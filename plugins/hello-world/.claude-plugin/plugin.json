@@ -1,0 +1,11 @@
+{
+  "name": "hello-world",
+  "version": "1.0.0",
+  "description": "A simple demo plugin that greets the user and demonstrates the Claude Code plugin standard. Includes a slash command and an auto-activating skill.",
+  "author": {
+    "name": "Fourmis",
+    "url": "https://github.com/jcanizalez/fourmis-marketplace"
+  },
+  "license": "MIT",
+  "keywords": ["demo", "greeting", "starter", "fourmis"]
+}

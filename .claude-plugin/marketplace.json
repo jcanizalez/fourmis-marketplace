@@ -1,0 +1,21 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "fourmis-marketplace",
+  "description": "Curated plugins for Claude Code built by the Fourmis community. Multi-agent productivity tools, developer utilities, and workflow automation.",
+  "owner": {
+    "name": "Fourmis",
+    "email": "javier-canizalez@outlook.com"
+  },
+  "plugins": [
+    {
+      "name": "hello-world",
+      "description": "A simple demo plugin that greets the user and demonstrates the Claude Code plugin standard. Includes a slash command and an auto-activating skill.",
+      "version": "1.0.0",
+      "author": {
+        "name": "Fourmis"
+      },
+      "source": "./plugins/hello-world",
+      "category": "demo"
+    }
+  ]
+}
