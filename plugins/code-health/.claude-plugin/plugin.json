@@ -1,0 +1,11 @@
+{
+  "name": "code-health",
+  "version": "1.0.0",
+  "description": "Codebase quality metrics and tech debt tracking. Analyzes file complexity, outdated dependencies, TODO/FIXME markers, and dead code. Gives your codebase a health score with actionable improvements.",
+  "author": {
+    "name": "Fourmis",
+    "url": "https://github.com/jcanizalez/fourmis-marketplace"
+  },
+  "license": "MIT",
+  "keywords": ["code-quality", "tech-debt", "complexity", "dependencies", "health"]
+}

@@ -26,6 +26,16 @@
       },
       "source": "./plugins/git-workflow",
       "category": "productivity"
+    },
+    {
+      "name": "code-health",
+      "description": "Codebase quality metrics and tech debt tracking. Analyzes file complexity, outdated dependencies, TODO/FIXME markers, and dead code. Gives your codebase a health score with actionable improvements.",
+      "version": "1.0.0",
+      "author": {
+        "name": "Fourmis"
+      },
+      "source": "./plugins/code-health",
+      "category": "productivity"
     }
   ]
 }
