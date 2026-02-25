@@ -36,6 +36,16 @@
       },
       "source": "./plugins/code-health",
       "category": "productivity"
+    },
+    {
+      "name": "api-docs",
+      "description": "Auto-generate API documentation from your code. Scans route handlers in Express, Go, Next.js, and Fastify to produce OpenAPI specs, markdown references, and curl examples.",
+      "version": "1.0.0",
+      "author": {
+        "name": "Fourmis"
+      },
+      "source": "./plugins/api-docs",
+      "category": "development"
     }
   ]
 }

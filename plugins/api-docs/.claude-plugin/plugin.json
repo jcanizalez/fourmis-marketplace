@@ -1,0 +1,11 @@
+{
+  "name": "api-docs",
+  "version": "1.0.0",
+  "description": "Auto-generate API documentation from your code. Scans route handlers in Express, Go, Next.js, and Fastify to produce OpenAPI specs, markdown references, and curl examples.",
+  "author": {
+    "name": "Fourmis",
+    "url": "https://github.com/jcanizalez/fourmis-marketplace"
+  },
+  "license": "MIT",
+  "keywords": ["api", "documentation", "openapi", "swagger", "curl", "rest"]
+}
