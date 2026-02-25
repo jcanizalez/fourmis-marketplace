@@ -46,6 +46,16 @@
       },
       "source": "./plugins/api-docs",
       "category": "development"
+    },
+    {
+      "name": "reddit-mcp",
+      "description": "Full Reddit integration via MCP — browse subreddits, search posts, read comments, submit posts, comment, and vote. Authenticated via OAuth2 with 10 tools covering all core Reddit operations.",
+      "version": "1.0.0",
+      "author": {
+        "name": "Fourmis"
+      },
+      "source": "./plugins/reddit-mcp",
+      "category": "social"
     }
   ]
 }

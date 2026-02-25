@@ -1,0 +1,13 @@
+{
+  "reddit": {
+    "type": "stdio",
+    "command": "node",
+    "args": ["${CLAUDE_PLUGIN_ROOT}/dist/index.js"],
+    "env": {
+      "REDDIT_CLIENT_ID": "",
+      "REDDIT_CLIENT_SECRET": "",
+      "REDDIT_USERNAME": "",
+      "REDDIT_PASSWORD": ""
+    }
+  }
+}

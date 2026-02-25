@@ -1,0 +1,9 @@
+{
+  "$schema": "https://anthropic.com/claude-code/plugin.schema.json",
+  "name": "reddit-mcp",
+  "description": "Full Reddit integration via MCP — browse subreddits, search posts, read comments, submit posts, comment, and vote. Authenticated via OAuth2 password grant for script-type apps.",
+  "version": "1.0.0",
+  "author": {
+    "name": "Fourmis"
+  }
+}
