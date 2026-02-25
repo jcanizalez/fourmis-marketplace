@@ -16,6 +16,16 @@
       },
       "source": "./plugins/hello-world",
       "category": "demo"
+    },
+    {
+      "name": "git-workflow",
+      "description": "Smart git workflows: conventional commits, branch naming conventions, PR description templates, and changelog generation. Enforces consistent practices across your team.",
+      "version": "1.0.0",
+      "author": {
+        "name": "Fourmis"
+      },
+      "source": "./plugins/git-workflow",
+      "category": "productivity"
     }
   ]
 }

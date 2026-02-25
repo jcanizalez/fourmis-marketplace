@@ -1,0 +1,11 @@
+{
+  "name": "git-workflow",
+  "version": "1.0.0",
+  "description": "Smart git workflows: conventional commits, branch naming conventions, PR description templates, and changelog generation. Enforces consistent practices across your team.",
+  "author": {
+    "name": "Fourmis",
+    "url": "https://github.com/jcanizalez/fourmis-marketplace"
+  },
+  "license": "MIT",
+  "keywords": ["git", "workflow", "conventional-commits", "changelog", "pull-request"]
+}
