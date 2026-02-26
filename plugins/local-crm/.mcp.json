@@ -1,0 +1,10 @@
+{
+  "local-crm": {
+    "type": "stdio",
+    "command": "node",
+    "args": ["${CLAUDE_PLUGIN_ROOT}/dist/index.js"],
+    "env": {
+      "CRM_DB_DIR": "${CLAUDE_PLUGIN_ROOT}/data"
+    }
+  }
+}

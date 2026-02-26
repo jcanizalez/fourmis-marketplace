@@ -56,6 +56,16 @@
       },
       "source": "./plugins/reddit-mcp",
       "category": "social"
+    },
+    {
+      "name": "local-crm",
+      "description": "Local-first CRM for freelancers — manage contacts, deals, follow-ups, and interactions with zero cloud dependencies. SQLite-based with 17 MCP tools covering full CRUD, pipeline tracking, and reporting.",
+      "version": "1.0.0",
+      "author": {
+        "name": "Fourmis"
+      },
+      "source": "./plugins/local-crm",
+      "category": "productivity"
     }
   ]
 }

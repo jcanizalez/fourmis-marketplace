@@ -1,0 +1,9 @@
+{
+  "$schema": "https://anthropic.com/claude-code/plugin.schema.json",
+  "name": "local-crm",
+  "description": "Local-first CRM for freelancers and small teams — manage contacts, deals, follow-ups, and interactions with zero cloud dependencies. All data stored in local SQLite. 17 MCP tools covering full CRUD operations, pipeline tracking, and reporting.",
+  "version": "1.0.0",
+  "author": {
+    "name": "Fourmis"
+  }
+}
