@@ -1,0 +1,9 @@
+{
+  "$schema": "https://anthropic.com/claude-code/plugin.schema.json",
+  "name": "markdown-writer",
+  "description": "Professional writing toolkit — blog posts, technical docs, SEO content, readability analysis, content outlining, and editing. 6 skills, 3 commands, 1 editor agent. No dependencies.",
+  "version": "1.0.0",
+  "author": {
+    "name": "Fourmis"
+  }
+}
