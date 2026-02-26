@@ -1,0 +1,9 @@
+{
+  "$schema": "https://anthropic.com/claude-code/plugin.schema.json",
+  "name": "social-poster",
+  "description": "Cross-platform social media posting — publish to Bluesky and Mastodon from Claude Code. Compose once, adapt for character limits, post to one or all platforms. 8 MCP tools, 1 skill, 2 commands. No heavy dependencies.",
+  "version": "1.0.0",
+  "author": {
+    "name": "Fourmis"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "social-poster": {
+    "type": "stdio",
+    "command": "node",
+    "args": ["${CLAUDE_PLUGIN_ROOT}/dist/index.js"],
+    "env": {
+      "BLUESKY_IDENTIFIER": "",
+      "BLUESKY_APP_PASSWORD": "",
+      "MASTODON_INSTANCE": "",
+      "MASTODON_ACCESS_TOKEN": ""
+    }
+  }
+}

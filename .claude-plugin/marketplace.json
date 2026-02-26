@@ -86,6 +86,16 @@
       },
       "source": "./plugins/devops-skills",
       "category": "devops"
+    },
+    {
+      "name": "social-poster",
+      "description": "Cross-platform social media posting — publish to Bluesky and Mastodon from Claude Code. Compose once, adapt for character limits, post to one or all platforms. 8 MCP tools, 1 skill, 2 commands.",
+      "version": "1.0.0",
+      "author": {
+        "name": "Fourmis"
+      },
+      "source": "./plugins/social-poster",
+      "category": "social"
     }
   ]
 }
