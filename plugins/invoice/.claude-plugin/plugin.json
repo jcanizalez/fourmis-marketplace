@@ -1,0 +1,9 @@
+{
+  "$schema": "https://anthropic.com/claude-code/plugin.schema.json",
+  "name": "invoice",
+  "description": "Local-first invoicing for freelancers — create, track, and export professional invoices from Claude Code. SQLite-based with 10 MCP tools, 1 skill, 2 commands. Zero cloud dependencies, zero subscriptions.",
+  "version": "1.0.0",
+  "author": {
+    "name": "Fourmis"
+  }
+}

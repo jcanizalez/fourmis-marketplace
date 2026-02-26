@@ -106,6 +106,16 @@
       },
       "source": "./plugins/seo-toolkit",
       "category": "marketing"
+    },
+    {
+      "name": "invoice",
+      "description": "Local-first invoicing for freelancers — create, track, and export professional invoices from Claude Code. SQLite-based with 10 MCP tools for clients, invoices, payments, HTML export, and revenue reports. Zero cloud dependencies.",
+      "version": "1.0.0",
+      "author": {
+        "name": "Fourmis"
+      },
+      "source": "./plugins/invoice",
+      "category": "productivity"
     }
   ]
 }

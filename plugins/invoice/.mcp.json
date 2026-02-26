@@ -1,0 +1,11 @@
+{
+  "invoice": {
+    "type": "stdio",
+    "command": "node",
+    "args": ["${CLAUDE_PLUGIN_ROOT}/dist/index.js"],
+    "env": {
+      "INVOICE_DB_DIR": "${CLAUDE_PLUGIN_ROOT}/data",
+      "INVOICE_OUTPUT_DIR": "${CLAUDE_PLUGIN_ROOT}/invoices"
+    }
+  }
+}
