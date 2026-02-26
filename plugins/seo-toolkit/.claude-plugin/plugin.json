@@ -1,0 +1,9 @@
+{
+  "$schema": "https://anthropic.com/claude-code/plugin.schema.json",
+  "name": "seo-toolkit",
+  "description": "Free SEO analysis toolkit — on-page optimization, technical audits, meta tag validation, heading analysis, image audits, SSL checks, redirect tracing, robots.txt/sitemap parsing, and performance metrics. 10 MCP tools, 3 skills, 2 commands, 1 agent. No paid API keys required.",
+  "version": "1.0.0",
+  "author": {
+    "name": "Fourmis"
+  }
+}

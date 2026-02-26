@@ -96,6 +96,16 @@
       },
       "source": "./plugins/social-poster",
       "category": "social"
+    },
+    {
+      "name": "seo-toolkit",
+      "description": "Free SEO analysis toolkit — on-page optimization, technical audits, meta tag validation, heading analysis, image audits, SSL checks, redirect tracing, robots.txt/sitemap parsing, and performance metrics. 10 MCP tools, 3 skills, 2 commands, 1 agent. No paid API keys.",
+      "version": "1.0.0",
+      "author": {
+        "name": "Fourmis"
+      },
+      "source": "./plugins/seo-toolkit",
+      "category": "marketing"
     }
   ]
 }
