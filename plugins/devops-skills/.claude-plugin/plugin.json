@@ -1,0 +1,9 @@
+{
+  "$schema": "https://anthropic.com/claude-code/plugin.schema.json",
+  "name": "devops-skills",
+  "description": "Comprehensive DevOps expertise bundle — incident response, deployment safety, Dockerfile optimization, GitHub Actions, Kubernetes troubleshooting, security hardening, and infrastructure cost analysis. 7 skills, 3 commands, 2 agents. No dependencies.",
+  "version": "1.0.0",
+  "author": {
+    "name": "Fourmis"
+  }
+}
