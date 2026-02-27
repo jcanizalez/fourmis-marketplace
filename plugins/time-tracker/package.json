@@ -1,0 +1,24 @@
+{
+  "name": "time-tracker",
+  "version": "1.0.0",
+  "description": "Local-first time tracking for freelancers — track hours per project/client, start/stop timers, generate timesheets, and export reports. SQLite-based MCP server with zero cloud dependencies.",
+  "private": true,
+  "type": "module",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "dev": "tsx src/index.ts"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.6.1",
+    "better-sqlite3": "^11.7.0",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@types/better-sqlite3": "^7.6.12",
+    "@types/node": "^22.0.0",
+    "tsx": "^4.19.0",
+    "typescript": "^5.6.0"
+  }
+}

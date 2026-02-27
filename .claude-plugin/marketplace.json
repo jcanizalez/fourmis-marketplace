@@ -126,6 +126,16 @@
       },
       "source": "./plugins/marketing-agent",
       "category": "marketing"
+    },
+    {
+      "name": "time-tracker",
+      "description": "Local-first time tracking for freelancers — start/stop timers, log hours per project, generate timesheets, and track billable earnings. SQLite-based with 12 MCP tools. Zero cloud dependencies, zero subscriptions.",
+      "version": "1.0.0",
+      "author": {
+        "name": "Fourmis"
+      },
+      "source": "./plugins/time-tracker",
+      "category": "productivity"
     }
   ]
 }
