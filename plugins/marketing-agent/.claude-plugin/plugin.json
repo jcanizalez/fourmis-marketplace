@@ -1,0 +1,9 @@
+{
+  "$schema": "https://anthropic.com/claude-code/plugin.schema.json",
+  "name": "marketing-agent",
+  "description": "Content marketing agent profile — orchestrates markdown-writer, seo-toolkit, and social-poster into end-to-end marketing workflows. Create content, optimize for search, and distribute across social platforms. 3 agents, 3 skills, 3 commands. No MCP server — pure coordination layer.",
+  "version": "1.0.0",
+  "author": {
+    "name": "Fourmis"
+  }
+}
