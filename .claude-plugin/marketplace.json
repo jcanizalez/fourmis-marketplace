@@ -166,6 +166,16 @@
       },
       "source": "./plugins/security-audit",
       "category": "security"
+    },
+    {
+      "name": "test-gen",
+      "description": "Test generation and analysis toolkit — unit tests, integration tests, E2E tests, TDD workflow, mocking patterns, and coverage analysis across Jest, Vitest, pytest, Go testing, Playwright, and Cypress. 6 skills, 3 commands. No dependencies.",
+      "version": "1.0.0",
+      "author": {
+        "name": "Fourmis"
+      },
+      "source": "./plugins/test-gen",
+      "category": "development"
     }
   ]
 }

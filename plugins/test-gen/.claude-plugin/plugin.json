@@ -1,0 +1,8 @@
+{
+  "name": "test-gen",
+  "version": "1.0.0",
+  "description": "Test generation and analysis toolkit — unit tests, integration tests, E2E tests, TDD workflow, mocking patterns, and coverage analysis across Jest, Vitest, pytest, Go testing, Playwright, and more. 6 skills, 3 commands. No dependencies.",
+  "author": {
+    "name": "Fourmis"
+  }
+}
