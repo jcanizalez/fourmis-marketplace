@@ -1,0 +1,8 @@
+{
+  "name": "security-audit",
+  "version": "1.0.0",
+  "description": "Local code security scanning MCP server — detect secrets, scan dependencies for vulnerabilities, find code injection patterns, audit configurations, and check HTTP security headers. Zero cloud dependencies.",
+  "author": {
+    "name": "Fourmis"
+  }
+}

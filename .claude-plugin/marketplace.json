@@ -156,6 +156,16 @@
       },
       "source": "./plugins/db-explorer",
       "category": "development"
+    },
+    {
+      "name": "security-audit",
+      "description": "Local code security scanning MCP server — detect secrets, scan dependencies for vulnerabilities, find code injection patterns, audit configurations, and check HTTP security headers. 8 MCP tools, 1 skill, 2 commands. Zero cloud dependencies.",
+      "version": "1.0.0",
+      "author": {
+        "name": "Fourmis"
+      },
+      "source": "./plugins/security-audit",
+      "category": "security"
     }
   ]
 }
