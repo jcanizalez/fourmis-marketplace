@@ -1,0 +1,9 @@
+{
+  "$schema": "https://anthropic.com/claude-code/plugin.schema.json",
+  "name": "freelancer-agent",
+  "description": "Freelancer business agent profile — orchestrates local-crm, invoice, and time-tracker into end-to-end freelancing workflows. Onboard clients, track time, generate invoices, manage pipeline. 3 agents, 3 skills, 4 commands. No MCP server — pure coordination layer.",
+  "version": "1.0.0",
+  "author": {
+    "name": "Fourmis"
+  }
+}

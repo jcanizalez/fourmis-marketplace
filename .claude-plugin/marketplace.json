@@ -136,6 +136,16 @@
       },
       "source": "./plugins/time-tracker",
       "category": "productivity"
+    },
+    {
+      "name": "freelancer-agent",
+      "description": "Freelancer business agent profile — orchestrates local-crm, invoice, and time-tracker into end-to-end workflows. Onboard clients, track time, bill clients, monitor business health. 3 agents, 3 skills, 4 commands. No MCP server — pure coordination.",
+      "version": "1.0.0",
+      "author": {
+        "name": "Fourmis"
+      },
+      "source": "./plugins/freelancer-agent",
+      "category": "productivity"
     }
   ]
 }
