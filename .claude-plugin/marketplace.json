@@ -206,6 +206,16 @@
       },
       "source": "./plugins/project-scaffold",
       "category": "development"
+    },
+    {
+      "name": "a11y-audit",
+      "description": "Accessibility audit toolkit — WCAG 2.2 compliance checking, ARIA patterns, color contrast analysis, keyboard navigation, screen reader optimization, and accessible component recipes. 6 skills, 3 commands, 1 agent. No dependencies.",
+      "version": "1.0.0",
+      "author": {
+        "name": "Fourmis"
+      },
+      "source": "./plugins/a11y-audit",
+      "category": "development"
     }
   ]
 }
