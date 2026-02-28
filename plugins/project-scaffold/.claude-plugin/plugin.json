@@ -1,0 +1,8 @@
+{
+  "name": "project-scaffold",
+  "version": "1.0.0",
+  "description": "Project scaffolding toolkit — generate production-ready boilerplate for Next.js, Express, Go, Python, monorepos, and npm/PyPI libraries. Best-practice project structure, configs, CI, testing, and Docker setup. 6 skills, 3 commands, 1 agent. No dependencies.",
+  "author": {
+    "name": "Fourmis"
+  }
+}

@@ -196,6 +196,16 @@
       },
       "source": "./plugins/ci-cd",
       "category": "devops"
+    },
+    {
+      "name": "project-scaffold",
+      "description": "Project scaffolding toolkit — generate production-ready boilerplate for Next.js, Express, Go, Python, monorepos, and npm/PyPI libraries. Best-practice project structure, configs, CI, testing, and Docker setup. 6 skills, 3 commands, 1 agent. No dependencies.",
+      "version": "1.0.0",
+      "author": {
+        "name": "Fourmis"
+      },
+      "source": "./plugins/project-scaffold",
+      "category": "development"
     }
   ]
 }
