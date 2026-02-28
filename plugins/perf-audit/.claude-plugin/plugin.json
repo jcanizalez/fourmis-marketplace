@@ -1,0 +1,8 @@
+{
+  "name": "perf-audit",
+  "version": "1.0.0",
+  "description": "Web performance optimization toolkit — Core Web Vitals (LCP, INP, CLS), rendering performance, bundle size optimization, image optimization, caching strategies, and performance monitoring. 6 skills, 3 commands, 1 agent. No dependencies.",
+  "author": {
+    "name": "Fourmis"
+  }
+}
