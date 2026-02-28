@@ -176,6 +176,16 @@
       },
       "source": "./plugins/test-gen",
       "category": "development"
+    },
+    {
+      "name": "code-review",
+      "description": "Comprehensive code review toolkit — review patterns for bugs, security, and quality; PR review workflow; targeted review checklists for APIs, React, migrations, and auth; SOLID principles and code smell detection; effective review comment writing. 5 skills, 3 commands, 1 agent. No dependencies.",
+      "version": "1.0.0",
+      "author": {
+        "name": "Fourmis"
+      },
+      "source": "./plugins/code-review",
+      "category": "development"
     }
   ]
 }

@@ -1,0 +1,8 @@
+{
+  "name": "code-review",
+  "version": "1.0.0",
+  "description": "Comprehensive code review toolkit — review patterns, PR review workflow, review checklists, code quality assessment, and effective review comments. 5 skills, 3 commands, 1 agent. No dependencies.",
+  "author": {
+    "name": "Fourmis"
+  }
+}
