@@ -226,6 +226,16 @@
       },
       "source": "./plugins/perf-audit",
       "category": "development"
+    },
+    {
+      "name": "api-testing",
+      "description": "API testing toolkit — REST API testing patterns (Supertest, httpx, Go httptest), mock server setup (MSW), contract testing (OpenAPI validation), API security auditing, HTTP client best practices, and API documentation. 6 skills, 3 commands, 1 agent. No dependencies.",
+      "version": "1.0.0",
+      "author": {
+        "name": "Fourmis"
+      },
+      "source": "./plugins/api-testing",
+      "category": "development"
     }
   ]
 }

@@ -1,0 +1,8 @@
+{
+  "name": "api-testing",
+  "version": "1.0.0",
+  "description": "API testing toolkit — REST API testing patterns, mock server setup, contract testing, API security auditing, HTTP client best practices, and API documentation validation. Covers Supertest, httpx, Go httptest, Postman, and OpenAPI. 6 skills, 3 commands, 1 agent. No dependencies.",
+  "author": {
+    "name": "Fourmis"
+  }
+}
