@@ -186,6 +186,16 @@
       },
       "source": "./plugins/code-review",
       "category": "development"
+    },
+    {
+      "name": "ci-cd",
+      "description": "CI/CD toolkit — GitHub Actions workflow generation, deployment pipelines, Docker CI, release automation, and CI best practices. 5 skills, 3 commands, 1 agent. No dependencies.",
+      "version": "1.0.0",
+      "author": {
+        "name": "Fourmis"
+      },
+      "source": "./plugins/ci-cd",
+      "category": "devops"
     }
   ]
 }
