@@ -236,6 +236,16 @@
       },
       "source": "./plugins/api-testing",
       "category": "development"
+    },
+    {
+      "name": "design-system",
+      "description": "Design system toolkit — design tokens (3-tier architecture), Tailwind CSS theming (v3/v4), responsive design patterns (container queries, fluid typography), CSS animations (entrance, loading, scroll-driven), typography systems (scales, font loading, prose), and component styling (CVA variants, compound components). 6 skills, 3 commands, 1 agent. No dependencies.",
+      "version": "1.0.0",
+      "author": {
+        "name": "Fourmis"
+      },
+      "source": "./plugins/design-system",
+      "category": "design"
     }
   ]
 }

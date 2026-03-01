@@ -1,0 +1,8 @@
+{
+  "name": "design-system",
+  "version": "1.0.0",
+  "description": "Design system toolkit — design tokens, Tailwind CSS theming, responsive design patterns, CSS animations and transitions, typography systems, and component styling architecture. Build consistent, scalable UI with proper design foundations. 6 skills, 3 commands, 1 agent. No dependencies.",
+  "author": {
+    "name": "Fourmis"
+  }
+}
