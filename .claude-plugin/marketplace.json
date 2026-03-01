@@ -266,6 +266,16 @@
       },
       "source": "./plugins/prompt-engineering",
       "category": "development"
+    },
+    {
+      "name": "migration-toolkit",
+      "description": "Migration and upgrade toolkit — database schema migrations (SQL, ORM, rollbacks, zero-downtime), dependency updates (semver, changelogs, breaking changes, Dependabot/Renovate), framework upgrades (Next.js, React, Express, Go, codemods), API versioning (URL/header strategies, deprecation headers, consumer migration), data migrations (ETL, backfills, dual-write, verification), and deprecation management (sunset plans, migration guides, usage tracking). 6 skills, 3 commands, 1 agent. No dependencies.",
+      "version": "1.0.0",
+      "author": {
+        "name": "Fourmis"
+      },
+      "source": "./plugins/migration-toolkit",
+      "category": "development"
     }
   ]
 }

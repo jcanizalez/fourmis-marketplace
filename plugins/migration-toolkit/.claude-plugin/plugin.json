@@ -1,0 +1,8 @@
+{
+  "name": "migration-toolkit",
+  "version": "1.0.0",
+  "description": "Migration and upgrade toolkit — database schema migrations (SQL, ORM, rollbacks), dependency updates (semver, changelogs, breaking changes), framework upgrades (Next.js, React, Express, Go), API versioning (strategies, deprecation headers, consumer migration), data migrations (ETL, backfills, zero-downtime), and deprecation management (sunset plans, migration guides). 6 skills, 3 commands, 1 agent. No dependencies.",
+  "author": {
+    "name": "Fourmis"
+  }
+}
