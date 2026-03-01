@@ -1,7 +1,5 @@
 ---
-name: Conventional Commits
-description: Enforces the Conventional Commits specification when writing git commit messages. Activates when the user asks to commit, write a commit message, or when you are about to create a git commit.
-version: 1.0.0
+description: When the user asks to commit changes, write a commit message, asks about conventional commit format, commit types (feat, fix, refactor, chore), commit scopes, breaking changes in commits, or how to write good commit messages
 ---
 
 # Conventional Commits

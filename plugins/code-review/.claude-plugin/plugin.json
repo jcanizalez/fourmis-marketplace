@@ -1,7 +1,7 @@
 {
   "name": "code-review",
   "version": "1.0.0",
-  "description": "Comprehensive code review toolkit — review patterns, PR review workflow, review checklists, code quality assessment, and effective review comments. 5 skills, 3 commands, 1 agent. No dependencies.",
+  "description": "Comprehensive code review toolkit — review patterns (TypeScript, Python, Go), PR review workflow (gh CLI, size guidelines, verdict framework), review checklists (API, React, migration, auth, performance, config), code quality assessment (SOLID, code smells, cyclomatic/cognitive complexity), test review (coverage gaps, anti-patterns, mock audit), and effective review comments (categorization, tone, volume guidelines). 6 skills, 3 commands, 1 agent. No dependencies.",
   "author": {
     "name": "Fourmis"
   }

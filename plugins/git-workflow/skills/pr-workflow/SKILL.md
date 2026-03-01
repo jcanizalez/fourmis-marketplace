@@ -1,7 +1,5 @@
 ---
-name: PR Workflow
-description: Generates well-structured pull request descriptions, changelogs from git history, and pre-commit checklists. Activates when creating PRs, generating changelogs, or reviewing changes before committing.
-version: 1.0.0
+description: When the user asks to create a pull request, write a PR description, generate a changelog from git history, create a pre-commit checklist, or asks about PR templates, Keep a Changelog format, or pre-merge verification steps
 ---
 
 # PR Workflow

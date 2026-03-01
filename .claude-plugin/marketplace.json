@@ -19,7 +19,7 @@
     },
     {
       "name": "git-workflow",
-      "description": "Smart git workflows: conventional commits, branch naming conventions, PR description templates, and changelog generation. Enforces consistent practices across your team.",
+      "description": "Comprehensive git workflow toolkit — conventional commits, branch naming conventions, PR descriptions, changelog generation, git hooks (Husky, lint-staged, Lefthook), merge conflict resolution, rebasing and recovery (reflog, cherry-pick, stash), and monorepo workflows (CODEOWNERS, selective CI, Changesets). 6 skills, 4 commands, 1 agent. No dependencies.",
       "version": "1.0.0",
       "author": {
         "name": "Fourmis"
@@ -179,7 +179,7 @@
     },
     {
       "name": "code-review",
-      "description": "Comprehensive code review toolkit — review patterns for bugs, security, and quality; PR review workflow; targeted review checklists for APIs, React, migrations, and auth; SOLID principles and code smell detection; effective review comment writing. 5 skills, 3 commands, 1 agent. No dependencies.",
+      "description": "Comprehensive code review toolkit — review patterns (TypeScript, Python, Go), PR review workflow (gh CLI, size guidelines, verdict framework), review checklists (API, React, migration, auth, performance, config), code quality assessment (SOLID, code smells, cyclomatic/cognitive complexity), test review (coverage gaps, anti-patterns, mock audit), and effective review comments (categorization, tone, volume guidelines). 6 skills, 3 commands, 1 agent. No dependencies.",
       "version": "1.0.0",
       "author": {
         "name": "Fourmis"

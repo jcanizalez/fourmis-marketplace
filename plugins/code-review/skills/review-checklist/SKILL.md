@@ -1,14 +1,10 @@
+---
+description: When the user asks for a code review checklist, QA checklist, pre-merge checklist, things to check before shipping, review checklist for APIs, React components, database migrations, authentication code, error handling, performance-critical code, or configuration changes
+---
+
 # Review Checklist
 
 Generate targeted review checklists based on the type of code being reviewed. Provides systematic checklists for APIs, React components, database changes, auth code, and more.
-
-## When to Activate
-
-When the user asks to:
-- Create a review checklist for a specific change
-- Get a systematic list of things to check
-- Ensure nothing is missed in a review
-- Generate a QA checklist for a feature
 
 ## Checklist: API Endpoint
 

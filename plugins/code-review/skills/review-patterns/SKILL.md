@@ -1,14 +1,10 @@
+---
+description: When the user asks to review code, check code quality, find bugs in a file, audit code for issues, review a code snippet, perform a code walkthrough, or asks about what to look for when reviewing JavaScript, TypeScript, Python, or Go code
+---
+
 # Review Patterns
 
 Systematic patterns for reviewing code across languages. Knows what to look for in JavaScript/TypeScript, Python, Go, and general codebases.
-
-## When to Activate
-
-When the user asks to:
-- Review code or a code change
-- Check code quality of a file
-- Find issues in a code snippet
-- Perform a code audit or walkthrough
 
 ## Review Priority Order
 

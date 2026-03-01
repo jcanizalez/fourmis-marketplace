@@ -1,11 +1,8 @@
 {
   "name": "git-workflow",
   "version": "1.0.0",
-  "description": "Smart git workflows: conventional commits, branch naming conventions, PR description templates, and changelog generation. Enforces consistent practices across your team.",
+  "description": "Comprehensive git workflow toolkit — conventional commits, branch naming conventions, PR descriptions, changelog generation, git hooks (Husky, lint-staged, Lefthook), merge conflict resolution, rebasing and recovery (reflog, cherry-pick, stash), and monorepo workflows (CODEOWNERS, selective CI, Changesets). 6 skills, 4 commands, 1 agent. No dependencies.",
   "author": {
-    "name": "Fourmis",
-    "url": "https://github.com/jcanizalez/fourmis-marketplace"
-  },
-  "license": "MIT",
-  "keywords": ["git", "workflow", "conventional-commits", "changelog", "pull-request"]
+    "name": "Fourmis"
+  }
 }

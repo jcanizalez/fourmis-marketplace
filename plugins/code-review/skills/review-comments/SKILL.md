@@ -1,14 +1,10 @@
+---
+description: When the user asks about writing code review comments, providing PR feedback, commenting on code changes, structuring review feedback, review comment tone, categorizing review findings, or how to give constructive code review feedback
+---
+
 # Review Comments
 
 How to write effective, constructive, and actionable code review comments. Covers comment structure, tone, categorization, and common anti-patterns.
-
-## When to Activate
-
-When the user asks to:
-- Write review comments for a PR
-- Provide feedback on code changes
-- Comment on specific code issues
-- Improve their review comment style
 
 ## Comment Structure
 

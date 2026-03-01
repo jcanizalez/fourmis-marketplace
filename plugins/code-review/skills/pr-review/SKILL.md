@@ -1,14 +1,10 @@
+---
+description: When the user asks to review a pull request, check a PR before merging, provide PR feedback, assess if a PR is ready to merge, review a GitHub PR by number or URL, or asks about PR review workflow and best practices
+---
+
 # PR Review
 
 Pull request review workflow — how to review PRs systematically, what to check, and how to provide actionable feedback.
-
-## When to Activate
-
-When the user asks to:
-- Review a pull request
-- Check a PR before merging
-- Provide feedback on a PR
-- Assess if a PR is ready to merge
 
 ## PR Review Workflow
 

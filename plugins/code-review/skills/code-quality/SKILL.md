@@ -1,16 +1,10 @@
+---
+description: When the user asks about code quality, code smells, SOLID principles, DRY, KISS, cyclomatic complexity, cognitive complexity, code architecture, design patterns, refactoring suggestions, technical debt assessment, or how to improve code structure
+---
+
 # Code Quality
 
 Assess code quality using established principles — SOLID, DRY, KISS, complexity analysis, and design pattern recognition. Provides actionable improvement suggestions.
-
-## When to Activate
-
-When the user asks to:
-- Assess code quality
-- Check for code smells
-- Apply SOLID principles
-- Reduce code complexity
-- Improve code architecture
-- Identify design issues
 
 ## SOLID Principles
 

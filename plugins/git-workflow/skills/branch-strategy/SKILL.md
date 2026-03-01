@@ -1,7 +1,5 @@
 ---
-name: Branch Strategy
-description: Enforces consistent branch naming conventions and git branching strategy. Activates when creating branches, discussing branch strategy, or when the user asks about git workflow organization.
-version: 1.0.0
+description: When the user asks about branch naming conventions, git branching strategy, creating a new branch, branch prefixes (feature, fix, hotfix, chore), trunk-based development vs Git Flow vs GitHub Flow, or how to organize branches for a team
 ---
 
 # Branch Strategy
