@@ -1,0 +1,8 @@
+{
+  "name": "product-management",
+  "version": "1.0.0",
+  "description": "Product management toolkit — PRD generation, sprint planning, user story writing, effort estimation, roadmap planning, and sprint retrospectives. Covers RICE scoring, story mapping, t-shirt sizing, Fibonacci estimation, and OKR alignment. 6 skills, 3 commands, 1 agent. No dependencies.",
+  "author": {
+    "name": "Fourmis"
+  }
+}

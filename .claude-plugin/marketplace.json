@@ -246,6 +246,16 @@
       },
       "source": "./plugins/design-system",
       "category": "design"
+    },
+    {
+      "name": "product-management",
+      "description": "Product management toolkit — PRD writing (templates, RICE scoring), sprint planning (capacity, velocity, ceremonies), user stories (INVEST, story mapping, splitting), estimation (Fibonacci, t-shirt sizing, PERT), roadmap planning (Now/Next/Later, OKR alignment, milestones), and retrospectives (Start/Stop/Continue, 4Ls, Sailboat, action tracking). 6 skills, 3 commands, 1 agent. No dependencies.",
+      "version": "1.0.0",
+      "author": {
+        "name": "Fourmis"
+      },
+      "source": "./plugins/product-management",
+      "category": "productivity"
     }
   ]
 }
