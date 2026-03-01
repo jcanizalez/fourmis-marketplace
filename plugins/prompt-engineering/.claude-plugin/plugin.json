@@ -1,0 +1,8 @@
+{
+  "name": "prompt-engineering",
+  "version": "1.0.0",
+  "description": "Prompt engineering toolkit — prompt design patterns, structured output (JSON/XML/TypeScript), few-shot example design, chain-of-thought reasoning, RAG patterns (retrieval-augmented generation), and LLM evaluation techniques. Build better AI-powered features with proven prompting strategies. 6 skills, 3 commands, 1 agent. No dependencies.",
+  "author": {
+    "name": "Fourmis"
+  }
+}

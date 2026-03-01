@@ -256,6 +256,16 @@
       },
       "source": "./plugins/product-management",
       "category": "productivity"
+    },
+    {
+      "name": "prompt-engineering",
+      "description": "Prompt engineering toolkit — prompt design patterns (role, constraints, multi-pass), structured output (tool use, Zod schemas, JSON/XML parsing), few-shot example design (selection strategies, contrastive pairs), chain-of-thought reasoning (CoT, extended thinking, self-consistency, tree of thought), RAG patterns (chunking, vector search, hybrid search, grounding), and LLM evaluation (datasets, LLM-as-judge, regression testing, CI pipelines). 6 skills, 3 commands, 1 agent. No dependencies.",
+      "version": "1.0.0",
+      "author": {
+        "name": "Fourmis"
+      },
+      "source": "./plugins/prompt-engineering",
+      "category": "development"
     }
   ]
 }
