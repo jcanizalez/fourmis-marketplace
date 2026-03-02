@@ -1,15 +1,10 @@
+---
+description: When the user asks to write unit tests, test a function or module, add tests to an untested file, generate test cases for edge cases, set up test file structure, or asks about Jest, Vitest, pytest, Go testing patterns, test assertions, or test organization
+---
+
 # Unit Testing
 
 Generate and write unit tests for functions, classes, and modules. Covers Jest, Vitest, pytest, Go testing, and general patterns.
-
-## When to Activate
-
-When the user asks to:
-- Write unit tests for a function or module
-- Test a specific piece of code
-- Add tests to an untested file
-- Generate test cases for edge cases
-- Set up a test file structure
 
 ## Test File Naming Conventions
 

@@ -169,7 +169,7 @@
     },
     {
       "name": "test-gen",
-      "description": "Test generation and analysis toolkit — unit tests, integration tests, E2E tests, TDD workflow, mocking patterns, and coverage analysis across Jest, Vitest, pytest, Go testing, Playwright, and Cypress. 6 skills, 3 commands. No dependencies.",
+      "description": "Test generation and analysis toolkit — unit tests (Jest, Vitest, pytest, Go table-driven), integration tests (Supertest, httpx, httptest, database setup/teardown), E2E tests (Playwright, Cypress, Page Object pattern), TDD workflow (Red-Green-Refactor), mocking patterns (jest.fn, vi.fn, unittest.mock, testify/mock, fixtures), and coverage analysis (gap detection, risk-based prioritization, flaky test detection). 6 skills, 3 commands, 1 agent. No dependencies.",
       "version": "1.0.0",
       "author": {
         "name": "Fourmis"

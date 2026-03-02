@@ -1,16 +1,10 @@
+---
+description: When the user asks to analyze test coverage, find untested code, assess test quality or test suite health, identify what to test next, improve existing tests, understand coverage metrics, read coverage reports, find testing gaps, detect flaky tests, or asks about coverage strategy and risk-based test prioritization
+---
+
 # Test Analysis
 
 Analyze test coverage, find testing gaps, assess test quality, and prioritize what to test next.
-
-## When to Activate
-
-When the user asks to:
-- Analyze test coverage or coverage reports
-- Find untested code or functions
-- Assess test quality or test suite health
-- Identify what to test next
-- Improve existing tests
-- Understand coverage metrics
 
 ## Coverage Metrics Explained
 

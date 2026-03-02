@@ -1,15 +1,10 @@
+---
+description: When the user asks to write integration tests, test API endpoints, test database operations end-to-end, test service interactions, create integration test suites, test middleware pipelines, or asks about Supertest, httpx, Go httptest, database test setup/teardown, or transaction rollback patterns
+---
+
 # Integration Testing
 
 Write integration tests for APIs, databases, and service interactions. Covers HTTP testing, database setup/teardown, and external service integration.
-
-## When to Activate
-
-When the user asks to:
-- Write API endpoint tests
-- Test database operations end-to-end
-- Test service-to-service interactions
-- Create integration test suites
-- Test middleware or request pipelines
 
 ## Integration vs Unit Tests
 

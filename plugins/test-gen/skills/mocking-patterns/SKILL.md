@@ -1,16 +1,10 @@
+---
+description: When the user asks to mock a dependency, create test fixtures, stub API calls, spy on function calls, set up test doubles, isolate code under test, create factory functions for test data, or asks about jest.fn, vi.fn, unittest.mock, pytest fixtures, Go interface mocking, testify/mock, or module mocking patterns
+---
+
 # Mocking Patterns
 
 Create mocks, stubs, spies, and fixtures for test isolation. Covers dependency injection, module mocking, and test doubles across frameworks.
-
-## When to Activate
-
-When the user asks to:
-- Mock a dependency, module, or external service
-- Create test fixtures or test data
-- Stub API calls or database queries
-- Spy on function calls
-- Set up test doubles
-- Isolate code under test from dependencies
 
 ## Types of Test Doubles
 

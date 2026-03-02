@@ -1,15 +1,10 @@
+---
+description: When the user asks about test-driven development, TDD, writing tests before implementation, Red-Green-Refactor cycle, building a feature using TDD, test-first development, or asks how to practice TDD methodology with Jest, Vitest, pytest, or Go testing
+---
+
 # TDD Workflow
 
 Guide test-driven development — write tests first, implement to pass, then refactor. Covers the Red-Green-Refactor cycle across all major testing frameworks.
-
-## When to Activate
-
-When the user asks to:
-- Do test-driven development (TDD)
-- Write tests before implementation
-- Follow Red-Green-Refactor
-- Build a feature using TDD
-- Learn or practice TDD methodology
 
 ## The Red-Green-Refactor Cycle
 

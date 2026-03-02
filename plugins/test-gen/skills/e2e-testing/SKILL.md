@@ -1,15 +1,10 @@
+---
+description: When the user asks to write end-to-end tests, E2E tests, browser tests, test user workflows through the UI, set up Playwright or Cypress, test complete user journeys, create smoke tests or regression tests, or asks about Page Object pattern, test selectors (data-testid), or visual regression testing
+---
+
 # E2E Testing
 
 Write end-to-end tests that verify complete user workflows through the application. Covers Playwright, Cypress, and general E2E testing patterns.
-
-## When to Activate
-
-When the user asks to:
-- Write end-to-end tests or E2E tests
-- Test user workflows through the UI
-- Set up Playwright or Cypress
-- Test a complete user journey
-- Create smoke tests or regression tests
 
 ## E2E Testing Principles
 
