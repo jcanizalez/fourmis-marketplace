@@ -276,6 +276,16 @@
       },
       "source": "./plugins/migration-toolkit",
       "category": "development"
+    },
+    {
+      "name": "log-analyzer",
+      "description": "Log analysis and observability toolkit — structured logging patterns (Node.js Pino, Python structlog, Go slog), log parsing (JSON, Apache, nginx, syslog, Docker, Kubernetes), error diagnosis with stack trace analysis and root cause workflows, log monitoring and alerting (Grafana Loki, LogQL, script-based alerts), advanced log search (jq, grep, awk one-liners), and OpenTelemetry observability setup (traces, metrics, log correlation). 6 skills, 3 commands, 1 agent. No dependencies.",
+      "version": "1.0.0",
+      "author": {
+        "name": "Fourmis"
+      },
+      "source": "./plugins/log-analyzer",
+      "category": "devops"
     }
   ]
 }

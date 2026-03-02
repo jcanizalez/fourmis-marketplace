@@ -1,0 +1,8 @@
+{
+  "name": "log-analyzer",
+  "version": "1.0.0",
+  "description": "Log analysis and observability toolkit — structured logging patterns (Node.js, Python, Go), log parsing (JSON, Apache, nginx, syslog), error diagnosis with stack trace analysis, log monitoring and alerting, advanced log search patterns (grep, jq, regex), and OpenTelemetry observability setup. 6 skills, 3 commands, 1 agent. No dependencies.",
+  "author": {
+    "name": "Fourmis"
+  }
+}
