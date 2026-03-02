@@ -1,3 +1,7 @@
+---
+description: When the user asks about time tracking best practices, setting billable rates, writing time entry descriptions, generating timesheets, analyzing productivity, or managing billable hours as a freelancer or consultant
+---
+
 # Time Tracking & Management
 
 Expert guidance for effective time tracking, billing practices, and productivity analysis for freelancers and consultants.

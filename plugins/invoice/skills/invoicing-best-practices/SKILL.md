@@ -1,3 +1,7 @@
+---
+description: When the user asks about invoicing best practices, creating professional invoices, payment terms, late payment collection, freelance billing, invoice line item descriptions, tax considerations for freelancers, or international payment handling
+---
+
 # Invoicing Best Practices
 
 Expert guidance for creating professional invoices and managing freelance finances.

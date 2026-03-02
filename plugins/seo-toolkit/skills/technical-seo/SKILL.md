@@ -1,3 +1,7 @@
+---
+description: When the user asks about technical SEO, SSL certificates, HTTPS setup, robots.txt, XML sitemaps, redirect chains, URL structure, page speed optimization, security headers, or crawlability and indexing issues
+---
+
 # Technical SEO
 
 Server-side and infrastructure SEO optimization — the foundation that on-page SEO builds on.

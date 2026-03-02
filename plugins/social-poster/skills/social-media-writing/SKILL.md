@@ -1,3 +1,7 @@
+---
+description: When the user asks to write social media posts, compose posts for Bluesky or Mastodon, adapt content for different social platforms, use hashtags effectively, or write cross-platform social content
+---
+
 # Social Media Writing
 
 Expert guidance for writing effective social media posts across Bluesky and Mastodon.

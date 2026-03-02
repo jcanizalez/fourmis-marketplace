@@ -1,3 +1,7 @@
+---
+description: When the user asks about keyword research, finding search terms or content topics, analyzing search intent, long-tail keyword strategy, content gap analysis, or evaluating keyword competition without paid tools
+---
+
 # Keyword Research Methodology
 
 Systematic approach to finding and evaluating keywords without paid tools.

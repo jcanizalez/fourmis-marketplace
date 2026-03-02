@@ -1,3 +1,7 @@
+---
+description: When the user asks about on-page SEO, optimizing title tags or meta descriptions, heading structure for SEO, keyword placement, Open Graph tags, image alt text, internal linking strategy, or content optimization for search
+---
+
 # On-Page SEO Optimization
 
 Expert guidance for optimizing individual web pages for search engines.
