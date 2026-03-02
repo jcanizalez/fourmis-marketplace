@@ -1,0 +1,8 @@
+{
+  "name": "env-manager",
+  "version": "1.0.0",
+  "description": "Environment variable and configuration management toolkit — dotenv patterns and precedence rules, type-safe env validation (Zod, t3-env, Pydantic, Go envconfig), secret management (1Password CLI, cloud vaults, rotation), 12-factor config patterns and feature flags, .env.example sync and onboarding, and env security (leak prevention, secret scanning, audit). 6 skills, 3 commands, 1 agent. No dependencies.",
+  "author": {
+    "name": "Fourmis"
+  }
+}

@@ -286,6 +286,16 @@
       },
       "source": "./plugins/log-analyzer",
       "category": "devops"
+    },
+    {
+      "name": "env-manager",
+      "description": "Environment variable and configuration management toolkit — dotenv patterns and precedence rules (Node.js, Python, Go), type-safe env validation (Zod, t3-env, Pydantic, Go envconfig), secret management (1Password CLI, cloud vaults, rotation strategies), 12-factor config patterns and feature flags, .env.example sync and developer onboarding, and env security (leak prevention, gitleaks, secret scanning, audit). 6 skills, 3 commands, 1 agent. No dependencies.",
+      "version": "1.0.0",
+      "author": {
+        "name": "Fourmis"
+      },
+      "source": "./plugins/env-manager",
+      "category": "devops"
     }
   ]
 }
