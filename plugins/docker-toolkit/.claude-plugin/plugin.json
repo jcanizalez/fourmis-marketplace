@@ -1,0 +1,8 @@
+{
+  "name": "docker-toolkit",
+  "version": "1.0.0",
+  "description": "Docker and containerization toolkit — Dockerfile best practices (multi-stage, caching, distroless, Node.js/Python/Go), Docker Compose patterns (services, networks, health checks, profiles, dev/prod), container debugging (exec, logs, inspect, networking), image optimization (layer analysis, size reduction, multi-arch with buildx), Docker networking (bridge, overlay, DNS, service discovery), and container security (rootless, scanning, secrets, capabilities). 6 skills, 3 commands, 1 agent. No dependencies.",
+  "author": {
+    "name": "Fourmis"
+  }
+}

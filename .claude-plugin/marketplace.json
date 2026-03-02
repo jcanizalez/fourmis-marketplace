@@ -296,6 +296,16 @@
       },
       "source": "./plugins/env-manager",
       "category": "devops"
+    },
+    {
+      "name": "docker-toolkit",
+      "description": "Docker and containerization toolkit — Dockerfile best practices (multi-stage builds, layer caching, distroless/scratch, Node.js/Python/Go patterns), Docker Compose (services, networks, health checks, profiles, dev/prod overrides), container debugging (6-step framework, exit codes, logs, exec, networking, resources), image optimization (dive analysis, size reduction, BuildKit cache mounts, buildx multi-arch), Docker networking (bridge, overlay, DNS, service discovery, port mapping), and container security (rootless, image scanning, secrets, capabilities, hardening checklists). 6 skills, 3 commands, 1 agent. No dependencies.",
+      "version": "1.0.0",
+      "author": {
+        "name": "Fourmis"
+      },
+      "source": "./plugins/docker-toolkit",
+      "category": "devops"
     }
   ]
 }
