@@ -306,6 +306,16 @@
       },
       "source": "./plugins/docker-toolkit",
       "category": "devops"
+    },
+    {
+      "name": "typescript-patterns",
+      "description": "Advanced TypeScript patterns — generics (constrained, conditional, mapped, template literal types), utility types (built-in, custom, branded/opaque types), type guards (narrowing, discriminated unions, exhaustive checking, assertion functions), Zod validation (schemas, form/API validation, type inference from schemas), error handling (Result types, typed errors, error boundaries, async patterns), and module patterns (barrel exports, declaration merging, module augmentation, tsconfig best practices). 6 skills, 3 commands, 1 agent. No dependencies.",
+      "version": "1.0.0",
+      "author": {
+        "name": "Fourmis"
+      },
+      "source": "./plugins/typescript-patterns",
+      "category": "development"
     }
   ]
 }
