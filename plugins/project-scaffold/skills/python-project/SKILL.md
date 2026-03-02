@@ -1,3 +1,7 @@
+---
+description: When the user asks to scaffold a Python project, create a new Python CLI or library or FastAPI service, set up a Python project with uv and ruff and pytest, generate a Python boilerplate with Docker and CI
+---
+
 # Python Project Scaffolding
 
 Generate production-ready Python projects with modern tooling: `uv` for package management, `ruff` for linting/formatting, `pytest` for testing, and proper project structure.

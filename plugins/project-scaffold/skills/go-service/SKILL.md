@@ -1,3 +1,7 @@
+---
+description: When the user asks to scaffold a Go service, create a new Go HTTP API, set up a Go project with net/http and slog and graceful shutdown, generate a Go REST API boilerplate with Docker and Makefile
+---
+
 # Go Service Scaffolding
 
 Generate production-ready Go HTTP services with standard library `net/http`, structured logging, graceful shutdown, and idiomatic project layout.

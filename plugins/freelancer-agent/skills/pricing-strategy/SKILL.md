@@ -1,3 +1,7 @@
+---
+description: When the user asks about freelance pricing, setting hourly rates or project prices, writing a freelance proposal or quote, negotiating rates, choosing between hourly or fixed or retainer pricing, or handling scope creep
+---
+
 # Freelancer Pricing Strategy
 
 Guidance for setting, communicating, and adjusting freelance rates. Activate when the user discusses pricing, proposals, rate setting, or negotiations.

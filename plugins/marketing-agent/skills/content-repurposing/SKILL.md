@@ -1,3 +1,7 @@
+---
+description: When the user asks to repurpose content, turn a blog post into social media posts, adapt content for different platforms, cross-post or redistribute content, or extract social posts from an article or README
+---
+
 # Content Repurposing
 
 Turn one piece of content into many — maximize reach by adapting content across formats and platforms. Activate when the user wants to repurpose, redistribute, or adapt existing content for different channels.

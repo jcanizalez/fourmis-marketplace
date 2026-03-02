@@ -1,3 +1,7 @@
+---
+description: When the user asks to onboard a new client, set up a new freelance client, create a client onboarding checklist, or mentions new client setup or just signed a new client
+---
+
 # Client Onboarding Checklist
 
 Structured process for onboarding new freelance clients. Activate when setting up a new client relationship.

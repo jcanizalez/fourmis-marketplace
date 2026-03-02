@@ -1,3 +1,7 @@
+---
+description: When the user asks to scaffold an npm package or PyPI library, create a publishable TypeScript or Python library, set up tsup for dual ESM/CJS builds, configure package.json exports field, or set up automated npm or PyPI publishing
+---
+
 # Library / Package Scaffolding
 
 Generate publishable npm or PyPI packages with proper build pipeline, dual ESM/CJS output, type declarations, testing, and release automation.

@@ -1,3 +1,7 @@
+---
+description: When the user asks to scaffold an Express API, create a new Express.js project, set up a REST API with TypeScript, generate an Express boilerplate with Zod validation and error handling and Docker
+---
+
 # Express API Scaffolding
 
 Generate production-ready Express.js REST APIs with TypeScript, structured routing, validation, error handling, and testing.

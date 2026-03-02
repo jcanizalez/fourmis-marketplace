@@ -1,3 +1,7 @@
+---
+description: When the user asks to scaffold a monorepo, set up Turborepo with pnpm workspaces, create shared packages or shared TypeScript configs, configure a multi-app workspace, or generate a monorepo boilerplate with CI
+---
+
 # Monorepo Scaffolding
 
 Generate production-ready monorepo setups with Turborepo, shared packages, and consistent tooling across all workspaces.

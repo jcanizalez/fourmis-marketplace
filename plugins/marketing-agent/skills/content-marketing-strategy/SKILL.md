@@ -1,3 +1,7 @@
+---
+description: When the user asks about content marketing strategy, building an audience through content, choosing content pillars, content distribution across social channels, or measuring content marketing results
+---
+
 # Content Marketing Strategy
 
 Expert guidance for building and executing content marketing strategies. Activate when the user discusses content marketing, content strategy, audience growth, or asks how to market a product/project through content.

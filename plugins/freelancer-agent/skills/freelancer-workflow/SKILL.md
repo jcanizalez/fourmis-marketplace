@@ -1,3 +1,7 @@
+---
+description: When the user asks about freelancing workflows, managing a freelance business, the client lifecycle from lead to payment, weekly freelancer routines, or setting up freelance business systems
+---
+
 # Freelancer Business Workflow
 
 End-to-end workflow guidance for managing a freelance business — from lead acquisition through project delivery to payment collection.

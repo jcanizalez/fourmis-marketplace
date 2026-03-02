@@ -1,3 +1,7 @@
+---
+description: When the user asks to plan a marketing campaign, create a content calendar, plan a product launch, organize a content series, or build an editorial calendar with briefs and scheduling
+---
+
 # Campaign Planning
 
 Structured approach to planning content marketing campaigns — from product launches to ongoing content series. Activate when the user needs to plan a coordinated marketing effort across multiple pieces of content and channels.

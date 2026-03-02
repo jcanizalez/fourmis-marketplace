@@ -1,3 +1,7 @@
+---
+description: When the user asks to scaffold a Next.js app, create a new Next.js project with App Router and TypeScript, set up a Next.js boilerplate with Tailwind CSS, generate a Next.js application with authentication or database or tRPC
+---
+
 # Next.js App Scaffolding
 
 Generate production-ready Next.js applications with App Router, TypeScript, Tailwind CSS, and modern tooling.
