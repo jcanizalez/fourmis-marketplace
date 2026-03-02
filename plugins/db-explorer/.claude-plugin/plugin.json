@@ -1,7 +1,7 @@
 {
   "$schema": "https://anthropic.com/claude-code/plugin.schema.json",
   "name": "db-explorer",
-  "description": "Database exploration MCP server — connect to SQLite or PostgreSQL, explore schemas, run read-only queries, inspect tables, view relationships, and export results to CSV. 10 MCP tools. Zero cloud dependencies.",
+  "description": "Database exploration MCP server — connect to SQLite or PostgreSQL, list and describe tables, view column types and constraints and indexes, map table relationships, run read-only SQL queries, sample data, export results to CSV, data quality checks (orphaned FKs, duplicates, null analysis). 1 skill, 2 commands, 1 agent, 10 MCP tools. Zero cloud dependencies.",
   "version": "1.0.0",
   "author": {
     "name": "Fourmis"

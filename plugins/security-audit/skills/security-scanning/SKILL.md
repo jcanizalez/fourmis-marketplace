@@ -1,3 +1,7 @@
+---
+description: When the user asks to run a security audit, scan code for vulnerabilities, find hardcoded secrets or API keys, check for SQL injection or XSS or command injection patterns, audit dependencies for known vulnerabilities, check HTTP security headers, review .env file exposure, audit file permissions, get a security grade or security report, or asks about pre-deployment security checklists
+---
+
 # Security Scanning
 
 Comprehensive local security scanning for codebases — no cloud APIs, no paid subscriptions. Detect secrets, find vulnerabilities, audit configurations, and check HTTP headers.

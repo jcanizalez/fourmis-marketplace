@@ -1,3 +1,7 @@
+---
+description: When the user asks to explore a database, connect to SQLite or PostgreSQL, list tables, describe a table schema, view table relationships, run SQL queries, write SQL, export query results to CSV, check data quality, find duplicate records, analyze database structure, or asks about SQL join patterns, aggregation, window functions, or SQLite vs PostgreSQL differences
+---
+
 # Database Exploration
 
 Expert guidance for exploring, understanding, and querying databases. Activate when the user works with SQLite or PostgreSQL databases.

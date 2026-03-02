@@ -149,7 +149,7 @@
     },
     {
       "name": "db-explorer",
-      "description": "Database exploration MCP server — connect to SQLite or PostgreSQL, explore schemas, run read-only queries, inspect tables, view relationships, and export results to CSV. 10 MCP tools, 1 skill, 2 commands. Zero cloud dependencies.",
+      "description": "Database exploration MCP server — connect to SQLite or PostgreSQL, list and describe tables, view column types and constraints and indexes, map table relationships, run read-only SQL queries, sample data, export results to CSV, data quality checks (orphaned FKs, duplicates, null analysis). 1 skill, 2 commands, 1 agent, 10 MCP tools. Zero cloud dependencies.",
       "version": "1.0.0",
       "author": {
         "name": "Fourmis"
@@ -159,7 +159,7 @@
     },
     {
       "name": "security-audit",
-      "description": "Local code security scanning MCP server — detect secrets, scan dependencies for vulnerabilities, find code injection patterns, audit configurations, and check HTTP security headers. 8 MCP tools, 1 skill, 2 commands. Zero cloud dependencies.",
+      "description": "Local code security scanning MCP server — detect hardcoded secrets and API keys, scan dependencies for known CVEs, find SQL injection and XSS and command injection patterns, audit configurations for misconfigurations, check HTTP security headers (HSTS, CSP, X-Frame-Options), verify .env exposure and file permissions, generate security grades and audit reports. 1 skill, 2 commands, 1 agent, MCP server. Zero cloud dependencies.",
       "version": "1.0.0",
       "author": {
         "name": "Fourmis"
