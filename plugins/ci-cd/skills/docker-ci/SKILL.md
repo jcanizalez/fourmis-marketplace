@@ -1,13 +1,10 @@
+---
+description: When the user asks to build Docker images in CI, push images to a container registry, set up multi-stage Docker builds, configure Docker Compose for integration testing, scan Docker images for vulnerabilities, or automate container workflows in CI/CD
+---
+
 # Docker CI
 
 Build, test, and push Docker images in CI/CD pipelines. Covers multi-stage builds, registry authentication, image scanning, and Docker Compose for integration tests.
-
-## When to Activate
-
-When the user asks to:
-- Build Docker images in CI
-- Push images to a container registry
-- Set up multi-stage Docker builds
 - Run integration tests with Docker Compose in CI
 - Scan Docker images for vulnerabilities
 - Optimize Docker builds for CI

@@ -1,13 +1,10 @@
+---
+description: When the user asks to set up a deployment pipeline, deploy to staging or production, implement blue-green or canary deployments, configure environment promotion, set up rollback strategies, or asks about deployment patterns and infrastructure as code
+---
+
 # Deployment Pipelines
 
 Design and implement deployment pipelines — deployment strategies, environment promotion, rollback patterns, and infrastructure as code integration.
-
-## When to Activate
-
-When the user asks to:
-- Set up a deployment pipeline
-- Deploy to staging or production
-- Implement blue-green or canary deployments
 - Create an environment promotion workflow
 - Set up rollback automation
 

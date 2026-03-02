@@ -1,13 +1,10 @@
+---
+description: When the user asks to set up automated releases, generate changelogs, publish to npm or other registries, configure semantic versioning, create GitHub Releases, automate version bumping, or set up release-please or changesets
+---
+
 # Release Automation
 
 Automate releases — semantic versioning, changelog generation, GitHub Releases, npm publishing, and version bumping workflows.
-
-## When to Activate
-
-When the user asks to:
-- Set up automated releases
-- Generate changelogs
-- Publish to npm or other registries
 - Implement semantic versioning in CI
 - Create a release workflow
 - Automate version bumping

@@ -1,13 +1,10 @@
+---
+description: When the user asks to create a GitHub Actions workflow, set up CI for a project, configure automated testing or builds, write a CI pipeline YAML, set up GitHub Actions triggers, reusable workflows, or matrix builds
+---
+
 # GitHub Actions
 
 Generate and configure GitHub Actions workflows. Covers workflow syntax, job configuration, triggers, reusable workflows, and common patterns.
-
-## When to Activate
-
-When the user asks to:
-- Create a GitHub Actions workflow
-- Set up CI for a project
-- Configure automated testing or builds
 - Add a workflow for linting, formatting, or type checking
 - Set up pull request checks
 
