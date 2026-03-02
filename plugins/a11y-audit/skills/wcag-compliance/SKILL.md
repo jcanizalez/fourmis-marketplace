@@ -1,3 +1,7 @@
+---
+description: When the user asks about WCAG compliance, WCAG 2.2 audit, accessibility audit or checklist, Level A or AA or AAA conformance, perceivable operable understandable robust principles, or asks to check if a page meets WCAG standards
+---
+
 # WCAG 2.2 Compliance
 
 Audit web content against the Web Content Accessibility Guidelines (WCAG) 2.2. Covers all four principles: Perceivable, Operable, Understandable, and Robust.

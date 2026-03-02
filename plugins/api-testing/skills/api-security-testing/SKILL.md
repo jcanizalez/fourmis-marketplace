@@ -1,3 +1,7 @@
+---
+description: When the user asks to test API security, check for SQL injection or XSS or NoSQL injection, test authentication and authorization, verify rate limiting, test CORS configuration, check for data exposure in API responses, or write API security tests
+---
+
 # API Security Testing
 
 Test APIs for common security vulnerabilities: authentication bypass, injection attacks, rate limiting, CORS misconfiguration, and data exposure.

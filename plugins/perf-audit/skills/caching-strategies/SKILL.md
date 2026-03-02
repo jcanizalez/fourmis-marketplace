@@ -1,3 +1,7 @@
+---
+description: When the user asks about caching strategies, Cache-Control headers, CDN caching, browser cache, service worker caching with Workbox, Redis caching, ETags, stale-while-revalidate, Next.js ISR or revalidation, or cache invalidation patterns
+---
+
 # Caching Strategies
 
 Implement effective caching at every layer: browser, CDN, server, and application. Correct caching is the single biggest performance win for returning visitors.

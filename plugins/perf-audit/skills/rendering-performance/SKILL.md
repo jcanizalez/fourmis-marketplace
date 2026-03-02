@@ -1,3 +1,7 @@
+---
+description: When the user asks about rendering performance, layout thrashing, CSS containment or content-visibility, animation performance, will-change, React re-render optimization, React.memo or useMemo, list virtualization with TanStack Virtual, requestAnimationFrame, or the browser rendering pipeline
+---
+
 # Rendering Performance
 
 Optimize how the browser renders your application. Covers the rendering pipeline, layout thrashing, paint optimization, compositing, and React/framework-specific patterns.

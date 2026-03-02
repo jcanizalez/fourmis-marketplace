@@ -1,3 +1,7 @@
+---
+description: When the user asks about color contrast ratios, WCAG AA or AAA contrast requirements, color blindness accessibility, accessible color palette design, dark mode contrast, focus indicator contrast, or asks to check if colors meet accessibility standards
+---
+
 # Color Contrast & Visual Accessibility
 
 Ensure text and UI elements have sufficient color contrast for readability. Covers WCAG contrast requirements, color blindness considerations, and accessible color palette design.

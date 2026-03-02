@@ -1,3 +1,7 @@
+---
+description: When the user asks to reduce bundle size, analyze JavaScript bundle, set up tree shaking, implement code splitting or dynamic imports or lazy loading, find lighter alternatives to heavy npm packages, or use bundle analyzer with Webpack or Vite
+---
+
 # Bundle Size Optimization
 
 Analyze and reduce JavaScript bundle size. Covers tree shaking, code splitting, dynamic imports, dependency auditing, and build tool configuration.

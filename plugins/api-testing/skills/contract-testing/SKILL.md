@@ -1,3 +1,7 @@
+---
+description: When the user asks about API contract testing, schema validation, OpenAPI spec validation, consumer-driven contracts, Zod schema contracts, or how to detect breaking API changes
+---
+
 # Contract Testing
 
 Validate that API producers and consumers agree on the API contract. Covers schema validation, OpenAPI-based testing, and consumer-driven contract testing.

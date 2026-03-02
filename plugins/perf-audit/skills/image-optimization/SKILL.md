@@ -1,3 +1,7 @@
+---
+description: When the user asks about image optimization, converting to WebP or AVIF, responsive images with srcset and sizes, lazy loading images, Next.js Image component, image compression with sharp, SVG optimization with SVGO, or setting up an image CDN
+---
+
 # Image Optimization
 
 Images are typically the heaviest resources on a page (50-70% of total bytes). Optimize format, size, loading, and delivery for significant performance gains.

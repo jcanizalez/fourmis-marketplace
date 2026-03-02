@@ -1,3 +1,7 @@
+---
+description: When the user asks about Core Web Vitals, LCP or INP or CLS optimization, page speed or Lighthouse score, render-blocking resources, layout shifts, interaction responsiveness, fetchpriority, font loading performance, or preloading critical resources
+---
+
 # Core Web Vitals
 
 Measure and optimize the three Core Web Vitals (CWV) that Google uses for search ranking: Largest Contentful Paint (LCP), Interaction to Next Paint (INP), and Cumulative Layout Shift (CLS).

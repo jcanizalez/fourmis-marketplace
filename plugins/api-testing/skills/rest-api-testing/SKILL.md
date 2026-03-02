@@ -1,3 +1,7 @@
+---
+description: When the user asks to write REST API tests, test CRUD endpoints, use Supertest or httpx or httptest for API testing, test API pagination or filtering or validation, or asks about API testing patterns in Node.js or Python or Go
+---
+
 # REST API Testing
 
 Write comprehensive API tests covering all HTTP methods, status codes, request/response validation, authentication, pagination, and error handling.

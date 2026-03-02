@@ -1,3 +1,7 @@
+---
+description: When the user asks to set up performance monitoring, real user monitoring (RUM), web-vitals library, Lighthouse CI, performance budgets in CI, Server-Timing headers, size-limit bundle budgets, Chrome DevTools Performance profiling, or wants to track Core Web Vitals in production
+---
+
 # Performance Monitoring
 
 Set up real-user monitoring (RUM), synthetic testing, and CI performance budgets to catch regressions before they reach production.

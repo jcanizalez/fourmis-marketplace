@@ -1,3 +1,7 @@
+---
+description: When the user asks about ARIA roles or attributes, aria-label or aria-labelledby or aria-describedby, landmark regions, ARIA live regions, or how to add ARIA patterns to widgets like tabs, dialogs, accordions, comboboxes, or menus
+---
+
 # ARIA Patterns & Landmarks
 
 Accessible Rich Internet Applications (ARIA) patterns for interactive widgets, landmarks, and dynamic content. Use ARIA when native HTML semantics are insufficient.

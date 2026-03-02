@@ -1,3 +1,7 @@
+---
+description: When the user asks to generate API documentation, create an OpenAPI spec, validate or lint an OpenAPI spec, generate docs from code (Zod, FastAPI, swag), write curl examples for an API, or asks about API documentation best practices
+---
+
 # API Documentation & Validation
 
 Generate, validate, and maintain API documentation. Covers OpenAPI spec generation, documentation from code, SDK generation, and documentation testing.

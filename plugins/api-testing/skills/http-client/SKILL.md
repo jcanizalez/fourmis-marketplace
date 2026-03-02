@@ -1,3 +1,7 @@
+---
+description: When the user asks to build an HTTP client, create a fetch wrapper, add retry logic to API calls, implement request cancellation with AbortController, build a type-safe API client in TypeScript or Python or Go, or use TanStack Query with a custom client
+---
+
 # HTTP Client Best Practices
 
 Build robust, typed HTTP clients for consuming APIs. Covers fetch wrappers, error handling, retry logic, interceptors, and type-safe API clients.

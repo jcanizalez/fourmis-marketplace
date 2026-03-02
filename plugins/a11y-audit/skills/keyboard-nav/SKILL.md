@@ -1,3 +1,7 @@
+---
+description: When the user asks about keyboard navigation, focus management, tab order, focus trapping in modals, roving tabindex, skip navigation links, keyboard shortcuts, or how to make interactive elements keyboard-accessible
+---
+
 # Keyboard Navigation & Focus Management
 
 Ensure all interactive elements are accessible via keyboard. Covers focus order, focus trapping, roving tabindex, skip links, and keyboard interaction patterns.

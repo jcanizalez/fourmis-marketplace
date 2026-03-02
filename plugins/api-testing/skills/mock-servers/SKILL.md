@@ -1,3 +1,7 @@
+---
+description: When the user asks to create a mock API server, set up MSW (Mock Service Worker), mock API responses in tests, create fixture-based responses, simulate latency or errors in API mocks, or use Hurl for declarative API testing
+---
+
 # Mock Servers & API Mocking
 
 Create mock API servers for development, testing, and prototyping. Covers MSW (Mock Service Worker), in-memory mock servers, fixture-based responses, and API simulation.

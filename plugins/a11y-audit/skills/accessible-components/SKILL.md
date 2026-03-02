@@ -1,3 +1,7 @@
+---
+description: When the user asks to build accessible components, create accessible forms or modals or dropdowns or tabs, add ARIA attributes to React or Vue components, make a component keyboard accessible, or asks about accessible component patterns and recipes
+---
+
 # Accessible Component Recipes
 
 Production-ready accessible component patterns for React, Vue, and vanilla HTML. Each pattern includes proper ARIA, keyboard handling, and screen reader support.

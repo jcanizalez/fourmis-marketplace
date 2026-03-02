@@ -1,3 +1,7 @@
+---
+description: When the user asks about screen reader support, VoiceOver or NVDA or JAWS compatibility, accessible names and descriptions, aria-live regions, semantic HTML for assistive technology, or how to test with screen readers
+---
+
 # Screen Reader Optimization
 
 Write HTML that works well with screen readers. Covers semantic markup, accessible names, descriptions, live regions, and testing with VoiceOver, NVDA, and other assistive technologies.
