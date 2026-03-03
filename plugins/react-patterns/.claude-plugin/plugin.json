@@ -1,0 +1,8 @@
+{
+  "name": "react-patterns",
+  "version": "1.0.0",
+  "description": "Modern React patterns — custom hooks (useCallback, useMemo, useReducer, composition), state management (Context, Zustand, TanStack Query, colocation), React Server Components (RSC boundaries, streaming, Suspense, data fetching), component architecture (compound components, render props, polymorphic, slots), form patterns (React Hook Form, Zod, multi-step, server actions), and performance (React.memo, virtualization, code splitting, React Compiler). 6 skills, 3 commands, 1 agent. No dependencies.",
+  "author": {
+    "name": "Fourmis"
+  }
+}

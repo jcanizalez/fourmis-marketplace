@@ -316,6 +316,16 @@
       },
       "source": "./plugins/typescript-patterns",
       "category": "development"
+    },
+    {
+      "name": "react-patterns",
+      "description": "Modern React patterns — custom hooks (useCallback, useMemo, useRef, useReducer, composition, debounce), state management (React Context, Zustand, TanStack Query, state colocation), React Server Components (RSC boundaries, streaming, Suspense, Server Actions, data fetching), component architecture (compound components, render props, polymorphic, slots, controlled/uncontrolled), form patterns (React Hook Form, Zod, multi-step wizards, optimistic updates, field arrays), and performance (React.memo, virtualization, code splitting, lazy loading, React Compiler). 6 skills, 3 commands, 1 agent. No dependencies.",
+      "version": "1.0.0",
+      "author": {
+        "name": "Fourmis"
+      },
+      "source": "./plugins/react-patterns",
+      "category": "development"
     }
   ]
 }
