@@ -1,0 +1,8 @@
+{
+  "name": "go-patterns",
+  "version": "1.0.0",
+  "description": "Idiomatic Go patterns — concurrency (goroutines, channels, select, sync primitives, errgroup, worker pools, rate limiting), error handling (wrapping, custom types, errors.Is/As, sentinel errors, multi-error), interfaces (implicit interfaces, composition, type assertions, dependency injection, mocking), HTTP (net/http server/client, middleware, JSON, graceful shutdown, Go 1.22+ routing), testing (table-driven, subtests, testify, httptest, benchmarks, fuzzing, golden files), and project structure (layout, packages, internal/, cmd/, Makefile, golangci-lint). 6 skills, 3 commands, 1 agent. No dependencies.",
+  "author": {
+    "name": "Fourmis"
+  }
+}

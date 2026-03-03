@@ -326,6 +326,16 @@
       },
       "source": "./plugins/react-patterns",
       "category": "development"
+    },
+    {
+      "name": "go-patterns",
+      "description": "Idiomatic Go patterns — concurrency (goroutines, channels, select, sync.Mutex/RWMutex/WaitGroup/Once/Pool, errgroup, fan-out/fan-in, worker pools, rate limiting), error handling (fmt.Errorf %w wrapping, custom error types, errors.Is/As, sentinel errors, multi-error, goroutine errors), interfaces (implicit satisfaction, composition, type assertions/switches, common interfaces, dependency injection, mocking), HTTP (net/http, Go 1.22+ routing, middleware chains, JSON helpers, graceful shutdown, structured responses), testing (table-driven, subtests, testify, httptest, benchmarks, fuzzing, golden files, build tags), and project structure (cmd/internal layout, packages, modules, Makefile, golangci-lint). 6 skills, 3 commands, 1 agent. No dependencies.",
+      "version": "1.0.0",
+      "author": {
+        "name": "Fourmis"
+      },
+      "source": "./plugins/go-patterns",
+      "category": "development"
     }
   ]
 }
