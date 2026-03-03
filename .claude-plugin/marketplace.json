@@ -346,6 +346,16 @@
       },
       "source": "./plugins/auth-patterns",
       "category": "security"
+    },
+    {
+      "name": "monitoring-patterns",
+      "description": "Production observability patterns — structured logging (Pino, Winston, zerolog with correlation IDs and redaction), Prometheus metrics (RED/USE methods, prom-client, client_golang, custom business metrics, label best practices), alerting rules (Prometheus rules, Alertmanager routing, SLO burn-rate alerts, severity levels, alert fatigue prevention), health checks (liveness/readiness/startup probes, dependency checkers, Kubernetes configuration, graceful degradation), distributed tracing (OpenTelemetry SDK for Node.js and Go, auto-instrumentation, manual spans, context propagation, sampling strategies, collector config), and Grafana dashboards (PromQL queries, RED/USE/SLO/database dashboards, JSON provisioning, variables, GitOps). 6 skills, 3 commands, 1 agent. No dependencies.",
+      "version": "1.0.0",
+      "author": {
+        "name": "Fourmis"
+      },
+      "source": "./plugins/monitoring-patterns",
+      "category": "devops"
     }
   ]
 }

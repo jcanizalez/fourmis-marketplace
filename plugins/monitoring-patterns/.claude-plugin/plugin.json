@@ -1,0 +1,8 @@
+{
+  "name": "monitoring-patterns",
+  "version": "1.0.0",
+  "description": "Production-ready observability patterns — structured logging, Prometheus metrics, OpenTelemetry tracing, Grafana dashboards, alerting rules, and health checks for Node.js and Go services.",
+  "author": "fourmis",
+  "category": "devops",
+  "tags": ["monitoring", "observability", "logging", "metrics", "grafana", "prometheus", "opentelemetry", "tracing"]
+}
