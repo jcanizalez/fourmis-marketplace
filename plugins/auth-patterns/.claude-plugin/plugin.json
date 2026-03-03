@@ -1,0 +1,8 @@
+{
+  "name": "auth-patterns",
+  "version": "1.0.0",
+  "description": "Authentication and authorization patterns — JWT (access/refresh tokens, RS256/HS256, claims design, rotation), OAuth2 (authorization code, PKCE, client credentials, social login, OIDC), session auth (cookie-based sessions, Redis/DB stores, CSRF protection, session security), password security (bcrypt/argon2, reset flows, magic links, email verification, rate limiting), authorization (RBAC roles/permissions, ABAC, resource-level auth, policy patterns), and API auth (API keys, Bearer tokens, webhook signatures, scoped keys, auth middleware). 6 skills, 3 commands, 1 agent. No dependencies.",
+  "author": {
+    "name": "Fourmis"
+  }
+}

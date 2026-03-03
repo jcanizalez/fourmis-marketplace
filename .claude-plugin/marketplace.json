@@ -336,6 +336,16 @@
       },
       "source": "./plugins/go-patterns",
       "category": "development"
+    },
+    {
+      "name": "auth-patterns",
+      "description": "Authentication and authorization patterns — JWT (access/refresh tokens, RS256/HS256, claims design, token rotation, revocation), OAuth2 (authorization code + PKCE, client credentials, social login with Google/GitHub/Discord, OIDC), session auth (cookie-based sessions, Redis/DB stores, CSRF protection, session security, httpOnly/sameSite cookies), password security (bcrypt/argon2 hashing, reset flows, magic links, email verification, rate limiting login), authorization (RBAC roles/permissions, ABAC policies, resource-level auth, org/tenant scoping, middleware), and API auth (API key generation/rotation/scoping, webhook signature verification, tiered rate limiting, Bearer tokens). 6 skills, 3 commands, 1 agent. No dependencies.",
+      "version": "1.0.0",
+      "author": {
+        "name": "Fourmis"
+      },
+      "source": "./plugins/auth-patterns",
+      "category": "security"
     }
   ]
 }
