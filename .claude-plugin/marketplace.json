@@ -386,6 +386,16 @@
       },
       "source": "./plugins/nextjs-patterns",
       "category": "development"
+    },
+    {
+      "name": "kubernetes-patterns",
+      "description": "Production Kubernetes patterns — core resources (Pods, Deployments, StatefulSets, DaemonSets, Jobs, ConfigMaps, Secrets, Namespaces, resource quotas, labels), networking (Services, Ingress with NGINX and cert-manager TLS, NetworkPolicies with default deny, DNS service discovery, Gateway API, canary traffic splitting), storage (StorageClasses, PVCs, StatefulSets with volumeClaimTemplates, access modes, volume snapshots, Velero backups), scaling (HPA with CPU/memory/custom metrics, VPA right-sizing, KEDA event-driven scale-to-zero, PodDisruptionBudgets, Cluster Autoscaler, Karpenter), Helm charts (chart structure, values per environment, Go templates, hooks for migrations, dependencies, OCI registries, testing), and troubleshooting (CrashLoopBackOff, OOMKilled, ImagePullBackOff, pending pods, network debugging, RBAC, exit codes, kubectl debug). 6 skills, 3 commands, 1 agent. No dependencies.",
+      "version": "1.0.0",
+      "author": {
+        "name": "Fourmis"
+      },
+      "source": "./plugins/kubernetes-patterns",
+      "category": "devops"
     }
   ]
 }

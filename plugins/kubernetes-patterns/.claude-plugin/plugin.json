@@ -1,0 +1,5 @@
+{
+  "name": "kubernetes-patterns",
+  "description": "Production Kubernetes patterns — core resources, networking, storage, scaling, Helm charts, and troubleshooting for reliable cluster operations.",
+  "version": "1.0.0"
+}
