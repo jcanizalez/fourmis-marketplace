@@ -366,6 +366,16 @@
       },
       "source": "./plugins/api-design-patterns",
       "category": "development"
+    },
+    {
+      "name": "database-patterns",
+      "description": "Production database patterns — schema design (naming, types, constraints, UUIDs, soft deletes, enums, normalization), query optimization (EXPLAIN ANALYZE, B-tree/GIN/partial/covering/composite indexes, CTEs, window functions, materialized views), ORM patterns (Prisma schema/queries/transactions, Drizzle ORM, GORM, SQLx, raw SQL), transactions and locking (ACID, isolation levels, optimistic locking with version columns, pessimistic locking with SELECT FOR UPDATE, advisory locks, deadlock prevention, SKIP LOCKED job queues), connection pooling (pg Pool, pgxpool, pool sizing formulas, PgBouncer, monitoring, graceful shutdown), and data modeling (one-to-many, many-to-many, polymorphic associations, self-referential trees with ltree, JSONB columns, audit logs with triggers, multi-tenancy with RLS). 6 skills, 3 commands, 1 agent. No dependencies.",
+      "version": "1.0.0",
+      "author": {
+        "name": "Fourmis"
+      },
+      "source": "./plugins/database-patterns",
+      "category": "development"
     }
   ]
 }

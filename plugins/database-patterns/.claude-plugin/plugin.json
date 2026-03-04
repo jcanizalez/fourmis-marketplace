@@ -1,0 +1,8 @@
+{
+  "name": "database-patterns",
+  "version": "1.0.0",
+  "description": "Production database patterns — schema design, query optimization (EXPLAIN, indexes), ORM patterns (Prisma, Drizzle, GORM), transactions and locking, connection pooling, and data modeling for PostgreSQL with Node.js and Go.",
+  "author": "fourmis",
+  "category": "development",
+  "tags": ["database", "sql", "postgresql", "prisma", "drizzle", "orm", "query-optimization", "transactions"]
+}
