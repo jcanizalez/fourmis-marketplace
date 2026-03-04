@@ -1,0 +1,8 @@
+{
+  "name": "nextjs-patterns",
+  "version": "1.0.0",
+  "description": "Production Next.js patterns — App Router, data fetching with caching and revalidation, Server Actions, middleware and authentication, caching strategies, and deployment optimization for Next.js 14/15.",
+  "author": "fourmis",
+  "category": "development",
+  "tags": ["nextjs", "react", "app-router", "server-components", "server-actions", "caching", "deployment"]
+}

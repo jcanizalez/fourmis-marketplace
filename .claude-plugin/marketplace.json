@@ -376,6 +376,16 @@
       },
       "source": "./plugins/database-patterns",
       "category": "development"
+    },
+    {
+      "name": "nextjs-patterns",
+      "description": "Production Next.js patterns — App Router (file-based routing, layouts, parallel/intercepting routes, route groups), data fetching (Server Components, fetch caching, ISR, streaming with Suspense, React.cache, parallel data loading), Server Actions (useActionState, useOptimistic, validation, redirect after mutation), middleware and authentication (Auth.js/NextAuth v5, session cookies, JWT, role-based access, protected API routes), caching strategies (four cache layers, tag-based invalidation, revalidatePath/revalidateTag, cache debugging, ISR), and deployment optimization (next.config.ts, security headers, next/image, next/font, bundle analysis, Docker standalone, Vercel, env validation with Zod). 6 skills, 3 commands, 1 agent. No dependencies.",
+      "version": "1.0.0",
+      "author": {
+        "name": "Fourmis"
+      },
+      "source": "./plugins/nextjs-patterns",
+      "category": "development"
     }
   ]
 }
