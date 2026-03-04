@@ -396,6 +396,16 @@
       },
       "source": "./plugins/kubernetes-patterns",
       "category": "devops"
+    },
+    {
+      "name": "vector-db",
+      "description": "Vector database and RAG patterns — embedding models (OpenAI text-embedding-3, Cohere, Voyage AI, sentence-transformers, Ollama local models, chunking strategies, token counting), pgvector (PostgreSQL extension setup, HNSW/IVFFlat indexes, cosine/L2/IP similarity search, hybrid search with full-text, metadata filtering, Drizzle/Prisma/node-postgres usage), vector search fundamentals (distance metrics, ANN algorithms, filtering strategies, cross-encoder re-ranking, Cohere rerank, Reciprocal Rank Fusion, evaluation metrics), RAG patterns (retrieval-augmented generation pipelines, query rewriting, HyDE, multi-step retrieval, parent document retrieval, context assembly, citation, ingestion pipelines, LLM-as-judge evaluation), Pinecone (serverless/pod indexes, batch upsert, metadata filtering, namespaces, hybrid search, index management), and ChromaDB/Weaviate (local embedded DB, collections, custom embedding functions, Weaviate schema, hybrid BM25+vector search, multi-tenancy). 6 skills, 3 commands, 1 agent. No dependencies.",
+      "version": "1.0.0",
+      "author": {
+        "name": "Fourmis"
+      },
+      "source": "./plugins/vector-db",
+      "category": "development"
     }
   ]
 }

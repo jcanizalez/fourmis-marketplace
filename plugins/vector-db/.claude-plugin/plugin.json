@@ -1,0 +1,5 @@
+{
+  "name": "vector-db",
+  "description": "Vector database and RAG patterns — embeddings, pgvector, similarity search, retrieval-augmented generation, Pinecone, ChromaDB, and Weaviate.",
+  "version": "1.0.0"
+}
