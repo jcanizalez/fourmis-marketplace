@@ -356,6 +356,16 @@
       },
       "source": "./plugins/monitoring-patterns",
       "category": "devops"
+    },
+    {
+      "name": "api-design-patterns",
+      "description": "Production API design patterns — RESTful resource design (naming, methods, status codes, versioning, idempotency, ETags), error handling (RFC 7807 Problem Details, typed error classes, validation errors, error middleware), pagination and filtering (cursor/offset pagination, Relay connections, sorting, field selection, search), rate limiting (token bucket, sliding window, Redis distributed limiting, tiered limits, proper headers), WebSocket real-time patterns (ws, gorilla/websocket, rooms/channels, authentication, heartbeat/reconnection, Redis pub/sub scaling), and GraphQL (schema design, resolvers, DataLoader N+1 prevention, subscriptions, Relay pagination, query complexity). 6 skills, 3 commands, 1 agent. No dependencies.",
+      "version": "1.0.0",
+      "author": {
+        "name": "Fourmis"
+      },
+      "source": "./plugins/api-design-patterns",
+      "category": "development"
     }
   ]
 }

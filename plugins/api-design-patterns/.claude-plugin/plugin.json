@@ -1,0 +1,8 @@
+{
+  "name": "api-design-patterns",
+  "version": "1.0.0",
+  "description": "Production API design patterns — RESTful resource design, error handling (RFC 7807), pagination and filtering, rate limiting, WebSocket real-time patterns, and GraphQL schema design for Node.js and Go services.",
+  "author": "fourmis",
+  "category": "development",
+  "tags": ["api", "rest", "graphql", "websocket", "rate-limiting", "pagination", "error-handling"]
+}
