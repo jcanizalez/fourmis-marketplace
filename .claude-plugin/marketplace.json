@@ -406,6 +406,16 @@
       },
       "source": "./plugins/vector-db",
       "category": "development"
+    },
+    {
+      "name": "state-machines",
+      "description": "State machines and workflow patterns — XState v5 (createMachine, createActor, context, events, guards, actions, invoke, delayed transitions, type-safe machines), XState + React (useActor, useSelector, actor context pattern, multi-step form wizards, authentication flows, testing), workflow patterns (order processing, approval workflows, retry with exponential backoff, saga pattern with compensation, pipeline pattern), finite automata (hierarchical/nested states, parallel states, history states, always transitions, final states, actor model/spawning), event-driven architecture (event sourcing, CQRS, event stores with optimistic concurrency, projections, snapshots, domain events, event versioning), and process orchestration (Temporal.io workflows/activities/signals/queries, simple workflow engine, database-backed job queues with SKIP LOCKED). 6 skills, 3 commands, 1 agent. No dependencies.",
+      "version": "1.0.0",
+      "author": {
+        "name": "Fourmis"
+      },
+      "source": "./plugins/state-machines",
+      "category": "development"
     }
   ]
 }

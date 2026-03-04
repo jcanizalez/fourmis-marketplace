@@ -1,0 +1,5 @@
+{
+  "name": "state-machines",
+  "description": "State machines and workflow patterns — XState v5, React integration, workflow orchestration, finite automata, event-driven architecture, and process orchestration.",
+  "version": "1.0.0"
+}
