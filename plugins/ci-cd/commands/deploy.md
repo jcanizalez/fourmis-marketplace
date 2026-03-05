@@ -1,6 +1,10 @@
 ---
 name: deploy
 description: Generate or review a deployment pipeline — staging, production, rollback
+arguments:
+  - name: platform
+    description: "Target platform: vercel, fly, aws, docker, k8s, cloudflare, railway, or 'review' to audit existing config, 'rollback' for rollback strategy"
+    required: false
 allowed-tools: Bash, Read, Glob, Grep
 ---
 
@@ -54,3 +58,8 @@ Generate or review a deployment pipeline for your project.
 - Generates health check verification after deployment
 - Includes rollback strategy for every deployment
 - Documents all required secrets and configuration
+
+## Related
+
+- Use `/ci` to analyze and optimize your CI pipeline before setting up deployment
+- Use `/workflow` to generate the deployment workflow YAML

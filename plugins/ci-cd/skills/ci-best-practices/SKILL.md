@@ -1,20 +1,10 @@
 ---
-description: When the user asks to speed up CI builds, optimize CI pipeline performance, set up caching in CI (npm, pip, Go modules, Docker layers), configure parallel test execution or test sharding, manage secrets in CI/CD (GitHub Secrets, OIDC authentication), use matrix builds, debug failing CI builds, cancel redundant runs, or asks about CI performance optimization best practices
+description: When the user asks to speed up CI builds, optimize CI pipeline performance, set up caching in CI (npm, pip, Go modules, Docker layers), configure parallel test execution or test sharding, manage secrets in CI/CD (GitHub Secrets, OIDC authentication), use matrix builds, debug failing CI builds, cancel redundant runs, concurrency groups, self-hosted runners, fail-fast strategy, actions/cache, status badges, tmate debugging, CI performance benchmarks, or CI cost optimization
 ---
 
 # CI Best Practices
 
 Optimize CI/CD pipelines — caching strategies, parallelism, secrets management, matrix builds, and reducing build times.
-
-## When to Activate
-
-When the user asks to:
-- Speed up CI builds
-- Optimize CI pipeline performance
-- Set up caching in CI
-- Configure parallel test execution
-- Manage secrets in CI/CD
-- Debug failing CI builds
 
 ## Caching Strategies
 

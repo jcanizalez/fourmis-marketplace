@@ -1,6 +1,10 @@
 ---
 name: workflow
 description: Generate a GitHub Actions workflow for your project — CI, deploy, release, or custom
+arguments:
+  - name: type
+    description: "Workflow type: ci, deploy, release, docker, or a custom description (e.g., 'deploy to Vercel on push to main')"
+    required: false
 ---
 
 # /workflow — Generate GitHub Actions Workflow
@@ -49,3 +53,8 @@ Create a GitHub Actions workflow tailored to your project.
 - Includes proper caching configuration automatically
 - Adds concurrency groups to prevent redundant runs
 - For deployment workflows, suggest which secrets to configure
+
+## Related
+
+- Use `/ci` to analyze and optimize an existing CI/CD setup
+- Use `/deploy` to set up a full deployment pipeline with staging, production, and rollback

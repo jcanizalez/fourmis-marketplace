@@ -1,5 +1,5 @@
 ---
-description: When the user asks to create a GitHub Actions workflow, set up CI for a project, configure automated testing or builds, write a CI pipeline YAML, set up GitHub Actions triggers, reusable workflows, or matrix builds
+description: When the user asks to create a GitHub Actions workflow, set up CI for a project, configure automated testing or builds, write a CI pipeline YAML, set up GitHub Actions triggers, reusable workflows, composite actions, matrix builds, workflow_dispatch, workflow_call, actions/checkout, actions/setup-node, actions/cache, upload-artifact, conditional execution, monorepo CI with path filters, or .github/workflows configuration
 ---
 
 # GitHub Actions
@@ -195,6 +195,106 @@ jobs:
     secrets:
       DEPLOY_KEY: ${{ secrets.STAGING_DEPLOY_KEY }}
 ```
+
+## Composite Actions
+
+Reusable steps shared across workflows — like a function for CI.
+
+### Define a Composite Action
+
+```yaml
+# .github/actions/setup-project/action.yml
+name: 'Setup Project'
+description: 'Checkout, install deps, build'
+inputs:
+  node-version:
+    description: 'Node.js version'
+    default: '22'
+
+runs:
+  using: 'composite'
+  steps:
+    - uses: actions/checkout@v4
+    - uses: actions/setup-node@v4
+      with:
+        node-version: ${{ inputs.node-version }}
+        cache: 'npm'
+    - run: npm ci
+      shell: bash
+    - run: npm run build
+      shell: bash
+```
+
+### Use the Composite Action
+
+```yaml
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: ./.github/actions/setup-project
+        with:
+          node-version: '22'
+      - run: npm test
+```
+
+**Why**: Eliminate duplicated setup steps across CI, deploy, and release workflows.
+
+---
+
+## Monorepo CI (Path Filtering)
+
+Run only the jobs affected by changed files:
+
+```yaml
+name: CI
+
+on:
+  pull_request:
+    branches: [main]
+
+jobs:
+  detect-changes:
+    runs-on: ubuntu-latest
+    outputs:
+      api: ${{ steps.filter.outputs.api }}
+      web: ${{ steps.filter.outputs.web }}
+      shared: ${{ steps.filter.outputs.shared }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dorny/paths-filter@v3
+        id: filter
+        with:
+          filters: |
+            api:
+              - 'packages/api/**'
+              - 'packages/shared/**'
+            web:
+              - 'packages/web/**'
+              - 'packages/shared/**'
+            shared:
+              - 'packages/shared/**'
+
+  test-api:
+    needs: detect-changes
+    if: needs.detect-changes.outputs.api == 'true'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: npm ci && npm test -w packages/api
+
+  test-web:
+    needs: detect-changes
+    if: needs.detect-changes.outputs.web == 'true'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: npm ci && npm test -w packages/web
+```
+
+**Why**: In monorepos, running all tests on every change wastes minutes. Path filtering runs only affected packages.
+
+---
 
 ## Environment Variables and Secrets
 

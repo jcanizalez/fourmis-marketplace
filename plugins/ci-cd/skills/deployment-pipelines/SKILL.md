@@ -1,5 +1,5 @@
 ---
-description: When the user asks to set up a deployment pipeline, deploy to staging or production, implement blue-green or canary deployments, configure environment promotion, set up rollback strategies, or asks about deployment patterns and infrastructure as code
+description: When the user asks to set up a deployment pipeline, deploy to staging or production, implement blue-green or canary or rolling deployments, configure environment promotion, set up rollback strategies, deploy to Vercel or Fly.io or Railway or AWS ECS or Cloudflare, health check verification, smoke tests, manual approval gates, GitHub environments, or zero-downtime deployment patterns
 ---
 
 # Deployment Pipelines
@@ -196,6 +196,38 @@ git push origin main
       --service my-service \
       --force-new-deployment
 ```
+
+### Cloudflare (Pages / Workers)
+
+```yaml
+# Cloudflare Pages
+- name: Deploy to Cloudflare Pages
+  uses: cloudflare/wrangler-action@v3
+  with:
+    apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+    accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+    command: pages deploy dist --project-name=my-app
+```
+
+```yaml
+# Cloudflare Workers
+- name: Deploy Worker
+  uses: cloudflare/wrangler-action@v3
+  with:
+    apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+    command: deploy --env ${{ github.ref == 'refs/heads/main' && 'production' || 'staging' }}
+```
+
+### Railway
+
+```yaml
+- name: Deploy to Railway
+  run: railway up --detach
+  env:
+    RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
+```
+
+---
 
 ## Deploy Checklist
 

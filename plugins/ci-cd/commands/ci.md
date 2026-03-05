@@ -1,6 +1,10 @@
 ---
 name: ci
 description: Analyze and improve existing CI/CD configuration — find bottlenecks, suggest optimizations
+arguments:
+  - name: mode
+    description: "Analysis mode: optimize (speed), security (audit), debug (failing run), or omit for full analysis"
+    required: false
 allowed-tools: Read, Glob, Grep, Bash
 ---
 
@@ -54,3 +58,8 @@ Analyze existing CI/CD configuration and suggest improvements.
 - Reads existing workflow files to provide contextual advice
 - Suggests specific YAML changes, not just general recommendations
 - Can help debug specific failing jobs by analyzing workflow syntax
+
+## Related
+
+- Use `/workflow` to generate a new GitHub Actions workflow from scratch
+- Use `/deploy` to set up or review deployment pipelines

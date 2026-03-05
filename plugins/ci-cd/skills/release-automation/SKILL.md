@@ -1,5 +1,5 @@
 ---
-description: When the user asks to set up automated releases, generate changelogs, publish to npm or other registries, configure semantic versioning, create GitHub Releases, automate version bumping, or set up release-please or changesets
+description: When the user asks to set up automated releases, generate changelogs, publish to npm or PyPI or crates.io, configure semantic versioning, create GitHub Releases, automate version bumping, set up release-please or changesets, conventional commits for releases, CHANGELOG.md generation, softprops/action-gh-release, Go module releasing via tags, pre-release versioning, or npm publish in CI
 ---
 
 # Release Automation

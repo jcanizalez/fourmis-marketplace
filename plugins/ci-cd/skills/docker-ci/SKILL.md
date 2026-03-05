@@ -1,5 +1,5 @@
 ---
-description: When the user asks to build Docker images in CI, push images to a container registry, set up multi-stage Docker builds, configure Docker Compose for integration testing, scan Docker images for vulnerabilities, or automate container workflows in CI/CD
+description: When the user asks to build Docker images in CI, push images to a container registry (Docker Hub, GHCR, ECR), set up multi-stage Docker builds in GitHub Actions, configure Docker Compose for integration testing, scan Docker images for vulnerabilities (Trivy, Docker Scout), docker/build-push-action, docker/metadata-action, BuildKit caching in CI, multi-arch Docker builds in pipelines, or automate container workflows in CI/CD
 ---
 
 # Docker CI
