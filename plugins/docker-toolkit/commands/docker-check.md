@@ -59,3 +59,8 @@ Present findings as a table:
 Severity levels: 🔴 Critical, 🟡 Warning, 🟢 Good
 
 End with a summary score (e.g., "7/10 — solid foundation, fix the 2 critical issues") and the top 3 actionable improvements.
+
+## Related
+
+- Use `/compose-check` to audit the Docker Compose file alongside the Dockerfile
+- Use `/docker-debug` to diagnose issues with a running container built from this image

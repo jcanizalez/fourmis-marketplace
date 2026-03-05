@@ -1,5 +1,5 @@
 ---
-description: When the user asks about Docker networking, container-to-container communication, Docker bridge or overlay networks, port mapping, Docker DNS and service discovery, or troubleshooting Docker network issues
+description: When the user asks about Docker networking, container-to-container communication, Docker bridge or overlay networks, port mapping, Docker DNS and service discovery, troubleshooting Docker network issues, host.docker.internal, macvlan networking, network isolation, custom bridge networks, service aliases, connecting containers across Compose projects, external networks, or binding to 0.0.0.0 vs localhost in containers
 ---
 
 # Docker Networking

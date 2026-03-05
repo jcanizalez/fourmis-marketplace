@@ -88,3 +88,8 @@ Based on the gathered information, provide:
 | 143 | SIGTERM | Normal `docker stop` — check if unexpected |
 
 Format the output as a clear diagnostic report with the issue, evidence, and recommended fix.
+
+## Related
+
+- Use `/docker-check` to audit the Dockerfile for issues that may be causing container problems
+- Use `/compose-check` to review the Compose configuration for misconfigurations

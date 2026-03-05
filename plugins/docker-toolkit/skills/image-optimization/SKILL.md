@@ -1,5 +1,5 @@
 ---
-description: When the user asks about reducing Docker image size, analyzing Docker layers, optimizing Docker builds, using buildx for multi-arch images, Docker build cache, or speeding up Docker builds
+description: When the user asks about reducing Docker image size, analyzing Docker layers, optimizing Docker builds, using buildx for multi-arch images, Docker build cache, speeding up Docker builds, dive layer analysis, docker scout, trivy image scanning, BuildKit cache mounts, --mount=type=cache, multi-platform builds, linux/amd64 linux/arm64, .dockerignore optimization, or why Docker image is too large
 ---
 
 # Image Optimization

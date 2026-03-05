@@ -1,5 +1,5 @@
 ---
-description: When the user asks about writing a Dockerfile, multi-stage Docker builds, Docker layer caching, choosing a base image, Dockerizing a Node.js or Python or Go application, or Dockerfile best practices
+description: When the user asks about writing a Dockerfile, multi-stage Docker builds, Docker layer caching, choosing a base image, Dockerizing a Node.js or Python or Go or Rust application, Dockerfile best practices, HEALTHCHECK instruction, .dockerignore, distroless images, scratch images, docker init, slim vs alpine base images, pnpm/Bun Docker setup, Next.js standalone Docker, COPY vs ADD, USER directive, ENTRYPOINT vs CMD, or production-ready container images
 ---
 
 # Dockerfile Patterns
@@ -290,6 +290,42 @@ RUN npm ci
 4. Dependency install (`npm ci`, `go mod download`)
 5. Source code (`COPY . .`)
 6. Build command (`npm run build`)
+
+## HEALTHCHECK Instruction
+
+Add health checks directly in the Dockerfile so orchestrators (Compose, Swarm, Kubernetes) know when the app is ready.
+
+### HTTP Service
+```dockerfile
+HEALTHCHECK --interval=30s --timeout=5s --start-period=10s --retries=3 \
+  CMD wget -qO- http://localhost:3000/health || exit 1
+```
+
+### Node.js (Without curl/wget)
+```dockerfile
+# Use Node.js itself — no extra binary needed
+HEALTHCHECK --interval=30s --timeout=5s --start-period=10s --retries=3 \
+  CMD node -e "fetch('http://localhost:3000/health').then(r => { if (!r.ok) throw r; })"
+```
+
+### Go (Static Binary)
+```dockerfile
+# Distroless/scratch have no shell — use the app's health endpoint
+HEALTHCHECK --interval=30s --timeout=5s --start-period=5s --retries=3 \
+  CMD ["/server", "--health-check"]
+# Your Go app should handle the --health-check flag
+```
+
+### Parameters
+
+| Parameter | Default | Purpose |
+|-----------|---------|---------|
+| `--interval` | 30s | Time between checks |
+| `--timeout` | 30s | Max time for a single check |
+| `--start-period` | 0s | Grace period for startup (failures don't count) |
+| `--retries` | 3 | Consecutive failures before "unhealthy" |
+
+---
 
 ## .dockerignore
 

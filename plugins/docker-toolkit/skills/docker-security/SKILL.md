@@ -1,5 +1,5 @@
 ---
-description: When the user asks about Docker security, running containers as non-root, Docker image scanning, Docker secrets, container capabilities, read-only filesystems, or hardening Docker containers for production
+description: When the user asks about Docker security, running containers as non-root, Docker image scanning, Docker secrets, container capabilities, read-only filesystems, hardening Docker containers for production, trivy vulnerability scanning, docker scout CVEs, BuildKit secrets --mount=type=secret, cap_drop ALL, resource limits memory/CPU, USER directive, rootless Docker, securing Docker in CI/CD, or container security best practices
 ---
 
 # Docker Security

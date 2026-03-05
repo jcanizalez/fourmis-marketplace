@@ -1,5 +1,5 @@
 ---
-description: When the user asks about Docker Compose, docker-compose.yml configuration, defining services and networks and volumes, health checks in Compose, Docker Compose profiles, or setting up a local development environment with Docker
+description: When the user asks about Docker Compose, docker-compose.yml or compose.yml configuration, defining services and networks and volumes, health checks in Compose, Docker Compose profiles, setting up a local development environment with Docker, depends_on conditions, docker compose watch, compose override files, dev vs production compose, env_file, restart policies, docker compose up/down/logs, or running databases with Docker
 ---
 
 # Docker Compose
@@ -384,6 +384,81 @@ docker compose -f docker-compose.yml up
 # Or use separate production file
 docker compose -f docker-compose.yml -f docker-compose.prod.yml up
 ```
+
+## Compose Watch (v2.22+)
+
+File sync without bind mounts — cleaner alternative to volume-based hot reload:
+
+```yaml
+services:
+  api:
+    build: .
+    ports:
+      - "3000:3000"
+    develop:
+      watch:
+        # Sync source code changes (hot reload)
+        - action: sync
+          path: ./src
+          target: /app/src
+
+        # Rebuild on dependency changes
+        - action: rebuild
+          path: package.json
+
+        # Sync + restart on config changes
+        - action: sync+restart
+          path: ./config
+          target: /app/config
+```
+
+```bash
+# Start with file watching
+docker compose watch
+
+# Or in detached mode
+docker compose up --watch
+```
+
+### Watch Actions
+
+| Action | Behavior | Use Case |
+|--------|----------|----------|
+| `sync` | Copy changed files into container | Source code (with hot-reload server) |
+| `rebuild` | Full image rebuild + container recreate | Dependency changes (package.json, go.mod) |
+| `sync+restart` | Copy files + restart container | Config files, env changes |
+
+**Why not bind mounts?** Watch mode works across all OSes (including Docker Desktop on macOS/Windows without performance issues) and doesn't expose the container filesystem to the host.
+
+---
+
+## Restart Policies
+
+```yaml
+services:
+  api:
+    restart: unless-stopped  # Recommended for production
+
+  worker:
+    restart: on-failure      # Only restart on non-zero exit
+    deploy:
+      restart_policy:
+        condition: on-failure
+        max_attempts: 5
+        delay: 10s
+        window: 60s
+```
+
+### Restart Options
+
+| Policy | Behavior |
+|--------|----------|
+| `no` | Never restart (default) |
+| `always` | Always restart, even on manual stop |
+| `unless-stopped` | Restart unless explicitly stopped (recommended) |
+| `on-failure` | Only restart on non-zero exit code |
+
+---
 
 ## Common Commands
 

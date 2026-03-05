@@ -1,5 +1,5 @@
 ---
-description: When the user asks about debugging Docker containers, troubleshooting container issues, docker exec or docker logs, container networking problems, why a container is crashing, or common Docker errors
+description: When the user asks about debugging Docker containers, troubleshooting container issues, docker exec or docker logs, container networking problems, why a container is crashing, common Docker errors, exit code 137 OOM, exec format error, permission denied in container, container keeps restarting, docker inspect, docker stats, docker events, "address already in use", or how to diagnose container problems
 ---
 
 # Container Debugging

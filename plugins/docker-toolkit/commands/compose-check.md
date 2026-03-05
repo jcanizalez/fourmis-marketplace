@@ -65,3 +65,8 @@ Present findings as a table:
 Severity levels: 🔴 Critical, 🟡 Warning, 🟢 Good
 
 End with a summary and top 3 actionable improvements.
+
+## Related
+
+- Use `/docker-check` to audit individual Dockerfiles referenced by the Compose services
+- Use `/docker-debug` to diagnose runtime issues with a specific container in the stack
