@@ -1,5 +1,5 @@
 ---
-description: When the user asks about TypeScript utility types, built-in types like Partial or Omit or Pick or Record, custom utility types, branded types, opaque types, nominal typing, or creating type helpers in TypeScript
+description: When the user asks about TypeScript utility types, built-in types like Partial or Omit or Pick or Record, custom utility types, branded types, opaque types, nominal typing, NoInfer, Awaited, satisfies operator, or creating type helpers in TypeScript
 ---
 
 # Utility Types
@@ -90,6 +90,33 @@ type FetchResult = Awaited<ReturnType<typeof fetchUser>>;
 // Constructor parameters
 type DateArgs = ConstructorParameters<typeof Date>;
 ```
+
+### NoInfer (TS 5.4+)
+
+Prevent TypeScript from inferring a type parameter from a specific position:
+
+```typescript
+// Without NoInfer — default is inferred from items too:
+function createList<T>(items: T[], default_: T): T[] {
+  return items;
+}
+
+createList([1, 2, 3], "oops");
+// ✅ No error — T is inferred as number | string (wrong!)
+
+// With NoInfer — default must match inferred T from items:
+function createList<T>(items: T[], default_: NoInfer<T>): T[] {
+  return items;
+}
+
+createList([1, 2, 3], "oops");
+// ❌ Error: Argument of type 'string' is not assignable to 'number'
+
+createList([1, 2, 3], 0);
+// ✅ Works — T is number, default is number
+```
+
+Useful for functions where one parameter should **drive** inference and others should **follow**.
 
 ---
 

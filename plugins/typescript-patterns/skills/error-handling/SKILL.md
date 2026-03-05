@@ -1,5 +1,5 @@
 ---
-description: When the user asks about TypeScript error handling, Result types, typed errors, error boundaries in TypeScript, async error patterns, try-catch best practices, or how to handle errors safely in TypeScript
+description: When the user asks about TypeScript error handling, Result types, typed errors, error boundaries in TypeScript, async error patterns, try-catch best practices, unknown in catch blocks, error narrowing, Promise.allSettled, retry patterns, typed error classes, or how to handle errors safely in TypeScript
 ---
 
 # Error Handling Patterns

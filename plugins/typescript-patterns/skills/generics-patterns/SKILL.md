@@ -1,5 +1,5 @@
 ---
-description: When the user asks about TypeScript generics, generic functions, constrained generics, conditional types, mapped types, template literal types, infer keyword, or advanced type-level programming in TypeScript
+description: When the user asks about TypeScript generics, generic functions, constrained generics, conditional types, mapped types, template literal types, infer keyword, const type parameters, variadic tuple types, type-safe builders, generic arrow functions in JSX/TSX, or advanced type-level programming in TypeScript
 ---
 
 # Generics Patterns
@@ -365,4 +365,89 @@ function pipe<T extends [(...args: any[]) => any, ...Array<(arg: any) => any>]>(
 ): (...args: Parameters<T[0]>) => ReturnType<Last<T>> {
   return (...args) => fns.reduce((acc, fn) => fn(acc), (fns[0] as any)(...args));
 }
+```
+
+---
+
+## const Type Parameters (TS 5.0+)
+
+Infer literal types instead of widened types from generic arguments.
+
+### Without const (widens)
+```typescript
+function routes<T extends readonly string[]>(paths: T): T {
+  return paths;
+}
+
+const r = routes(["users", "posts"]);
+// type: string[]  — widened, loses literal info
+```
+
+### With const (preserves literals)
+```typescript
+function routes<const T extends readonly string[]>(paths: T): T {
+  return paths;
+}
+
+const r = routes(["users", "posts"]);
+// type: readonly ["users", "posts"]  — literal tuple preserved!
+```
+
+### Practical: Type-Safe Config
+```typescript
+function defineConfig<const T extends Record<string, { url: string; method: string }>>(
+  config: T,
+): T {
+  return config;
+}
+
+const api = defineConfig({
+  getUser: { url: "/users/:id", method: "GET" },
+  createPost: { url: "/posts", method: "POST" },
+});
+
+// api.getUser.method is "GET" (literal), not string
+// api.createPost.url is "/posts" (literal), not string
+```
+
+---
+
+## satisfies Operator (TS 4.9+)
+
+Validate a value matches a type without widening it.
+
+### The Problem
+```typescript
+// Using `as` loses type checking:
+const colors = { primary: "#3178c6" } as Record<string, string>;
+colors.typo; // ✅ No error — `as` bypasses checking
+
+// Using type annotation widens:
+const colors2: Record<string, string> = { primary: "#3178c6" };
+colors2.primary; // string — lost the literal type
+```
+
+### The Solution
+```typescript
+const colors = {
+  primary: "#3178c6",
+  secondary: "#f97316",
+} satisfies Record<string, string>;
+
+colors.primary;  // ✅ type is "#3178c6" (literal preserved)
+colors.typo;     // ❌ Error: Property 'typo' does not exist
+```
+
+### Exhaustive Config Pattern
+```typescript
+type Route = "home" | "about" | "contact";
+
+const routes = {
+  home:    { path: "/", title: "Home" },
+  about:   { path: "/about", title: "About" },
+  contact: { path: "/contact", title: "Contact" },
+} satisfies Record<Route, { path: string; title: string }>;
+
+// All routes must be covered (exhaustive)
+// Literal types preserved: routes.home.path is "/"
 ```

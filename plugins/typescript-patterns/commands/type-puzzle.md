@@ -102,3 +102,8 @@ Consider:
 ### Simplification
 [simpler version if applicable, or "Already clean — no simplification needed"]
 ```
+
+## Related
+
+- Use `/type-check` to scan a whole codebase for type safety issues
+- Use `/strict-mode` to audit tsconfig.json and plan strict mode migration

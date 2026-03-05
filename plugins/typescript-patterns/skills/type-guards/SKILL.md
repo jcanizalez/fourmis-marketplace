@@ -1,5 +1,5 @@
 ---
-description: When the user asks about TypeScript type guards, type narrowing, discriminated unions, exhaustive checking, assertion functions, the is keyword, or how to check types at runtime in TypeScript
+description: When the user asks about TypeScript type guards, type narrowing, discriminated unions, exhaustive checking, assertion functions, the is keyword, satisfies keyword, using keyword, Disposable pattern, Symbol.dispose, or how to check types at runtime in TypeScript
 ---
 
 # Type Guards & Narrowing
@@ -368,6 +368,91 @@ el.innerHTML = "Hello"; // ✅ el is HTMLElement, not null
 
 ---
 
+## Explicit Resource Management (`using`, TS 5.2+)
+
+The `using` keyword automatically cleans up resources when they go out of scope — like `defer` in Go or context managers in Python.
+
+### Disposable Pattern
+```typescript
+// Synchronous disposable
+class TempFile implements Disposable {
+  path: string;
+
+  constructor(name: string) {
+    this.path = `/tmp/${name}`;
+    // Create the file
+  }
+
+  [Symbol.dispose](): void {
+    // Automatically called when `using` scope ends
+    fs.unlinkSync(this.path);
+    console.log(`Cleaned up ${this.path}`);
+  }
+}
+
+// Usage — file is deleted when scope ends
+function processData() {
+  using file = new TempFile("data.json");
+  // ... use file.path ...
+} // ← [Symbol.dispose]() called automatically here
+```
+
+### Async Disposable
+```typescript
+class DatabaseConnection implements AsyncDisposable {
+  private client: Client;
+
+  constructor(url: string) {
+    this.client = new Client(url);
+  }
+
+  async connect() {
+    await this.client.connect();
+    return this;
+  }
+
+  async [Symbol.asyncDispose](): Promise<void> {
+    await this.client.end();
+    console.log("Connection closed");
+  }
+}
+
+// Usage
+async function queryUsers() {
+  await using db = await new DatabaseConnection(DATABASE_URL).connect();
+  // ... query the database ...
+} // ← connection automatically closed
+```
+
+### Practical: Lock Pattern
+```typescript
+class Mutex {
+  private locked = false;
+
+  async acquire(): Promise<Disposable> {
+    while (this.locked) {
+      await new Promise((r) => setTimeout(r, 10));
+    }
+    this.locked = true;
+
+    return {
+      [Symbol.dispose]: () => {
+        this.locked = false;
+      },
+    };
+  }
+}
+
+const mutex = new Mutex();
+
+async function criticalSection() {
+  using lock = await mutex.acquire();
+  // ... exclusive access ...
+} // ← lock automatically released
+```
+
+---
+
 ## Summary: When to Use What
 
 | Pattern | Use Case |
@@ -380,3 +465,4 @@ el.innerHTML = "Hello"; // ✅ el is HTMLElement, not null
 | `assertNever` | Exhaustive switch/case checking |
 | `asserts` function | Throw-or-narrow pattern (validate early) |
 | `satisfies` Record | Exhaustive mapping with preserved literal types |
+| `using` / Disposable | Auto-cleanup of resources (files, connections, locks) |

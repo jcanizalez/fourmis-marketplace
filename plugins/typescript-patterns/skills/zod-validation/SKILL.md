@@ -1,5 +1,5 @@
 ---
-description: When the user asks about Zod schemas, runtime validation in TypeScript, form validation with Zod, API request or response validation, inferring TypeScript types from schemas, or type-safe validation patterns
+description: When the user asks about Zod schemas, runtime validation in TypeScript, form validation with Zod, API request or response validation, inferring TypeScript types from schemas, z.infer, z.object, z.enum, z.discriminatedUnion, Zod transforms, Zod refinements, zodResolver, type-safe environment variables with Zod, or type-safe validation patterns
 ---
 
 # Zod Validation Patterns

@@ -95,3 +95,8 @@ Check for additional improvements:
 ## Migration Steps
 [Prioritized list with specific file patterns to fix]
 ```
+
+## Related
+
+- Use `/type-check` to find specific type safety issues in the codebase after enabling strict flags
+- Use `/type-puzzle` to understand complex type errors that appear during migration

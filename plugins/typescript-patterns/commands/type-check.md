@@ -63,3 +63,8 @@ Present findings grouped by severity:
 🟢 **Good Patterns Found**: List examples of good type safety patterns in the codebase.
 
 End with a type safety score (e.g., "8/10 — strong typing, fix the 3 `as any` casts") and top 3 improvements.
+
+## Related
+
+- Use `/strict-mode` to audit tsconfig.json strict flags and create a migration plan
+- Use `/type-puzzle` to break down and explain complex types found during the audit

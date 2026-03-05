@@ -1,5 +1,5 @@
 ---
-description: When the user asks about TypeScript module patterns, barrel exports, declaration merging, module augmentation, ambient declarations, tsconfig configuration, or how to organize TypeScript modules and project structure
+description: When the user asks about TypeScript module patterns, barrel exports, declaration merging, module augmentation, ambient declarations, tsconfig configuration, import type, verbatimModuleSyntax, path aliases, project references, d.ts files, declare module, or how to organize TypeScript modules and project structure
 ---
 
 # Module Patterns
