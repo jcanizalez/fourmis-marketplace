@@ -1,5 +1,5 @@
 ---
-description: When the user asks about merge conflicts, resolving conflicts, rebasing, rebase vs merge, interactive rebase, squashing commits, cherry-picking, git stash, recovering lost commits, git reflog, undoing commits, reverting changes, or fixing git mistakes
+description: When the user asks about merge conflicts, resolving conflicts, rebasing, rebase vs merge, interactive rebase, squashing commits, cherry-picking, git stash, recovering lost commits, git reflog, undoing commits, reverting changes, git reset, fixing git mistakes, git worktree, or how to undo a force push
 ---
 
 # Merge Conflicts, Rebasing & Recovery
@@ -289,6 +289,46 @@ git cherry-pick --abort      # cancel the operation
 - Applying a specific commit from a feature branch
 - Moving a commit that was made on the wrong branch
 
+## Git Worktree
+
+Work on multiple branches simultaneously without stashing:
+
+```bash
+# Create a worktree for a different branch
+git worktree add ../my-project-hotfix hotfix/urgent-fix
+# Now you have two directories, each on a different branch
+
+# List worktrees
+git worktree list
+
+# Remove when done
+git worktree remove ../my-project-hotfix
+```
+
+### When to Use Worktrees
+
+- Reviewing a PR while working on your own branch
+- Hotfix on main while keeping your feature branch open
+- Running tests on one branch while coding on another
+- Comparing behavior between branches side-by-side
+
+## Recover from Force Push
+
+If someone (or you) accidentally force-pushed to a shared branch:
+
+```bash
+# On a teammate's machine that still has the old commits:
+git reflog show origin/main
+# Find the commit before the force push
+
+# Push the correct history back
+git push origin <correct-commit>:main --force-with-lease
+
+# Better: always use --force-with-lease instead of --force
+# It refuses if the remote has commits you haven't fetched
+git push --force-with-lease origin feature/my-branch
+```
+
 ## Checklist
 
 - [ ] Always check `git status` before and after conflict resolution
@@ -299,3 +339,4 @@ git cherry-pick --abort      # cancel the operation
 - [ ] Know about `git reflog` — it's your safety net for recovery
 - [ ] Stash work before switching branches with uncommitted changes
 - [ ] Test after resolving conflicts — don't assume the merge is correct
+- [ ] Use `--force-with-lease` instead of `--force` when force-pushing

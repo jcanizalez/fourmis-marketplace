@@ -1,5 +1,5 @@
 ---
-description: When the user asks about branch naming conventions, git branching strategy, creating a new branch, branch prefixes (feature, fix, hotfix, chore), trunk-based development vs Git Flow vs GitHub Flow, or how to organize branches for a team
+description: When the user asks about branch naming conventions, git branching strategy, creating a new branch, branch prefixes (feature, fix, hotfix, chore), trunk-based development vs Git Flow vs GitHub Flow, how to organize branches for a team, cleaning up old branches, pruning stale branches, branch protection rules, or deleting merged branches
 ---
 
 # Branch Strategy
@@ -84,6 +84,58 @@ git checkout -b feature/PROJ-123-oauth-integration
 - `feature/*` → `develop`
 - `release/*` → `main` + `develop`
 - `hotfix/*` → `main` + `develop`
+
+## Branch Cleanup
+
+### Delete Merged Branches
+
+```bash
+# Delete a local branch after merge
+git branch -d feature/user-avatar          # safe — refuses if not merged
+git branch -D feature/experiment           # force — deletes even if not merged
+
+# Delete a remote branch
+git push origin --delete feature/user-avatar
+
+# Prune stale remote tracking branches
+git fetch --prune
+# or configure auto-prune globally
+git config --global fetch.prune true
+```
+
+### Find Stale Branches
+
+```bash
+# Branches merged into main (safe to delete)
+git branch --merged main
+
+# Branches NOT merged into main (still in progress)
+git branch --no-merged main
+
+# Remote branches sorted by last commit date
+git for-each-ref --sort=-committerdate refs/remotes/origin \
+  --format='%(committerdate:short) %(refname:short)'
+```
+
+### Automated Cleanup
+
+```bash
+# Delete all local branches that have been merged into main
+git branch --merged main | grep -v '^\*\|main\|develop' | xargs -n 1 git branch -d
+
+# Prune remote branches that no longer exist on the remote
+git remote prune origin
+```
+
+## Branch Protection
+
+Key protection rules for `main` (configure in GitHub Settings > Branches):
+
+- Require pull request reviews before merging (1+ approvals)
+- Require status checks to pass (CI must be green)
+- Require branches to be up to date before merging
+- Do not allow force pushes to main
+- Do not allow deletions of main
 
 ## When Asked About Strategy
 

@@ -1,5 +1,5 @@
 ---
-description: When the user asks to commit changes, write a commit message, asks about conventional commit format, commit types (feat, fix, refactor, chore), commit scopes, breaking changes in commits, or how to write good commit messages
+description: When the user asks to commit changes, write a commit message, asks about conventional commit format, commit types (feat, fix, refactor, chore), commit scopes, breaking changes in commits, how to write good commit messages, git commit --amend, fixup commits, signed commits, co-authored-by, or commit message best practices
 ---
 
 # Conventional Commits
@@ -90,6 +90,59 @@ Ask yourself:
 - Does this only change docs/comments? → `docs`
 - Does this only add/change tests? → `test`
 - Is this a dependency update, CI change, or other maintenance? → `chore`
+
+## Fixup & Amend Patterns
+
+### Amend the Last Commit
+
+```bash
+# Fix the last commit message (not yet pushed)
+git commit --amend -m "feat(auth): correct description here"
+
+# Add forgotten files to the last commit
+git add forgotten-file.ts
+git commit --amend --no-edit    # keeps the existing message
+```
+
+**Warning**: Never amend commits that have already been pushed to a shared branch.
+
+### Fixup Commits (for later squashing)
+
+```bash
+# Create a fixup targeting a specific commit
+git commit --fixup=abc1234
+
+# Later, auto-squash during rebase
+git rebase -i --autosquash main
+# The fixup commit will be auto-placed after its target with "fixup" action
+```
+
+Use fixup when you find a small issue in an earlier commit during a PR review cycle. It keeps the intent clear and auto-squashes cleanly.
+
+## Signed Commits
+
+```bash
+# Sign with GPG key (required by some orgs)
+git commit -S -m "feat(auth): add OAuth2 login"
+
+# Configure signing globally
+git config --global commit.gpgsign true
+git config --global user.signingkey YOUR_KEY_ID
+```
+
+## Co-Authors
+
+When pair programming or getting help from an AI:
+
+```bash
+git commit -m "$(cat <<'EOF'
+feat(auth): add login form validation
+
+Co-Authored-By: Partner Name <partner@example.com>
+Co-Authored-By: kite <kite@fourmis.ai>
+EOF
+)"
+```
 
 ## Analyze Changes Before Committing
 

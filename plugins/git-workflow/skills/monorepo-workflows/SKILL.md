@@ -1,5 +1,5 @@
 ---
-description: When the user asks about monorepo git workflows, managing multiple packages in one repo, workspace-aware commits, selective CI, turborepo, nx, pnpm workspaces, git subtrees, git submodules, CODEOWNERS, or large repository management
+description: When the user asks about monorepo git workflows, managing multiple packages in one repo, workspace-aware commits, selective CI, turborepo, nx, pnpm workspaces, git subtrees, git submodules, CODEOWNERS, large repository management, sparse checkout, changesets, independent versioning, or partial clone
 ---
 
 # Monorepo Git Workflows

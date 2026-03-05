@@ -1,6 +1,10 @@
 ---
 name: commit
 description: Stage changes and create a conventional commit with a well-crafted message
+arguments:
+  - name: flags
+    description: "Optional flags: --amend (amend last commit), --fixup <hash> (create fixup commit), --empty (allow empty commit)"
+    required: false
 ---
 
 # Commit Command
@@ -25,8 +29,17 @@ When the user runs `/commit`, help them create a proper conventional commit.
 - Never commit files that look like they contain secrets (.env, credentials, tokens)
 - If changes span multiple concerns, suggest splitting into separate commits
 - Show the user the proposed message before committing and ask for confirmation
+- Use HEREDOC format for multi-line commit messages (proper formatting)
 
-## Example Flow
+## Flag Handling
+
+If the user passes flags:
+
+- **`--amend`**: Run `git commit --amend` to modify the last commit. Show the previous message and propose changes. Warn if the commit has been pushed.
+- **`--fixup <hash>`**: Create a fixup commit with `git commit --fixup=<hash>`. Explain that `git rebase -i --autosquash` will auto-squash it later.
+- **`--empty`**: Allow empty commits with `git commit --allow-empty`. Useful for triggering CI or marking milestones.
+
+## Example Flows
 
 ```
 User: /commit
@@ -42,3 +55,18 @@ User: /commit
 → User picks option
 → Create the commit(s)
 ```
+
+```
+User: /commit --amend
+
+→ Show last commit message and diff
+→ "Last commit: feat(auth): add login form
+   ⚠️ This commit has NOT been pushed — safe to amend.
+   What would you like to change?"
+```
+
+## Related
+
+- Use `/branch` to create a properly named branch before committing
+- Use `/pr` to create a pull request after your commits are ready
+- Use `/changelog` to generate a changelog from your commit history

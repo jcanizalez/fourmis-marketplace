@@ -1,15 +1,20 @@
 ---
 name: branch
 description: Create a properly named git branch following naming conventions
+arguments:
+  - name: description
+    description: "What the branch is for (e.g., 'add user search', 'fix login timeout'). Used to generate the branch name."
+    required: false
+  - name: ticket
+    description: "Optional ticket/issue ID to include (e.g., 'PROJ-123', 'GH-456')"
+    required: false
 ---
 
 # Branch Command
 
 When the user runs `/branch`, help them create a properly named branch.
 
-## Arguments
-
-The user can optionally provide a description: `/branch add user search` → `feature/add-user-search`
+Examples: `/branch add user search` → `feature/add-user-search`, `/branch fix login timeout GH-456` → `fix/GH-456-login-timeout`
 
 ## Steps
 
@@ -55,3 +60,8 @@ User: /branch fix the login timeout bug, ticket GH-456
 → Branch: fix/GH-456-login-timeout
 → git checkout -b fix/GH-456-login-timeout
 ```
+
+## Related
+
+- Use `/commit` to create conventional commits on your new branch
+- Use `/pr` to create a pull request when the branch is ready for review

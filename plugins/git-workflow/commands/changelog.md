@@ -1,15 +1,18 @@
 ---
 name: changelog
 description: Generate a changelog from git history, grouped by type
+arguments:
+  - name: range
+    description: "Commit range: a tag (v1.0.0), time period (2 weeks), or range (v1.0.0..v1.1.0). Defaults to commits since last tag."
+    required: false
 ---
 
 # Changelog Command
 
 When the user runs `/changelog`, generate a structured changelog from git commit history.
 
-## Arguments
+## Range Examples
 
-Optional range specification:
 - `/changelog` — all commits since the last tag
 - `/changelog v1.0.0` — commits since v1.0.0
 - `/changelog 2 weeks` — commits from the last 2 weeks
@@ -64,3 +67,8 @@ Optional range specification:
 - Omit test-only and style-only commits from the changelog
 - Always include the commit hash for reference
 - If commits don't follow conventional format, do your best to categorize them by reading the message
+
+## Related
+
+- Use `/commit` to ensure commits follow conventional format (makes changelogs more accurate)
+- Use `/pr` to create a pull request with the changelog as part of the release

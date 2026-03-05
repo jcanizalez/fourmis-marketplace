@@ -1,20 +1,10 @@
 ---
-description: When the user asks to create a pull request, write a PR description, generate a changelog from git history, create a pre-commit checklist, or asks about PR templates, Keep a Changelog format, or pre-merge verification steps
+description: When the user asks to create a pull request, write a PR description, generate a changelog from git history, create a pre-commit checklist, asks about PR templates, PR size guidelines, Keep a Changelog format, pre-merge verification steps, or draft PRs
 ---
 
 # PR Workflow
 
-This skill activates when working with pull requests, changelogs, or pre-commit reviews.
-
-## When to Activate
-
-- User asks to create a PR or pull request
-- User asks for a PR description or template
-- User asks to generate a changelog
-- User asks for a pre-commit checklist or review
-- You are about to run `gh pr create`
-
----
+Covers pull request creation, structured descriptions, changelog generation, and pre-commit quality checks.
 
 ## Pull Request Descriptions
 
@@ -66,6 +56,31 @@ chore: upgrade dependencies to latest
 ```
 
 Keep under 72 characters. This becomes the merge commit message.
+
+### PR Size Guidelines
+
+| Size | Lines Changed | Review Time | Risk |
+|------|--------------|-------------|------|
+| **XS** | 1-10 | Minutes | Low |
+| **S** | 11-100 | 15-30 min | Low |
+| **M** | 101-400 | 30-60 min | Medium |
+| **L** | 401-1000 | 1-2 hours | High |
+| **XL** | 1000+ | Split it | Very High |
+
+If a PR is L or larger, suggest splitting into smaller PRs. Smaller PRs get reviewed faster and catch more bugs.
+
+### Draft PRs
+
+Use draft PRs for:
+- Work-in-progress that needs early feedback
+- Proposals or architectural changes before full implementation
+- CI verification before the code is ready for review
+
+```bash
+gh pr create --draft --title "feat(auth): add OAuth2 login [WIP]" --body "..."
+# When ready:
+gh pr ready
+```
 
 ---
 

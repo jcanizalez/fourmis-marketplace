@@ -1,5 +1,5 @@
 ---
-description: When the user asks about git hooks, pre-commit hooks, commit-msg hooks, husky, lint-staged, lefthook, pre-push checks, CI gating, automated code quality checks before commit, or setting up git automation
+description: When the user asks about git hooks, pre-commit hooks, commit-msg hooks, husky, lint-staged, lefthook, pre-push checks, CI gating, automated code quality checks before commit, setting up git automation, commitlint, post-merge hooks, core.hooksPath, or shareable git hooks
 ---
 
 # Git Hooks & Automation

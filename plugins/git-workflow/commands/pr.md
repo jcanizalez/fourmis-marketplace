@@ -1,15 +1,25 @@
 ---
 name: pr
 description: Create a pull request with a well-structured description, testing steps, and checklist
+arguments:
+  - name: base
+    description: "Target branch for the PR (default: main). Example: /pr develop"
+    required: false
+  - name: flags
+    description: "Optional flags: --draft (create as draft PR), --web (open in browser after creating)"
+    required: false
 ---
 
 # PR Command
 
 When the user runs `/pr`, analyze the branch changes and create a well-structured pull request.
 
-## Arguments
+## Usage
 
-Optional target branch: `/pr` (defaults to main) or `/pr develop`
+- `/pr` — create PR targeting main
+- `/pr develop` — create PR targeting develop
+- `/pr --draft` — create as draft PR
+- `/pr develop --draft` — draft PR targeting develop
 
 ## Steps
 
@@ -94,3 +104,14 @@ User: /pr
 
    Create this PR? (y/n)"
 ```
+
+## Flag Handling
+
+- **`--draft`**: Add `--draft` flag to `gh pr create`. Useful for work-in-progress PRs that need early feedback.
+- **`--web`**: After creating, open the PR in the browser with `gh pr view --web`.
+
+## Related
+
+- Use `/commit` to clean up your commit messages before creating the PR
+- Use `/changelog` to generate a changelog from the PR's commits
+- Use `/branch` to ensure your branch follows naming conventions
