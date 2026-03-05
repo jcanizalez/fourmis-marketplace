@@ -1,5 +1,5 @@
 ---
-description: When the user asks about React state management, React Context, Zustand, TanStack Query, React Query, global state, server state, state colocation, or choosing a state management approach in React
+description: When the user asks about React state management, React Context, Zustand, TanStack Query, React Query, global state, server state, state colocation, split context pattern, zustand persist, zustand immer, useInfiniteQuery, query keys, optimistic cache updates, useMutation, when to use context vs zustand, useSearchParams for URL state, or choosing a state management approach in React
 ---
 
 # State Management

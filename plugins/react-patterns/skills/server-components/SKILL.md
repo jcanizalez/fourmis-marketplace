@@ -1,5 +1,5 @@
 ---
-description: When the user asks about React Server Components, RSC, use server, use client, server and client component boundaries, streaming, Suspense, data fetching in Server Components, or when to use client vs server components in Next.js
+description: When the user asks about React Server Components, RSC, "use server", "use client", server and client component boundaries, streaming, Suspense for data fetching, loading.tsx, async Server Components, server actions, React.cache deduplication, parallel data fetching, Promise.all in RSC, passing server components as children, revalidatePath, or when to use client vs server components in Next.js App Router
 ---
 
 # React Server Components

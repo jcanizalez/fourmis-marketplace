@@ -1,5 +1,5 @@
 ---
-description: When the user asks about React hooks, custom hooks, useCallback, useMemo, useRef, useReducer, hook composition, or how to write reusable hooks in React
+description: When the user asks about React hooks, custom hooks, useCallback, useMemo, useRef, useReducer, useId, useFormStatus, hook composition, how to write reusable hooks in React, the use() hook for reading promises/context, React 19 hooks, stale closures, hook dependency arrays, debounce hook, useLocalStorage, usePrevious, useAsync, useToggle, useInterval, or Rules of Hooks
 ---
 
 # Hooks Patterns
@@ -376,6 +376,106 @@ function Search() {
   });
 
   return <input value={query} onChange={(e) => setQuery(e.target.value)} />;
+}
+```
+
+---
+
+## React 19 Hooks
+
+### use() — Read Promises and Context
+
+The `use()` hook reads a resource (Promise or Context) during render. Unlike other hooks, it can be called conditionally.
+
+```tsx
+import { use, Suspense } from "react";
+
+// Read a promise — replaces useEffect + useState for data fetching
+function UserProfile({ userPromise }: { userPromise: Promise<User> }) {
+  const user = use(userPromise); // Suspends until resolved
+  return <h1>{user.name}</h1>;
+}
+
+// Usage — parent creates the promise, child reads it
+function Page({ userId }: { userId: string }) {
+  const userPromise = fetchUser(userId); // Start fetching immediately
+
+  return (
+    <Suspense fallback={<Skeleton />}>
+      <UserProfile userPromise={userPromise} />
+    </Suspense>
+  );
+}
+```
+
+```tsx
+// Conditional context reading (only use() allows this)
+function StatusMessage({ showDetails }: { showDetails: boolean }) {
+  if (showDetails) {
+    const theme = use(ThemeContext); // ✅ Valid — use() works in conditionals
+    return <p style={{ color: theme.primary }}>Details shown</p>;
+  }
+  return <p>Summary view</p>;
+}
+```
+
+### useId — Stable IDs for Accessibility
+
+Generates unique IDs that are stable across server/client rendering.
+
+```tsx
+function FormField({ label }: { label: string }) {
+  const id = useId();
+
+  return (
+    <div>
+      <label htmlFor={id}>{label}</label>
+      <input id={id} />
+    </div>
+  );
+}
+
+// Multiple related IDs
+function PasswordField() {
+  const id = useId();
+
+  return (
+    <div>
+      <label htmlFor={`${id}-password`}>Password</label>
+      <input id={`${id}-password`} type="password" aria-describedby={`${id}-hint`} />
+      <p id={`${id}-hint`}>Must be at least 8 characters</p>
+    </div>
+  );
+}
+```
+
+### useFormStatus — Form Submission State
+
+Access the pending state of a parent `<form>` without prop drilling.
+
+```tsx
+"use client";
+
+import { useFormStatus } from "react-dom";
+
+function SubmitButton() {
+  const { pending, data, method, action } = useFormStatus();
+
+  return (
+    <button type="submit" disabled={pending}>
+      {pending ? "Saving..." : "Save"}
+    </button>
+  );
+}
+
+// Usage — must be inside a <form>
+function EditForm({ action }: { action: (formData: FormData) => Promise<void> }) {
+  return (
+    <form action={action}>
+      <input name="title" />
+      <SubmitButton /> {/* Automatically knows when form is submitting */}
+    </form>
+  );
 }
 ```
 

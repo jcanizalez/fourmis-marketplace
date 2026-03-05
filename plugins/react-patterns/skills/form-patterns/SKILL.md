@@ -1,5 +1,5 @@
 ---
-description: When the user asks about React forms, React Hook Form, form validation in React, multi-step forms, optimistic updates, server actions with forms, or form handling patterns in React or Next.js
+description: When the user asks about React forms, React Hook Form, form validation in React, multi-step forms, multi-step wizard, optimistic updates, useOptimistic, server actions with forms, useActionState, form handling patterns in React or Next.js, zodResolver, dynamic field arrays, useFieldArray, FormProvider, revalidatePath, progressive enhancement forms, or z.infer with forms
 ---
 
 # Form Patterns

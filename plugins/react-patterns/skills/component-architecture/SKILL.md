@@ -1,5 +1,5 @@
 ---
-description: When the user asks about React component architecture, compound components, render props, component composition, polymorphic components, slots pattern, controlled vs uncontrolled components, or how to structure React components
+description: When the user asks about React component architecture, compound components, render props, component composition, polymorphic components, the "as" prop pattern, slots pattern, controlled vs uncontrolled components, hybrid controlled/uncontrolled, prop explosion, children pattern, forwardRef, component design, page layout components, or how to structure React components for reusability
 ---
 
 # Component Architecture

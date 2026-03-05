@@ -67,3 +67,8 @@ Group by severity:
 🟢 **Good Patterns Found**: Highlight well-structured code.
 
 End with: component health score (X/10), top 3 improvements, and estimated effort for each.
+
+## Related
+
+- Use `/hook-check` to deep-dive into hook-specific issues found during the audit
+- Use `/react-refactor` to implement the suggested improvements on a specific component

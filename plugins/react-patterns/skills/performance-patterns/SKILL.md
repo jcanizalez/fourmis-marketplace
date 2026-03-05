@@ -1,5 +1,5 @@
 ---
-description: When the user asks about React performance, React.memo, useMemo, useCallback optimization, virtualization, code splitting, lazy loading, React Compiler, or how to optimize React app performance
+description: When the user asks about React performance, React.memo, useMemo, useCallback optimization, virtualization, code splitting, lazy loading, React Compiler, useTransition, useDeferredValue, concurrent rendering, non-blocking updates, React DevTools Profiler, re-render debugging, @tanstack/react-virtual, dynamic imports, React.lazy, Suspense for performance, bundle size optimization, or how to optimize React app performance
 ---
 
 # Performance Patterns
@@ -302,6 +302,85 @@ The compiler requires code that follows the **Rules of React**:
 4. Side effects only in useEffect
 
 If the compiler can't optimize a component, it silently skips it — your code still works, just without auto-memoization.
+
+---
+
+## Concurrent Rendering
+
+### useTransition — Non-Blocking State Updates
+
+Mark a state update as non-urgent so React can keep the UI responsive during expensive re-renders.
+
+```tsx
+import { useState, useTransition } from "react";
+
+function FilterableList({ items }: { items: Item[] }) {
+  const [query, setQuery] = useState("");
+  const [filteredItems, setFilteredItems] = useState(items);
+  const [isPending, startTransition] = useTransition();
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const value = e.target.value;
+    setQuery(value); // Urgent — update input immediately
+
+    startTransition(() => {
+      // Non-urgent — can be interrupted if user types again
+      setFilteredItems(
+        items.filter((item) =>
+          item.name.toLowerCase().includes(value.toLowerCase()),
+        ),
+      );
+    });
+  };
+
+  return (
+    <div>
+      <input value={query} onChange={handleChange} />
+      {isPending && <Spinner />}
+      <ul>
+        {filteredItems.map((item) => (
+          <li key={item.id}>{item.name}</li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+```
+
+### useDeferredValue — Defer Expensive Renders
+
+Let React defer re-rendering a value until more urgent updates are done. Simpler than `useTransition` when you don't control the state update.
+
+```tsx
+import { useDeferredValue, useMemo } from "react";
+
+function SearchResults({ query }: { query: string }) {
+  // Deferred value lags behind the actual query during rapid typing
+  const deferredQuery = useDeferredValue(query);
+  const isStale = query !== deferredQuery;
+
+  const results = useMemo(
+    () => heavySearch(deferredQuery), // Only re-computes when deferred value updates
+    [deferredQuery],
+  );
+
+  return (
+    <div style={{ opacity: isStale ? 0.7 : 1 }}>
+      {results.map((r) => (
+        <ResultCard key={r.id} result={r} />
+      ))}
+    </div>
+  );
+}
+```
+
+### When to Use Which
+
+| Pattern | Use Case |
+|---------|----------|
+| `useTransition` | You control the state update and want to mark it non-urgent |
+| `useDeferredValue` | You receive a value as a prop and want to defer its effect |
+| Neither | The update is fast enough (<16ms) that blocking is fine |
 
 ---
 

@@ -63,3 +63,8 @@ Categories: 🔴 Bug, 🟡 Performance, 🔵 Best Practice
 - Top 3 fixes to prioritize
 
 End with a hooks health score (X/10).
+
+## Related
+
+- Use `/component-audit` to scan for broader component anti-patterns beyond hooks
+- Use `/react-refactor` to refactor components with hook issues into cleaner patterns

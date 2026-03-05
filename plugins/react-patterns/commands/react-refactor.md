@@ -77,3 +77,8 @@ For each suggestion:
 | Remove unnecessary useEffect | Performance, correctness | Low |
 
 Prioritize by impact-to-effort ratio.
+
+## Related
+
+- Use `/component-audit` to scan an entire directory for components that need refactoring
+- Use `/hook-check` to find hook-specific issues in the component before refactoring
