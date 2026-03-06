@@ -1,0 +1,922 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fourmis Marketplace — Plugins for Claude Code</title>
+  <meta name="description" content="41 open-source plugins for Claude Code. Skills, commands, agents, and MCP servers to supercharge your AI-assisted development workflow.">
+  <meta property="og:title" content="Fourmis Marketplace">
+  <meta property="og:description" content="41 open-source plugins for Claude Code. 191 skills, 113 commands, 46 agents.">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐜</text></svg>">
+  <style>
+    /* ==================== RESET & BASE ==================== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #0a0a0f;
+      --bg-card: #13131a;
+      --bg-card-hover: #1a1a24;
+      --bg-surface: #0e0e15;
+      --border: #1e1e2e;
+      --border-hover: #2e2e42;
+      --text: #e4e4ed;
+      --text-muted: #8888a0;
+      --text-dim: #5c5c72;
+      --accent: #c084fc;
+      --accent-dim: #7c3aed;
+      --accent-glow: rgba(192, 132, 252, 0.15);
+      --green: #34d399;
+      --blue: #60a5fa;
+      --orange: #fb923c;
+      --pink: #f472b6;
+      --cyan: #22d3ee;
+      --yellow: #facc15;
+      --red: #f87171;
+      --radius: 12px;
+      --radius-sm: 8px;
+      --max-w: 1200px;
+      --font: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      --mono: 'SF Mono', 'Fira Code', 'Cascadia Code', Consolas, monospace;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font);
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: var(--accent); text-decoration: none; transition: color 0.2s; }
+    a:hover { color: #d8b4fe; }
+
+    /* ==================== LAYOUT ==================== */
+    .container { max-width: var(--max-w); margin: 0 auto; padding: 0 24px; }
+
+    /* ==================== NAV ==================== */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(10, 10, 15, 0.85);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-inner {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 0 24px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-brand {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--text);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .nav-brand span { color: var(--accent); }
+
+    .nav-links { display: flex; gap: 24px; }
+    .nav-links a { color: var(--text-muted); font-size: 14px; font-weight: 500; }
+    .nav-links a:hover { color: var(--text); }
+
+    .nav-cta {
+      background: var(--accent-dim);
+      color: white !important;
+      padding: 8px 16px;
+      border-radius: var(--radius-sm);
+      font-size: 13px;
+      font-weight: 600;
+      transition: background 0.2s;
+    }
+    .nav-cta:hover { background: #6d28d9; color: white !important; }
+
+    /* ==================== HERO ==================== */
+    .hero {
+      padding: 100px 0 80px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -200px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 800px;
+      height: 800px;
+      background: radial-gradient(circle, var(--accent-glow) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 6px 16px;
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-bottom: 24px;
+    }
+
+    .hero-badge .dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--green);
+    }
+
+    .hero h1 {
+      font-size: clamp(36px, 6vw, 64px);
+      font-weight: 800;
+      line-height: 1.1;
+      letter-spacing: -0.03em;
+      margin-bottom: 20px;
+      position: relative;
+    }
+
+    .hero h1 .gradient {
+      background: linear-gradient(135deg, var(--accent) 0%, var(--pink) 50%, var(--orange) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero p {
+      font-size: clamp(16px, 2vw, 20px);
+      color: var(--text-muted);
+      max-width: 600px;
+      margin: 0 auto 40px;
+      line-height: 1.7;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 24px;
+      border-radius: var(--radius-sm);
+      font-size: 15px;
+      font-weight: 600;
+      transition: all 0.2s;
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn-primary {
+      background: var(--accent-dim);
+      color: white;
+    }
+    .btn-primary:hover { background: #6d28d9; color: white; }
+
+    .btn-secondary {
+      background: var(--bg-card);
+      color: var(--text);
+      border: 1px solid var(--border);
+    }
+    .btn-secondary:hover { border-color: var(--border-hover); background: var(--bg-card-hover); color: var(--text); }
+
+    /* ==================== STATS ==================== */
+    .stats {
+      padding: 60px 0;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      background: var(--bg-surface);
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 32px;
+      text-align: center;
+    }
+
+    .stat-num {
+      font-size: 48px;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      background: linear-gradient(135deg, var(--accent), var(--blue));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .stat-label {
+      font-size: 14px;
+      color: var(--text-muted);
+      margin-top: 4px;
+      font-weight: 500;
+    }
+
+    /* ==================== INSTALL ==================== */
+    .install {
+      padding: 80px 0;
+      text-align: center;
+    }
+
+    .install h2 { font-size: 32px; font-weight: 700; margin-bottom: 12px; }
+    .install > .container > p { color: var(--text-muted); margin-bottom: 32px; font-size: 16px; }
+
+    .install-box {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 20px 24px;
+      max-width: 700px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .install-box code {
+      font-family: var(--mono);
+      font-size: 15px;
+      color: var(--green);
+      flex: 1;
+      text-align: left;
+      overflow-x: auto;
+      white-space: nowrap;
+    }
+
+    .install-box code .muted { color: var(--text-dim); }
+
+    .copy-btn {
+      background: var(--bg-card-hover);
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+      padding: 8px 14px;
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      font-size: 13px;
+      font-weight: 500;
+      transition: all 0.2s;
+      white-space: nowrap;
+    }
+    .copy-btn:hover { color: var(--text); border-color: var(--border-hover); }
+
+    /* ==================== SECTION TITLES ==================== */
+    .section-title {
+      text-align: center;
+      margin-bottom: 48px;
+    }
+    .section-title h2 {
+      font-size: 32px;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+    .section-title p { color: var(--text-muted); font-size: 16px; }
+
+    /* ==================== CATALOG ==================== */
+    .catalog { padding: 80px 0; }
+
+    .filter-bar {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-bottom: 40px;
+    }
+
+    .filter-btn {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+      padding: 8px 16px;
+      border-radius: 20px;
+      cursor: pointer;
+      font-size: 13px;
+      font-weight: 500;
+      transition: all 0.2s;
+    }
+    .filter-btn:hover { border-color: var(--border-hover); color: var(--text); }
+    .filter-btn.active {
+      background: var(--accent-dim);
+      border-color: var(--accent-dim);
+      color: white;
+    }
+
+    .catalog-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+      gap: 16px;
+    }
+
+    .plugin-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 20px;
+      transition: all 0.2s;
+      display: flex;
+      flex-direction: column;
+    }
+    .plugin-card:hover {
+      border-color: var(--border-hover);
+      background: var(--bg-card-hover);
+      transform: translateY(-2px);
+    }
+
+    .plugin-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 10px;
+    }
+
+    .plugin-name {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    .plugin-tag {
+      font-size: 11px;
+      font-weight: 600;
+      padding: 3px 10px;
+      border-radius: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .plugin-desc {
+      font-size: 14px;
+      color: var(--text-muted);
+      line-height: 1.5;
+      flex: 1;
+      margin-bottom: 14px;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    .plugin-meta {
+      display: flex;
+      gap: 12px;
+      font-size: 12px;
+      color: var(--text-dim);
+    }
+
+    .plugin-meta span { display: flex; align-items: center; gap: 4px; }
+
+    /* Category colors */
+    .tag-development { background: rgba(96, 165, 250, 0.15); color: var(--blue); }
+    .tag-devops { background: rgba(52, 211, 153, 0.15); color: var(--green); }
+    .tag-productivity { background: rgba(250, 204, 21, 0.15); color: var(--yellow); }
+    .tag-security { background: rgba(248, 113, 113, 0.15); color: var(--red); }
+    .tag-marketing { background: rgba(251, 146, 60, 0.15); color: var(--orange); }
+    .tag-content { background: rgba(244, 114, 182, 0.15); color: var(--pink); }
+    .tag-social { background: rgba(34, 211, 238, 0.15); color: var(--cyan); }
+    .tag-design { background: rgba(192, 132, 252, 0.15); color: var(--accent); }
+    .tag-demo { background: rgba(136, 136, 160, 0.15); color: var(--text-muted); }
+
+    /* ==================== STARTER PACKS ==================== */
+    .packs { padding: 80px 0; background: var(--bg-surface); }
+
+    .packs-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 16px;
+    }
+
+    .pack-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+      transition: all 0.2s;
+    }
+    .pack-card:hover { border-color: var(--border-hover); }
+
+    .pack-icon { font-size: 32px; margin-bottom: 12px; }
+    .pack-title { font-size: 18px; font-weight: 700; margin-bottom: 6px; }
+    .pack-desc { font-size: 14px; color: var(--text-muted); margin-bottom: 14px; line-height: 1.5; }
+
+    .pack-plugins {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .pack-plugins span {
+      font-size: 12px;
+      background: rgba(192, 132, 252, 0.1);
+      color: var(--accent);
+      padding: 3px 10px;
+      border-radius: 12px;
+      font-weight: 500;
+    }
+
+    /* ==================== CONTRIBUTE ==================== */
+    .contribute { padding: 80px 0; text-align: center; }
+
+    .contribute h2 { font-size: 32px; font-weight: 700; margin-bottom: 12px; }
+    .contribute > .container > p {
+      color: var(--text-muted);
+      max-width: 600px;
+      margin: 0 auto 32px;
+      font-size: 16px;
+    }
+
+    .contribute-steps {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      max-width: 900px;
+      margin: 0 auto 32px;
+    }
+
+    .step {
+      text-align: center;
+      padding: 24px;
+    }
+
+    .step-num {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: var(--accent-dim);
+      color: white;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 16px;
+      margin-bottom: 12px;
+    }
+
+    .step h3 { font-size: 16px; font-weight: 600; margin-bottom: 6px; }
+    .step p { font-size: 14px; color: var(--text-muted); }
+
+    /* ==================== FOOTER ==================== */
+    footer {
+      padding: 40px 0;
+      border-top: 1px solid var(--border);
+      text-align: center;
+    }
+
+    .footer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .footer-brand { font-size: 15px; color: var(--text-muted); }
+    .footer-brand strong { color: var(--text); font-weight: 600; }
+
+    .footer-links { display: flex; gap: 20px; }
+    .footer-links a { color: var(--text-dim); font-size: 14px; }
+    .footer-links a:hover { color: var(--text-muted); }
+
+    /* ==================== RESPONSIVE ==================== */
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 24px; }
+      .contribute-steps { grid-template-columns: 1fr; gap: 16px; }
+      .catalog-grid { grid-template-columns: 1fr; }
+      .packs-grid { grid-template-columns: 1fr; }
+      .hero { padding: 60px 0 40px; }
+      .footer-inner { flex-direction: column; text-align: center; }
+    }
+
+    @media (max-width: 480px) {
+      .install-box { flex-direction: column; align-items: stretch; }
+      .install-box code { text-align: center; }
+      .stat-num { font-size: 36px; }
+    }
+
+    /* ==================== SEARCH ==================== */
+    .search-box {
+      max-width: 500px;
+      margin: 0 auto 24px;
+      position: relative;
+    }
+
+    .search-box input {
+      width: 100%;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 12px 16px 12px 40px;
+      font-size: 15px;
+      color: var(--text);
+      font-family: var(--font);
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    .search-box input::placeholder { color: var(--text-dim); }
+    .search-box input:focus { border-color: var(--accent-dim); }
+
+    .search-icon {
+      position: absolute;
+      left: 14px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--text-dim);
+      font-size: 14px;
+    }
+
+    .no-results {
+      text-align: center;
+      padding: 60px 20px;
+      color: var(--text-dim);
+      font-size: 16px;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <div class="nav-brand">
+      <span>fourmis</span> marketplace
+    </div>
+    <div class="nav-links">
+      <a href="#catalog">Plugins</a>
+      <a href="#packs">Starter Packs</a>
+      <a href="#contribute">Contribute</a>
+    </div>
+    <a href="https://github.com/jcanizalez/fourmis-marketplace" class="nav-cta" target="_blank">GitHub</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-badge">
+      <div class="dot"></div>
+      41 plugins &middot; Open Source
+    </div>
+    <h1>
+      Plugins for<br>
+      <span class="gradient">Claude Code</span>
+    </h1>
+    <p>
+      Skills, commands, agents, and MCP servers that make Claude Code smarter.
+      Built by the Fourmis community. Install in one command.
+    </p>
+    <div class="hero-actions">
+      <a href="#install" class="btn btn-primary">Get Started</a>
+      <a href="#catalog" class="btn btn-secondary">Browse Plugins</a>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="stats">
+  <div class="container">
+    <div class="stats-grid">
+      <div>
+        <div class="stat-num">41</div>
+        <div class="stat-label">Plugins</div>
+      </div>
+      <div>
+        <div class="stat-num">191</div>
+        <div class="stat-label">Skills</div>
+      </div>
+      <div>
+        <div class="stat-num">113</div>
+        <div class="stat-label">Commands</div>
+      </div>
+      <div>
+        <div class="stat-num">46</div>
+        <div class="stat-label">Agents</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INSTALL -->
+<section class="install" id="install">
+  <div class="container">
+    <h2>Install in Seconds</h2>
+    <p>Add any plugin to your Claude Code setup with one command.</p>
+    <div class="install-box">
+      <code><span class="muted">$</span> claude plugin add --from https://github.com/jcanizalez/fourmis-marketplace/plugins/<em>plugin-name</em></code>
+      <button class="copy-btn" onclick="copyInstall(this)">Copy</button>
+    </div>
+  </div>
+</section>
+
+<!-- CATALOG -->
+<section class="catalog" id="catalog">
+  <div class="container">
+    <div class="section-title">
+      <h2>Plugin Catalog</h2>
+      <p>Browse all 41 plugins across 9 categories</p>
+    </div>
+
+    <div class="search-box">
+      <span class="search-icon">&#128269;</span>
+      <input type="text" id="searchInput" placeholder="Search plugins..." oninput="filterPlugins()">
+    </div>
+
+    <div class="filter-bar" id="filterBar">
+      <button class="filter-btn active" data-cat="all" onclick="setFilter('all', this)">All (41)</button>
+    </div>
+
+    <div class="catalog-grid" id="catalogGrid"></div>
+    <div class="no-results" id="noResults">No plugins found. Try a different search.</div>
+  </div>
+</section>
+
+<!-- STARTER PACKS -->
+<section class="packs" id="packs">
+  <div class="container">
+    <div class="section-title">
+      <h2>Starter Packs</h2>
+      <p>Curated plugin bundles for your role</p>
+    </div>
+    <div class="packs-grid">
+      <div class="pack-card">
+        <div class="pack-icon">&#9889;</div>
+        <div class="pack-title">Full-Stack TypeScript</div>
+        <div class="pack-desc">Everything for modern TS/React/Next.js development.</div>
+        <div class="pack-plugins">
+          <span>typescript-patterns</span>
+          <span>react-patterns</span>
+          <span>nextjs-patterns</span>
+          <span>test-gen</span>
+          <span>ci-cd</span>
+        </div>
+      </div>
+      <div class="pack-card">
+        <div class="pack-icon">&#128736;</div>
+        <div class="pack-title">Backend Engineer</div>
+        <div class="pack-desc">API design, databases, auth, and Go patterns.</div>
+        <div class="pack-plugins">
+          <span>go-patterns</span>
+          <span>api-design-patterns</span>
+          <span>database-patterns</span>
+          <span>auth-patterns</span>
+          <span>docker-toolkit</span>
+        </div>
+      </div>
+      <div class="pack-card">
+        <div class="pack-icon">&#9729;</div>
+        <div class="pack-title">DevOps &amp; SRE</div>
+        <div class="pack-desc">CI/CD, Docker, Kubernetes, and observability.</div>
+        <div class="pack-plugins">
+          <span>ci-cd</span>
+          <span>docker-toolkit</span>
+          <span>kubernetes-patterns</span>
+          <span>monitoring-patterns</span>
+          <span>env-manager</span>
+        </div>
+      </div>
+      <div class="pack-card">
+        <div class="pack-icon">&#127912;</div>
+        <div class="pack-title">Frontend Dev</div>
+        <div class="pack-desc">React, design systems, accessibility, and performance.</div>
+        <div class="pack-plugins">
+          <span>react-patterns</span>
+          <span>design-system</span>
+          <span>a11y-audit</span>
+          <span>perf-audit</span>
+          <span>nextjs-patterns</span>
+        </div>
+      </div>
+      <div class="pack-card">
+        <div class="pack-icon">&#128188;</div>
+        <div class="pack-title">Freelancer</div>
+        <div class="pack-desc">CRM, invoicing, time tracking, and business automation.</div>
+        <div class="pack-plugins">
+          <span>local-crm</span>
+          <span>invoice</span>
+          <span>time-tracker</span>
+          <span>freelancer-agent</span>
+          <span>markdown-writer</span>
+        </div>
+      </div>
+      <div class="pack-card">
+        <div class="pack-icon">&#129302;</div>
+        <div class="pack-title">AI / ML Engineer</div>
+        <div class="pack-desc">Prompt engineering, RAG, vector databases, and evaluation.</div>
+        <div class="pack-plugins">
+          <span>prompt-engineering</span>
+          <span>vector-db</span>
+          <span>api-testing</span>
+          <span>log-analyzer</span>
+        </div>
+      </div>
+      <div class="pack-card">
+        <div class="pack-icon">&#128227;</div>
+        <div class="pack-title">Content &amp; Marketing</div>
+        <div class="pack-desc">Write content, optimize SEO, and publish on social.</div>
+        <div class="pack-plugins">
+          <span>markdown-writer</span>
+          <span>seo-toolkit</span>
+          <span>social-poster</span>
+          <span>marketing-agent</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTRIBUTE -->
+<section class="contribute" id="contribute">
+  <div class="container">
+    <h2>Build a Plugin</h2>
+    <p>The marketplace is open source. Anyone can contribute a plugin — skills, commands, agents, or MCP servers.</p>
+    <div class="contribute-steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <h3>Fork &amp; Scaffold</h3>
+        <p>Fork the repo and create your plugin in <code>plugins/your-name/</code></p>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <h3>Build &amp; Test</h3>
+        <p>Add skills, commands, agents, or an MCP server. Test locally.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <h3>Submit a PR</h3>
+        <p>Open a pull request. We'll review and merge it.</p>
+      </div>
+    </div>
+    <a href="https://github.com/jcanizalez/fourmis-marketplace/blob/main/CONTRIBUTING.md" class="btn btn-primary" target="_blank">Read the Contributing Guide</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <strong>Fourmis</strong> Marketplace &middot; Open Source
+      </div>
+      <div class="footer-links">
+        <a href="https://github.com/jcanizalez/fourmis-marketplace" target="_blank">GitHub</a>
+        <a href="https://github.com/jcanizalez/fourmis-marketplace/blob/main/CONTRIBUTING.md" target="_blank">Contributing</a>
+        <a href="https://github.com/jcanizalez/fourmis-marketplace/issues" target="_blank">Issues</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+// ==================== PLUGIN DATA ====================
+const plugins = [
+  { name: "git-workflow", desc: "Conventional commits, branch naming, PR descriptions, changelog generation, git hooks, merge conflict resolution, and monorepo workflows.", cat: "productivity", skills: 6, cmds: 4, agents: 1 },
+  { name: "code-health", desc: "Codebase quality metrics and tech debt tracking. File complexity, outdated dependencies, TODO markers, and dead code detection.", cat: "productivity", skills: 3, cmds: 2, agents: 1 },
+  { name: "local-crm", desc: "Local-first CRM for freelancers. Manage contacts, deals, follow-ups, and interactions. SQLite-based, zero cloud dependencies.", cat: "productivity", skills: 1, cmds: 2, agents: 1, mcp: true },
+  { name: "invoice", desc: "Local-first invoicing for freelancers. Create, track, and export professional invoices. SQLite-based with HTML export and revenue reports.", cat: "productivity", skills: 1, cmds: 1, agents: 1, mcp: true },
+  { name: "time-tracker", desc: "Local-first time tracking for freelancers. Start/stop timers, log hours, generate timesheets, and track billable earnings.", cat: "productivity", skills: 1, cmds: 2, agents: 1, mcp: true },
+  { name: "freelancer-agent", desc: "Orchestrates local-crm, invoice, and time-tracker into end-to-end freelancer business workflows.", cat: "productivity", skills: 3, cmds: 4, agents: 3 },
+  { name: "product-management", desc: "PRD writing, sprint planning, user stories, estimation, roadmap planning, and retrospectives. Complete PM toolkit.", cat: "productivity", skills: 6, cmds: 3, agents: 1 },
+  { name: "api-docs", desc: "Auto-generate API documentation from code. Scans Express, Go, Next.js, and Fastify routes for OpenAPI specs and curl examples.", cat: "development", skills: 3, cmds: 2, agents: 1 },
+  { name: "db-explorer", desc: "Database exploration via MCP. Connect to SQLite/PostgreSQL, describe tables, map relationships, run read-only SQL, export CSV.", cat: "development", skills: 1, cmds: 2, agents: 1, mcp: true },
+  { name: "test-gen", desc: "Unit tests (Jest, Vitest, pytest, Go), integration tests, E2E tests (Playwright, Cypress), TDD workflow, mocking patterns, and coverage analysis.", cat: "development", skills: 6, cmds: 3, agents: 1 },
+  { name: "code-review", desc: "PR review workflow, review checklists (API, React, auth, perf), code quality assessment (SOLID, complexity), and effective review comments.", cat: "development", skills: 6, cmds: 3, agents: 1 },
+  { name: "project-scaffold", desc: "Generate production-ready boilerplate for Next.js, Express, Go, Python, monorepos, and npm/PyPI libraries.", cat: "development", skills: 6, cmds: 3, agents: 1 },
+  { name: "a11y-audit", desc: "WCAG 2.2 compliance checking, ARIA patterns, color contrast analysis, keyboard navigation, and accessible component recipes.", cat: "development", skills: 6, cmds: 3, agents: 1 },
+  { name: "perf-audit", desc: "Core Web Vitals (LCP, INP, CLS), rendering performance, bundle size optimization, image optimization, and caching strategies.", cat: "development", skills: 6, cmds: 3, agents: 1 },
+  { name: "api-testing", desc: "REST API testing (Supertest, httpx, Go httptest), MSW mock servers, contract testing, API security auditing, and HTTP best practices.", cat: "development", skills: 6, cmds: 3, agents: 1 },
+  { name: "prompt-engineering", desc: "Prompt design patterns, structured output, few-shot examples, chain-of-thought reasoning, RAG patterns, and LLM evaluation.", cat: "development", skills: 6, cmds: 3, agents: 1 },
+  { name: "migration-toolkit", desc: "Database migrations, dependency updates, framework upgrades, API versioning, data migrations, and deprecation management.", cat: "development", skills: 6, cmds: 3, agents: 1 },
+  { name: "typescript-patterns", desc: "Generics, utility types, type guards, Zod validation, error handling (Result types), and module patterns. Advanced TypeScript.", cat: "development", skills: 6, cmds: 3, agents: 1 },
+  { name: "react-patterns", desc: "Custom hooks, state management (Context, Zustand, TanStack Query), Server Components, compound components, forms, and performance.", cat: "development", skills: 6, cmds: 3, agents: 1 },
+  { name: "go-patterns", desc: "Concurrency, error handling, interfaces, HTTP servers, testing (table-driven, benchmarks, fuzzing), and project structure.", cat: "development", skills: 6, cmds: 3, agents: 1 },
+  { name: "api-design-patterns", desc: "RESTful design, RFC 7807 errors, pagination, rate limiting, WebSocket patterns, and GraphQL schema design.", cat: "development", skills: 6, cmds: 3, agents: 1 },
+  { name: "database-patterns", desc: "Schema design, query optimization, ORM patterns (Prisma, Drizzle, GORM), transactions, connection pooling, and data modeling.", cat: "development", skills: 6, cmds: 3, agents: 1 },
+  { name: "nextjs-patterns", desc: "App Router, data fetching, Server Actions, middleware, caching strategies, and deployment optimization.", cat: "development", skills: 6, cmds: 3, agents: 1 },
+  { name: "vector-db", desc: "Embedding models, pgvector, vector search, RAG pipelines, Pinecone, ChromaDB, and Weaviate patterns.", cat: "development", skills: 6, cmds: 3, agents: 1 },
+  { name: "state-machines", desc: "XState v5, workflow patterns (order processing, sagas), finite automata, event sourcing, CQRS, and Temporal.io orchestration.", cat: "development", skills: 6, cmds: 3, agents: 1 },
+  { name: "devops-skills", desc: "Incident response, deployment safety, Dockerfile optimization, GitHub Actions, Kubernetes troubleshooting, and security hardening.", cat: "devops", skills: 7, cmds: 3, agents: 2 },
+  { name: "ci-cd", desc: "GitHub Actions workflows, deployment pipelines (Vercel, Fly.io, AWS), Docker CI, release automation, and CI best practices.", cat: "devops", skills: 5, cmds: 3, agents: 1 },
+  { name: "log-analyzer", desc: "Structured logging (Pino, structlog, slog), log parsing, error diagnosis, alerting, advanced search, and OpenTelemetry setup.", cat: "devops", skills: 6, cmds: 3, agents: 1 },
+  { name: "env-manager", desc: "Dotenv patterns, type-safe env validation (Zod, t3-env, Pydantic), secret management, 12-factor config, and leak prevention.", cat: "devops", skills: 6, cmds: 3, agents: 1 },
+  { name: "docker-toolkit", desc: "Dockerfile best practices, Docker Compose, container debugging, image optimization, networking, and container security.", cat: "devops", skills: 6, cmds: 3, agents: 1 },
+  { name: "monitoring-patterns", desc: "Structured logging, Prometheus metrics, alerting rules, health checks, distributed tracing (OpenTelemetry), and Grafana dashboards.", cat: "devops", skills: 6, cmds: 3, agents: 1 },
+  { name: "kubernetes-patterns", desc: "Core resources, networking (Ingress, NetworkPolicies), storage, scaling (HPA, VPA, KEDA), Helm charts, and troubleshooting.", cat: "devops", skills: 6, cmds: 3, agents: 1 },
+  { name: "security-audit", desc: "Detect hardcoded secrets, scan dependencies for CVEs, find injection patterns, audit configs, check HTTP headers, and generate reports.", cat: "security", skills: 1, cmds: 2, agents: 1, mcp: true },
+  { name: "auth-patterns", desc: "JWT, OAuth2 + PKCE, session auth, password security, RBAC/ABAC authorization, and API key management.", cat: "security", skills: 6, cmds: 3, agents: 1 },
+  { name: "seo-toolkit", desc: "On-page optimization, technical audits, meta tags, heading analysis, SSL checks, robots.txt parsing, and performance metrics.", cat: "marketing", skills: 3, cmds: 2, agents: 1, mcp: true },
+  { name: "marketing-agent", desc: "Orchestrates markdown-writer, seo-toolkit, and social-poster for end-to-end content marketing workflows.", cat: "marketing", skills: 3, cmds: 3, agents: 3 },
+  { name: "markdown-writer", desc: "Blog posts, technical docs, SEO content, readability analysis, content outlining, and systematic editing.", cat: "content", skills: 6, cmds: 3, agents: 1 },
+  { name: "design-system", desc: "Design tokens, Tailwind CSS theming, responsive patterns, CSS animations, typography systems, and component styling (CVA).", cat: "design", skills: 6, cmds: 3, agents: 1 },
+  { name: "reddit-mcp", desc: "Full Reddit integration via MCP. Browse subreddits, search posts, read comments, submit posts, comment, and vote.", cat: "social", skills: 1, cmds: 2, agents: 1, mcp: true },
+  { name: "social-poster", desc: "Cross-platform social media posting. Publish to Bluesky and Mastodon from Claude Code.", cat: "social", skills: 1, cmds: 2, agents: 1, mcp: true },
+  { name: "hello-world", desc: "A simple demo plugin that greets the user. Demonstrates the Claude Code plugin standard with a skill and command.", cat: "demo", skills: 1, cmds: 1, agents: 0 }
+];
+
+const catLabels = {
+  development: "Development",
+  devops: "DevOps",
+  productivity: "Productivity",
+  security: "Security",
+  marketing: "Marketing",
+  content: "Content",
+  social: "Social",
+  design: "Design",
+  demo: "Demo"
+};
+
+// ==================== RENDER ====================
+let activeFilter = 'all';
+
+function renderFilters() {
+  const bar = document.getElementById('filterBar');
+  const cats = {};
+  plugins.forEach(p => { cats[p.cat] = (cats[p.cat] || 0) + 1; });
+
+  const order = ['development', 'devops', 'productivity', 'security', 'marketing', 'content', 'social', 'design', 'demo'];
+  order.forEach(cat => {
+    if (!cats[cat]) return;
+    const btn = document.createElement('button');
+    btn.className = 'filter-btn';
+    btn.dataset.cat = cat;
+    btn.textContent = `${catLabels[cat]} (${cats[cat]})`;
+    btn.onclick = () => setFilter(cat, btn);
+    bar.appendChild(btn);
+  });
+}
+
+function setFilter(cat, btn) {
+  activeFilter = cat;
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  renderCatalog();
+}
+
+function renderCatalog() {
+  const grid = document.getElementById('catalogGrid');
+  const query = (document.getElementById('searchInput').value || '').toLowerCase();
+
+  const filtered = plugins.filter(p => {
+    const matchesCat = activeFilter === 'all' || p.cat === activeFilter;
+    const matchesQuery = !query || p.name.includes(query) || p.desc.toLowerCase().includes(query) || p.cat.includes(query);
+    return matchesCat && matchesQuery;
+  });
+
+  document.getElementById('noResults').style.display = filtered.length === 0 ? 'block' : 'none';
+
+  grid.innerHTML = filtered.map(p => `
+    <a href="https://github.com/jcanizalez/fourmis-marketplace/tree/main/plugins/${p.name}" target="_blank" class="plugin-card">
+      <div class="plugin-header">
+        <div class="plugin-name">${p.name}</div>
+        <div class="plugin-tag tag-${p.cat}">${catLabels[p.cat]}</div>
+      </div>
+      <div class="plugin-desc">${p.desc}</div>
+      <div class="plugin-meta">
+        ${p.skills ? `<span>${p.skills} skill${p.skills > 1 ? 's' : ''}</span>` : ''}
+        ${p.cmds ? `<span>${p.cmds} cmd${p.cmds > 1 ? 's' : ''}</span>` : ''}
+        ${p.agents ? `<span>${p.agents} agent${p.agents > 1 ? 's' : ''}</span>` : ''}
+        ${p.mcp ? `<span>MCP</span>` : ''}
+      </div>
+    </a>
+  `).join('');
+}
+
+function filterPlugins() { renderCatalog(); }
+
+function copyInstall(btn) {
+  const cmd = 'claude plugin add --from https://github.com/jcanizalez/fourmis-marketplace/plugins/PLUGIN_NAME';
+  navigator.clipboard.writeText(cmd).then(() => {
+    btn.textContent = 'Copied!';
+    setTimeout(() => { btn.textContent = 'Copy'; }, 2000);
+  });
+}
+
+// Init
+renderFilters();
+renderCatalog();
+</script>
+
+</body>
+</html>
