@@ -380,12 +380,15 @@
 
     .plugin-meta {
       display: flex;
-      gap: 12px;
+      gap: 6px;
       font-size: 12px;
       color: var(--text-dim);
+      flex-wrap: wrap;
+      align-items: center;
     }
 
     .plugin-meta span { display: flex; align-items: center; gap: 4px; }
+    .plugin-meta .sep { color: var(--border-hover); font-size: 10px; }
 
     /* Category colors */
     .tag-development { background: rgba(96, 165, 250, 0.15); color: var(--blue); }
@@ -497,6 +500,27 @@
     .footer-links { display: flex; gap: 20px; }
     .footer-links a { color: var(--text-dim); font-size: 14px; }
     .footer-links a:hover { color: var(--text-muted); }
+
+    /* ==================== ANIMATIONS ==================== */
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(16px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .plugin-card {
+      animation: fadeInUp 0.3s ease both;
+    }
+
+    .stat-num {
+      animation: fadeInUp 0.5s ease both;
+    }
+
+    .plugin-card:nth-child(1) { animation-delay: 0s; }
+    .plugin-card:nth-child(2) { animation-delay: 0.03s; }
+    .plugin-card:nth-child(3) { animation-delay: 0.06s; }
+    .plugin-card:nth-child(4) { animation-delay: 0.09s; }
+    .plugin-card:nth-child(5) { animation-delay: 0.12s; }
+    .plugin-card:nth-child(6) { animation-delay: 0.15s; }
 
     /* ==================== RESPONSIVE ==================== */
     @media (max-width: 768px) {
@@ -792,47 +816,47 @@
 <script>
 // ==================== PLUGIN DATA ====================
 const plugins = [
-  { name: "git-workflow", desc: "Conventional commits, branch naming, PR descriptions, changelog generation, git hooks, merge conflict resolution, and monorepo workflows.", cat: "productivity", skills: 6, cmds: 4, agents: 1 },
-  { name: "code-health", desc: "Codebase quality metrics and tech debt tracking. File complexity, outdated dependencies, TODO markers, and dead code detection.", cat: "productivity", skills: 3, cmds: 2, agents: 1 },
-  { name: "local-crm", desc: "Local-first CRM for freelancers. Manage contacts, deals, follow-ups, and interactions. SQLite-based, zero cloud dependencies.", cat: "productivity", skills: 1, cmds: 2, agents: 1, mcp: true },
-  { name: "invoice", desc: "Local-first invoicing for freelancers. Create, track, and export professional invoices. SQLite-based with HTML export and revenue reports.", cat: "productivity", skills: 1, cmds: 1, agents: 1, mcp: true },
-  { name: "time-tracker", desc: "Local-first time tracking for freelancers. Start/stop timers, log hours, generate timesheets, and track billable earnings.", cat: "productivity", skills: 1, cmds: 2, agents: 1, mcp: true },
-  { name: "freelancer-agent", desc: "Orchestrates local-crm, invoice, and time-tracker into end-to-end freelancer business workflows.", cat: "productivity", skills: 3, cmds: 4, agents: 3 },
-  { name: "product-management", desc: "PRD writing, sprint planning, user stories, estimation, roadmap planning, and retrospectives. Complete PM toolkit.", cat: "productivity", skills: 6, cmds: 3, agents: 1 },
-  { name: "api-docs", desc: "Auto-generate API documentation from code. Scans Express, Go, Next.js, and Fastify routes for OpenAPI specs and curl examples.", cat: "development", skills: 3, cmds: 2, agents: 1 },
-  { name: "db-explorer", desc: "Database exploration via MCP. Connect to SQLite/PostgreSQL, describe tables, map relationships, run read-only SQL, export CSV.", cat: "development", skills: 1, cmds: 2, agents: 1, mcp: true },
-  { name: "test-gen", desc: "Unit tests (Jest, Vitest, pytest, Go), integration tests, E2E tests (Playwright, Cypress), TDD workflow, mocking patterns, and coverage analysis.", cat: "development", skills: 6, cmds: 3, agents: 1 },
-  { name: "code-review", desc: "PR review workflow, review checklists (API, React, auth, perf), code quality assessment (SOLID, complexity), and effective review comments.", cat: "development", skills: 6, cmds: 3, agents: 1 },
-  { name: "project-scaffold", desc: "Generate production-ready boilerplate for Next.js, Express, Go, Python, monorepos, and npm/PyPI libraries.", cat: "development", skills: 6, cmds: 3, agents: 1 },
-  { name: "a11y-audit", desc: "WCAG 2.2 compliance checking, ARIA patterns, color contrast analysis, keyboard navigation, and accessible component recipes.", cat: "development", skills: 6, cmds: 3, agents: 1 },
-  { name: "perf-audit", desc: "Core Web Vitals (LCP, INP, CLS), rendering performance, bundle size optimization, image optimization, and caching strategies.", cat: "development", skills: 6, cmds: 3, agents: 1 },
-  { name: "api-testing", desc: "REST API testing (Supertest, httpx, Go httptest), MSW mock servers, contract testing, API security auditing, and HTTP best practices.", cat: "development", skills: 6, cmds: 3, agents: 1 },
-  { name: "prompt-engineering", desc: "Prompt design patterns, structured output, few-shot examples, chain-of-thought reasoning, RAG patterns, and LLM evaluation.", cat: "development", skills: 6, cmds: 3, agents: 1 },
-  { name: "migration-toolkit", desc: "Database migrations, dependency updates, framework upgrades, API versioning, data migrations, and deprecation management.", cat: "development", skills: 6, cmds: 3, agents: 1 },
-  { name: "typescript-patterns", desc: "Generics, utility types, type guards, Zod validation, error handling (Result types), and module patterns. Advanced TypeScript.", cat: "development", skills: 6, cmds: 3, agents: 1 },
-  { name: "react-patterns", desc: "Custom hooks, state management (Context, Zustand, TanStack Query), Server Components, compound components, forms, and performance.", cat: "development", skills: 6, cmds: 3, agents: 1 },
-  { name: "go-patterns", desc: "Concurrency, error handling, interfaces, HTTP servers, testing (table-driven, benchmarks, fuzzing), and project structure.", cat: "development", skills: 6, cmds: 3, agents: 1 },
-  { name: "api-design-patterns", desc: "RESTful design, RFC 7807 errors, pagination, rate limiting, WebSocket patterns, and GraphQL schema design.", cat: "development", skills: 6, cmds: 3, agents: 1 },
-  { name: "database-patterns", desc: "Schema design, query optimization, ORM patterns (Prisma, Drizzle, GORM), transactions, connection pooling, and data modeling.", cat: "development", skills: 6, cmds: 3, agents: 1 },
-  { name: "nextjs-patterns", desc: "App Router, data fetching, Server Actions, middleware, caching strategies, and deployment optimization.", cat: "development", skills: 6, cmds: 3, agents: 1 },
-  { name: "vector-db", desc: "Embedding models, pgvector, vector search, RAG pipelines, Pinecone, ChromaDB, and Weaviate patterns.", cat: "development", skills: 6, cmds: 3, agents: 1 },
-  { name: "state-machines", desc: "XState v5, workflow patterns (order processing, sagas), finite automata, event sourcing, CQRS, and Temporal.io orchestration.", cat: "development", skills: 6, cmds: 3, agents: 1 },
-  { name: "devops-skills", desc: "Incident response, deployment safety, Dockerfile optimization, GitHub Actions, Kubernetes troubleshooting, and security hardening.", cat: "devops", skills: 7, cmds: 3, agents: 2 },
-  { name: "ci-cd", desc: "GitHub Actions workflows, deployment pipelines (Vercel, Fly.io, AWS), Docker CI, release automation, and CI best practices.", cat: "devops", skills: 5, cmds: 3, agents: 1 },
-  { name: "log-analyzer", desc: "Structured logging (Pino, structlog, slog), log parsing, error diagnosis, alerting, advanced search, and OpenTelemetry setup.", cat: "devops", skills: 6, cmds: 3, agents: 1 },
-  { name: "env-manager", desc: "Dotenv patterns, type-safe env validation (Zod, t3-env, Pydantic), secret management, 12-factor config, and leak prevention.", cat: "devops", skills: 6, cmds: 3, agents: 1 },
-  { name: "docker-toolkit", desc: "Dockerfile best practices, Docker Compose, container debugging, image optimization, networking, and container security.", cat: "devops", skills: 6, cmds: 3, agents: 1 },
-  { name: "monitoring-patterns", desc: "Structured logging, Prometheus metrics, alerting rules, health checks, distributed tracing (OpenTelemetry), and Grafana dashboards.", cat: "devops", skills: 6, cmds: 3, agents: 1 },
-  { name: "kubernetes-patterns", desc: "Core resources, networking (Ingress, NetworkPolicies), storage, scaling (HPA, VPA, KEDA), Helm charts, and troubleshooting.", cat: "devops", skills: 6, cmds: 3, agents: 1 },
-  { name: "security-audit", desc: "Detect hardcoded secrets, scan dependencies for CVEs, find injection patterns, audit configs, check HTTP headers, and generate reports.", cat: "security", skills: 1, cmds: 2, agents: 1, mcp: true },
-  { name: "auth-patterns", desc: "JWT, OAuth2 + PKCE, session auth, password security, RBAC/ABAC authorization, and API key management.", cat: "security", skills: 6, cmds: 3, agents: 1 },
-  { name: "seo-toolkit", desc: "On-page optimization, technical audits, meta tags, heading analysis, SSL checks, robots.txt parsing, and performance metrics.", cat: "marketing", skills: 3, cmds: 2, agents: 1, mcp: true },
-  { name: "marketing-agent", desc: "Orchestrates markdown-writer, seo-toolkit, and social-poster for end-to-end content marketing workflows.", cat: "marketing", skills: 3, cmds: 3, agents: 3 },
-  { name: "markdown-writer", desc: "Blog posts, technical docs, SEO content, readability analysis, content outlining, and systematic editing.", cat: "content", skills: 6, cmds: 3, agents: 1 },
-  { name: "design-system", desc: "Design tokens, Tailwind CSS theming, responsive patterns, CSS animations, typography systems, and component styling (CVA).", cat: "design", skills: 6, cmds: 3, agents: 1 },
-  { name: "reddit-mcp", desc: "Full Reddit integration via MCP. Browse subreddits, search posts, read comments, submit posts, comment, and vote.", cat: "social", skills: 1, cmds: 2, agents: 1, mcp: true },
-  { name: "social-poster", desc: "Cross-platform social media posting. Publish to Bluesky and Mastodon from Claude Code.", cat: "social", skills: 1, cmds: 2, agents: 1, mcp: true },
-  { name: "hello-world", desc: "A simple demo plugin that greets the user. Demonstrates the Claude Code plugin standard with a skill and command.", cat: "demo", skills: 1, cmds: 1, agents: 0 }
+  { name: "hello-world", desc: "A simple demo plugin that greets the user and demonstrates the Claude Code plugin standard. Includes a slash command and an auto-activating skill.", cat: "demo", skills: 1, cmds: 1, agents: 1 },
+  { name: "git-workflow", desc: "Comprehensive git workflow toolkit — conventional commits, branch naming conventions, PR descriptions, changelog generation, git hooks (Husky, lint-staged, Lefthook), merge conflict resolution, rebasing and recovery (reflog, cherry-pick, stash), and monorepo workflows (CODEOWNERS, selective CI, Changesets).", cat: "productivity", skills: 6, cmds: 4, agents: 1 },
+  { name: "code-health", desc: "Codebase quality metrics and tech debt tracking. Analyzes file complexity, outdated dependencies, TODO/FIXME markers, and dead code. Gives your codebase a health score with actionable improvements.", cat: "productivity", skills: 3, cmds: 2, agents: 1 },
+  { name: "api-docs", desc: "Auto-generate API documentation from your code. Scans route handlers in Express, Go, Next.js, and Fastify to produce OpenAPI specs, markdown references, and curl examples.", cat: "development", skills: 3, cmds: 3, agents: 1 },
+  { name: "reddit-mcp", desc: "Full Reddit integration via MCP — browse subreddits, search posts, read comments, submit posts, comment, and vote.", cat: "social", skills: 1, cmds: 1, agents: 1, mcp: true },
+  { name: "local-crm", desc: "Local-first CRM for freelancers — manage contacts, deals, follow-ups, and interactions with zero cloud dependencies. SQLite-based.", cat: "productivity", skills: 1, cmds: 2, agents: 1, mcp: true },
+  { name: "markdown-writer", desc: "Professional writing toolkit — blog posts, technical docs, SEO content, readability analysis, content outlining, and systematic editing.", cat: "content", skills: 6, cmds: 3, agents: 1 },
+  { name: "devops-skills", desc: "Comprehensive DevOps expertise bundle — incident response, deployment safety, Dockerfile optimization, GitHub Actions, Kubernetes troubleshooting, security hardening, and infrastructure cost analysis.", cat: "devops", skills: 7, cmds: 3, agents: 2 },
+  { name: "social-poster", desc: "Cross-platform social media posting — publish to Bluesky and Mastodon from Claude Code. Compose once, adapt for character limits, post to one or all platforms.", cat: "social", skills: 1, cmds: 2, agents: 1, mcp: true },
+  { name: "seo-toolkit", desc: "Free SEO analysis toolkit — on-page optimization, technical audits, meta tag validation, heading analysis, image audits, SSL checks, redirect tracing, robots.txt/sitemap parsing, and performance metrics.", cat: "marketing", skills: 3, cmds: 2, agents: 1, mcp: true },
+  { name: "invoice", desc: "Local-first invoicing for freelancers — create, track, and export professional invoices from Claude Code. SQLite-based.", cat: "productivity", skills: 1, cmds: 2, agents: 1, mcp: true },
+  { name: "marketing-agent", desc: "Content marketing agent profile — orchestrates markdown-writer, seo-toolkit, and social-poster into end-to-end workflows. Create content, optimize for search, distribute on social.", cat: "marketing", skills: 3, cmds: 3, agents: 3 },
+  { name: "time-tracker", desc: "Local-first time tracking for freelancers — start/stop timers, log hours per project, generate timesheets, and track billable earnings. SQLite-based.", cat: "productivity", skills: 1, cmds: 2, agents: 1, mcp: true },
+  { name: "freelancer-agent", desc: "Freelancer business agent profile — orchestrates local-crm, invoice, and time-tracker into end-to-end workflows. Onboard clients, track time, bill clients, monitor business health.", cat: "productivity", skills: 3, cmds: 4, agents: 3 },
+  { name: "db-explorer", desc: "Database exploration MCP server — connect to SQLite or PostgreSQL, list and describe tables, view column types and constraints and indexes, map table relationships, run read-only SQL queries, sample data, export results to CSV, data quality checks (orphaned FKs, duplicates, null analysis).", cat: "development", skills: 1, cmds: 2, agents: 1, mcp: true },
+  { name: "security-audit", desc: "Local code security scanning MCP server — detect hardcoded secrets and API keys, scan dependencies for known CVEs, find SQL injection and XSS and command injection patterns, audit configurations for misconfigurations, check HTTP security headers (HSTS, CSP, X-Frame-Options), verify .env exposure and file permissions, generate security grades and audit reports.", cat: "security", skills: 1, cmds: 2, agents: 1, mcp: true },
+  { name: "test-gen", desc: "Test generation and analysis toolkit — unit tests (Jest, Vitest, pytest, Go table-driven), integration tests (Supertest, httpx, httptest, database setup/teardown), E2E tests (Playwright, Cypress, Page Object pattern), TDD workflow (Red-Green-Refactor), mocking patterns (jest.fn, vi.fn, unittest.mock, testify/mock, fixtures), and coverage analysis (gap detection, risk-based prioritization, flaky test detection).", cat: "development", skills: 6, cmds: 3, agents: 1 },
+  { name: "code-review", desc: "Comprehensive code review toolkit — review patterns (TypeScript, Python, Go), PR review workflow (gh CLI, size guidelines, verdict framework), review checklists (API, React, migration, auth, performance, config), code quality assessment (SOLID, code smells, cyclomatic/cognitive complexity), test review (coverage gaps, anti-patterns, mock audit), and effective review comments (categorization, tone, volume guidelines).", cat: "development", skills: 6, cmds: 3, agents: 1 },
+  { name: "ci-cd", desc: "CI/CD toolkit — GitHub Actions workflows (Node.js, Go, Python, monorepo, reusable workflows), deployment pipelines (Vercel, Fly.io, Railway, AWS, blue-green, canary, rolling), Docker CI (multi-stage builds, layer caching, vulnerability scanning, multi-arch), release automation (semantic-release, Changesets, GoReleaser, GitHub Releases, changelogs), and CI best practices (caching, parallelism, test sharding, matrix builds, OIDC secrets, concurrency groups).", cat: "devops", skills: 5, cmds: 3, agents: 1 },
+  { name: "project-scaffold", desc: "Project scaffolding toolkit — generate production-ready boilerplate for Next.js, Express, Go, Python, monorepos, and npm/PyPI libraries. Best-practice project structure, configs, CI, testing, and Docker setup.", cat: "development", skills: 6, cmds: 3, agents: 1 },
+  { name: "a11y-audit", desc: "Accessibility audit toolkit — WCAG 2.2 compliance checking, ARIA patterns, color contrast analysis, keyboard navigation, screen reader optimization, and accessible component recipes.", cat: "development", skills: 6, cmds: 3, agents: 1 },
+  { name: "perf-audit", desc: "Web performance optimization toolkit — Core Web Vitals (LCP, INP, CLS), rendering performance, bundle size optimization, image optimization, caching strategies, and performance monitoring.", cat: "development", skills: 6, cmds: 3, agents: 1 },
+  { name: "api-testing", desc: "API testing toolkit — REST API testing patterns (Supertest, httpx, Go httptest), mock server setup (MSW), contract testing (OpenAPI validation), API security auditing, HTTP client best practices, and API documentation.", cat: "development", skills: 6, cmds: 3, agents: 1 },
+  { name: "design-system", desc: "Design system toolkit — design tokens (3-tier architecture), Tailwind CSS theming (v3/v4), responsive design patterns (container queries, fluid typography), CSS animations (entrance, loading, scroll-driven), typography systems (scales, font loading, prose), and component styling (CVA variants, compound components).", cat: "design", skills: 6, cmds: 3, agents: 1 },
+  { name: "product-management", desc: "Product management toolkit — PRD writing (templates, RICE scoring), sprint planning (capacity, velocity, ceremonies), user stories (INVEST, story mapping, splitting), estimation (Fibonacci, t-shirt sizing, PERT), roadmap planning (Now/Next/Later, OKR alignment, milestones), and retrospectives (Start/Stop/Continue, 4Ls, Sailboat, action tracking).", cat: "productivity", skills: 6, cmds: 3, agents: 1 },
+  { name: "prompt-engineering", desc: "Prompt engineering toolkit — prompt design patterns (role, constraints, multi-pass), structured output (tool use, Zod schemas, JSON/XML parsing), few-shot example design (selection strategies, contrastive pairs), chain-of-thought reasoning (CoT, extended thinking, self-consistency, tree of thought), RAG patterns (chunking, vector search, hybrid search, grounding), and LLM evaluation (datasets, LLM-as-judge, regression testing, CI pipelines).", cat: "development", skills: 6, cmds: 3, agents: 1 },
+  { name: "migration-toolkit", desc: "Migration and upgrade toolkit — database schema migrations (SQL, ORM, rollbacks, zero-downtime), dependency updates (semver, changelogs, breaking changes, Dependabot/Renovate), framework upgrades (Next.js, React, Express, Go, codemods), API versioning (URL/header strategies, deprecation headers, consumer migration), data migrations (ETL, backfills, dual-write, verification), and deprecation management (sunset plans, migration guides, usage tracking).", cat: "development", skills: 6, cmds: 3, agents: 1 },
+  { name: "log-analyzer", desc: "Log analysis and observability toolkit — structured logging patterns (Node.js Pino, Python structlog, Go slog), log parsing (JSON, Apache, nginx, syslog, Docker, Kubernetes), error diagnosis with stack trace analysis and root cause workflows, log monitoring and alerting (Grafana Loki, LogQL, script-based alerts), advanced log search (jq, grep, awk one-liners), and OpenTelemetry observability setup (traces, metrics, log correlation).", cat: "devops", skills: 6, cmds: 3, agents: 1 },
+  { name: "env-manager", desc: "Environment variable and configuration management toolkit — dotenv patterns and precedence rules (Node.js, Python, Go), type-safe env validation (Zod, t3-env, Pydantic, Go envconfig), secret management (1Password CLI, cloud vaults, rotation strategies), 12-factor config patterns and feature flags, .env.example sync and developer onboarding, and env security (leak prevention, gitleaks, secret scanning, audit).", cat: "devops", skills: 6, cmds: 3, agents: 1 },
+  { name: "docker-toolkit", desc: "Docker and containerization toolkit — Dockerfile best practices (multi-stage builds, layer caching, distroless/scratch, Node.js/Python/Go patterns), Docker Compose (services, networks, health checks, profiles, dev/prod overrides), container debugging (6-step framework, exit codes, logs, exec, networking, resources), image optimization (dive analysis, size reduction, BuildKit cache mounts, buildx multi-arch), Docker networking (bridge, overlay, DNS, service discovery, port mapping), and container security (rootless, image scanning, secrets, capabilities, hardening checklists).", cat: "devops", skills: 6, cmds: 3, agents: 1 },
+  { name: "typescript-patterns", desc: "Advanced TypeScript patterns — generics (constrained, conditional, mapped, template literal types), utility types (built-in, custom, branded/opaque types), type guards (narrowing, discriminated unions, exhaustive checking, assertion functions), Zod validation (schemas, form/API validation, type inference from schemas), error handling (Result types, typed errors, error boundaries, async patterns), and module patterns (barrel exports, declaration merging, module augmentation, tsconfig best practices).", cat: "development", skills: 6, cmds: 3, agents: 1 },
+  { name: "react-patterns", desc: "Modern React patterns — custom hooks (useCallback, useMemo, useRef, useReducer, composition, debounce), state management (React Context, Zustand, TanStack Query, state colocation), React Server Components (RSC boundaries, streaming, Suspense, Server Actions, data fetching), component architecture (compound components, render props, polymorphic, slots, controlled/uncontrolled), form patterns (React Hook Form, Zod, multi-step wizards, optimistic updates, field arrays), and performance (React.memo, virtualization, code splitting, lazy loading, React Compiler).", cat: "development", skills: 6, cmds: 3, agents: 1 },
+  { name: "go-patterns", desc: "Idiomatic Go patterns — concurrency (goroutines, channels, select, sync.Mutex/RWMutex/WaitGroup/Once/Pool, errgroup, fan-out/fan-in, worker pools, rate limiting), error handling (fmt.Errorf %w wrapping, custom error types, errors.Is/As, sentinel errors, multi-error, goroutine errors), interfaces (implicit satisfaction, composition, type assertions/switches, common interfaces, dependency injection, mocking), HTTP (net/http, Go 1.22+ routing, middleware chains, JSON helpers, graceful shutdown, structured responses), testing (table-driven, subtests, testify, httptest, benchmarks, fuzzing, golden files, build tags), and project structure (cmd/internal layout, packages, modules, Makefile, golangci-lint).", cat: "development", skills: 6, cmds: 3, agents: 1 },
+  { name: "auth-patterns", desc: "Authentication and authorization patterns — JWT (access/refresh tokens, RS256/HS256, claims design, token rotation, revocation), OAuth2 (authorization code + PKCE, client credentials, social login with Google/GitHub/Discord, OIDC), session auth (cookie-based sessions, Redis/DB stores, CSRF protection, session security, httpOnly/sameSite cookies), password security (bcrypt/argon2 hashing, reset flows, magic links, email verification, rate limiting login), authorization (RBAC roles/permissions, ABAC policies, resource-level auth, org/tenant scoping, middleware), and API auth (API key generation/rotation/scoping, webhook signature verification, tiered rate limiting, Bearer tokens).", cat: "security", skills: 6, cmds: 3, agents: 1 },
+  { name: "monitoring-patterns", desc: "Production observability patterns — structured logging (Pino, Winston, zerolog with correlation IDs and redaction), Prometheus metrics (RED/USE methods, prom-client, client_golang, custom business metrics, label best practices), alerting rules (Prometheus rules, Alertmanager routing, SLO burn-rate alerts, severity levels, alert fatigue prevention), health checks (liveness/readiness/startup probes, dependency checkers, Kubernetes configuration, graceful degradation), distributed tracing (OpenTelemetry SDK for Node.js and Go, auto-instrumentation, manual spans, context propagation, sampling strategies, collector config), and Grafana dashboards (PromQL queries, RED/USE/SLO/database dashboards, JSON provisioning, variables, GitOps).", cat: "devops", skills: 6, cmds: 3, agents: 1 },
+  { name: "api-design-patterns", desc: "Production API design patterns — RESTful resource design (naming, methods, status codes, versioning, idempotency, ETags), error handling (RFC 7807 Problem Details, typed error classes, validation errors, error middleware), pagination and filtering (cursor/offset pagination, Relay connections, sorting, field selection, search), rate limiting (token bucket, sliding window, Redis distributed limiting, tiered limits, proper headers), WebSocket real-time patterns (ws, gorilla/websocket, rooms/channels, authentication, heartbeat/reconnection, Redis pub/sub scaling), and GraphQL (schema design, resolvers, DataLoader N+1 prevention, subscriptions, Relay pagination, query complexity).", cat: "development", skills: 6, cmds: 3, agents: 1 },
+  { name: "database-patterns", desc: "Production database patterns — schema design (naming, types, constraints, UUIDs, soft deletes, enums, normalization), query optimization (EXPLAIN ANALYZE, B-tree/GIN/partial/covering/composite indexes, CTEs, window functions, materialized views), ORM patterns (Prisma schema/queries/transactions, Drizzle ORM, GORM, SQLx, raw SQL), transactions and locking (ACID, isolation levels, optimistic locking with version columns, pessimistic locking with SELECT FOR UPDATE, advisory locks, deadlock prevention, SKIP LOCKED job queues), connection pooling (pg Pool, pgxpool, pool sizing formulas, PgBouncer, monitoring, graceful shutdown), and data modeling (one-to-many, many-to-many, polymorphic associations, self-referential trees with ltree, JSONB columns, audit logs with triggers, multi-tenancy with RLS).", cat: "development", skills: 6, cmds: 3, agents: 1 },
+  { name: "nextjs-patterns", desc: "Production Next.js patterns — App Router (file-based routing, layouts, parallel/intercepting routes, route groups), data fetching (Server Components, fetch caching, ISR, streaming with Suspense, React.cache, parallel data loading), Server Actions (useActionState, useOptimistic, validation, redirect after mutation), middleware and authentication (Auth.js/NextAuth v5, session cookies, JWT, role-based access, protected API routes), caching strategies (four cache layers, tag-based invalidation, revalidatePath/revalidateTag, cache debugging, ISR), and deployment optimization (next.config.ts, security headers, next/image, next/font, bundle analysis, Docker standalone, Vercel, env validation with Zod).", cat: "development", skills: 6, cmds: 3, agents: 1 },
+  { name: "kubernetes-patterns", desc: "Production Kubernetes patterns — core resources (Pods, Deployments, StatefulSets, DaemonSets, Jobs, ConfigMaps, Secrets, Namespaces, resource quotas, labels), networking (Services, Ingress with NGINX and cert-manager TLS, NetworkPolicies with default deny, DNS service discovery, Gateway API, canary traffic splitting), storage (StorageClasses, PVCs, StatefulSets with volumeClaimTemplates, access modes, volume snapshots, Velero backups), scaling (HPA with CPU/memory/custom metrics, VPA right-sizing, KEDA event-driven scale-to-zero, PodDisruptionBudgets, Cluster Autoscaler, Karpenter), Helm charts (chart structure, values per environment, Go templates, hooks for migrations, dependencies, OCI registries, testing), and troubleshooting (CrashLoopBackOff, OOMKilled, ImagePullBackOff, pending pods, network debugging, RBAC, exit codes, kubectl debug).", cat: "devops", skills: 6, cmds: 3, agents: 1 },
+  { name: "vector-db", desc: "Vector database and RAG patterns — embedding models (OpenAI text-embedding-3, Cohere, Voyage AI, sentence-transformers, Ollama local models, chunking strategies, token counting), pgvector (PostgreSQL extension setup, HNSW/IVFFlat indexes, cosine/L2/IP similarity search, hybrid search with full-text, metadata filtering, Drizzle/Prisma/node-postgres usage), vector search fundamentals (distance metrics, ANN algorithms, filtering strategies, cross-encoder re-ranking, Cohere rerank, Reciprocal Rank Fusion, evaluation metrics), RAG patterns (retrieval-augmented generation pipelines, query rewriting, HyDE, multi-step retrieval, parent document retrieval, context assembly, citation, ingestion pipelines, LLM-as-judge evaluation), Pinecone (serverless/pod indexes, batch upsert, metadata filtering, namespaces, hybrid search, index management), and ChromaDB/Weaviate (local embedded DB, collections, custom embedding functions, Weaviate schema, hybrid BM25+vector search, multi-tenancy).", cat: "development", skills: 6, cmds: 3, agents: 1 },
+  { name: "state-machines", desc: "State machines and workflow patterns — XState v5 (createMachine, createActor, context, events, guards, actions, invoke, delayed transitions, type-safe machines), XState + React (useActor, useSelector, actor context pattern, multi-step form wizards, authentication flows, testing), workflow patterns (order processing, approval workflows, retry with exponential backoff, saga pattern with compensation, pipeline pattern), finite automata (hierarchical/nested states, parallel states, history states, always transitions, final states, actor model/spawning), event-driven architecture (event sourcing, CQRS, event stores with optimistic concurrency, projections, snapshots, domain events, event versioning), and process orchestration (Temporal.io workflows/activities/signals/queries, simple workflow engine, database-backed job queues with SKIP LOCKED).", cat: "development", skills: 6, cmds: 3, agents: 1 }
 ];
 
 const catLabels = {
@@ -886,21 +910,25 @@ function renderCatalog() {
 
   document.getElementById('noResults').style.display = filtered.length === 0 ? 'block' : 'none';
 
-  grid.innerHTML = filtered.map(p => `
+  grid.innerHTML = filtered.map(p => {
+    const meta = [];
+    if (p.skills) meta.push(`${p.skills} skill${p.skills > 1 ? 's' : ''}`);
+    if (p.cmds) meta.push(`${p.cmds} cmd${p.cmds > 1 ? 's' : ''}`);
+    if (p.agents) meta.push(`${p.agents} agent${p.agents > 1 ? 's' : ''}`);
+    if (p.mcp) meta.push('MCP');
+    const metaHTML = meta.map((m, i) =>
+      `<span>${m}</span>${i < meta.length - 1 ? '<span class="sep">&middot;</span>' : ''}`
+    ).join('');
+    return `
     <a href="https://github.com/jcanizalez/fourmis-marketplace/tree/main/plugins/${p.name}" target="_blank" class="plugin-card">
       <div class="plugin-header">
         <div class="plugin-name">${p.name}</div>
         <div class="plugin-tag tag-${p.cat}">${catLabels[p.cat]}</div>
       </div>
       <div class="plugin-desc">${p.desc}</div>
-      <div class="plugin-meta">
-        ${p.skills ? `<span>${p.skills} skill${p.skills > 1 ? 's' : ''}</span>` : ''}
-        ${p.cmds ? `<span>${p.cmds} cmd${p.cmds > 1 ? 's' : ''}</span>` : ''}
-        ${p.agents ? `<span>${p.agents} agent${p.agents > 1 ? 's' : ''}</span>` : ''}
-        ${p.mcp ? `<span>MCP</span>` : ''}
-      </div>
-    </a>
-  `).join('');
+      <div class="plugin-meta">${metaHTML}</div>
+    </a>`;
+  }).join('');
 }
 
 function filterPlugins() { renderCatalog(); }
