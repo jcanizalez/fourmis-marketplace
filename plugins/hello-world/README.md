@@ -1,23 +1,36 @@
-# hello-world
+# 👋 hello-world
 
-A simple demo plugin for the Fourmis Marketplace. Demonstrates the Claude Code plugin standard with a slash command and an auto-activating skill.
+> A simple demo plugin that greets the user and demonstrates the Claude Code plugin standard.
 
-## Components
+**Category:** Demo | **1 skill** | **1 command** | **1 agent**
 
-### Commands
-
-- **`/hello`** — Greet the user with a friendly message from the Fourmis colony. Supports an optional name argument for personalized greetings.
-
-### Skills
-
-- **Greeting Style** — Automatically activates when the user says hello or asks for a greeting. Adds colony-themed flair to responses.
-
-## Installation
+## Install
 
 ```bash
-fourmis plugin install hello-world
+claude plugin add --from https://github.com/jcanizalez/fourmis-marketplace/plugins/hello-world
 ```
 
-## License
+## Overview
 
-MIT
+A simple demo plugin that greets the user and demonstrates the Claude Code plugin standard. Includes a slash command and an auto-activating skill.
+
+## Skills
+
+| Skill | Activates when... |
+|-------|-------------------|
+| `greeting` | Provides friendly, colony-themed greeting patterns when the user says hello |
+
+## Commands
+
+| Command | Description |
+|---------|-------------|
+| `/hello` | Greet the user with a friendly message from Fourmis |
+
+## Agents
+
+### greeter
+A friendly demo agent that greets users and demonstrates Claude Code plugin capabilities — serves as an example of agent structure.
+
+---
+
+Part of the [Fourmis Marketplace](https://jcanizalez.github.io/fourmis-marketplace/) — open-source plugins for Claude Code.

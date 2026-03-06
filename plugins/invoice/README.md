@@ -1,119 +1,41 @@
-# invoice
+# 📋 invoice
 
-Local-first invoicing for freelancers — create, track, and export professional invoices from Claude Code. SQLite-based, zero cloud dependencies, zero subscriptions.
+> Local-first invoicing for freelancers — create, track, and export professional invoices from Claude Code.
 
-Replace FreshBooks ($17/mo) or QuickBooks ($30/mo) with a free, local tool that works from your terminal.
+**Category:** Productivity | **1 skill** | **2 commands** | **1 agent** | **MCP server**
 
-## MCP Tools (10)
+## Install
 
-| Tool | Description |
-|------|-------------|
-| `invoice_create_client` | Create a new client record |
-| `invoice_search_clients` | Search clients by name, email, or company |
-| `invoice_create` | Create an invoice with line items |
-| `invoice_get` | Get full invoice details by ID or number |
-| `invoice_list` | List invoices with status/client filters |
-| `invoice_update_status` | Update invoice status (draft → sent → paid) |
-| `invoice_record_payment` | Record a payment (supports partial payments) |
-| `invoice_export_html` | Export as professional HTML (print to PDF) |
-| `invoice_report` | Revenue report with per-client breakdown |
+```bash
+claude plugin add --from https://github.com/jcanizalez/fourmis-marketplace/plugins/invoice
+```
 
-## Commands (2)
+## Overview
+
+Local-first invoicing for freelancers — create, track, and export professional invoices from Claude Code. SQLite-based with 10 MCP tools for clients, invoices, payments, HTML export, and revenue reports. Zero cloud dependencies.
+
+## Skills
+
+| Skill | Activates when... |
+|-------|-------------------|
+| `invoicing-best-practices` | When the user asks about invoicing best practices |
+
+## Commands
 
 | Command | Description |
 |---------|-------------|
-| `/invoice` | Create invoice from natural language (e.g., "invoice Acme $2500 for 10h web dev") |
-| `/invoices` | Dashboard — revenue summary, status breakdown, action items |
+| `/invoice` | Create a new invoice from a natural language description |
+| `/invoices` | List and manage recent invoices — see status, outstanding, overdue |
 
-## Skills (1)
+## Agents
 
-| Skill | Description |
-|-------|-------------|
-| **Invoicing Best Practices** | Payment terms, line item formatting, tax considerations, late payment strategy, international payments |
+### invoice-manager
+Freelance invoicing specialist — creates professional invoices, tracks payments, manages clients, exports HTML invoices, and generates revenue reports.
 
-## Setup
+## MCP Server
 
-```bash
-fourmis plugin install invoice
-```
+This plugin includes an MCP (Model Context Protocol) server that provides additional tools. The server starts automatically when the plugin is loaded.
 
-No API keys required. Data stored locally in SQLite.
+---
 
-## Usage Examples
-
-### Create a client and invoice
-```
-/invoice Acme Corp $2500 for 10 hours of web development at $250/hr, due in 30 days
-```
-
-### Check your invoices
-```
-/invoices unpaid
-```
-
-### Export and send
-```
-Use invoice_export_html on INV-202602-001
-```
-Then open the HTML file in your browser and press Ctrl+P to save as PDF.
-
-### Record a payment
-```
-Use invoice_record_payment on INV-202602-001 for $2500 via bank_transfer
-```
-
-## Architecture
-
-```
-invoice/
-├── .claude-plugin/
-│   └── plugin.json          # Plugin manifest
-├── .mcp.json                # MCP server configuration
-├── skills/
-│   └── invoicing-best-practices/
-│       └── SKILL.md         # Payment terms, tax, late payment guidance
-├── commands/
-│   ├── invoice.md           # /invoice — create from natural language
-│   └── invoices.md          # /invoices — dashboard view
-├── src/
-│   ├── index.ts             # MCP server with 10 tools
-│   ├── db.ts                # SQLite database (clients, invoices, line_items, payments)
-│   └── templates.ts         # Professional HTML invoice template
-├── package.json
-├── tsconfig.json
-└── README.md
-```
-
-## Database Schema
-
-| Table | Purpose |
-|-------|---------|
-| `clients` | Client records (name, email, company, address) |
-| `invoices` | Invoice headers (number, status, dates, tax, discount) |
-| `line_items` | Line items with quantity × unit_price = amount |
-| `payments` | Payment records with method, reference, notes |
-
-## Invoice Lifecycle
-
-```
-draft → sent → paid
-                ↘ overdue → paid
-                ↘ partial → paid
-draft → cancelled
-```
-
-## HTML Invoice Export
-
-The exported HTML includes:
-- Professional design with inline CSS
-- Responsive layout
-- Status badge (color-coded)
-- Full line item table
-- Subtotal, discount, tax, and total
-- Payment history (if any)
-- Print button (hidden when printing)
-- Works in all modern browsers
-
-## License
-
-MIT
+Part of the [Fourmis Marketplace](https://jcanizalez.github.io/fourmis-marketplace/) — open-source plugins for Claude Code.

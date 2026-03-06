@@ -1,74 +1,40 @@
-# reddit-mcp
+# 🌐 reddit-mcp
 
-Full Reddit integration for Claude Code via MCP (Model Context Protocol). Browse subreddits, search posts, read comment threads, submit posts, comment, and vote — all through authenticated Reddit API calls.
+> Full Reddit integration via MCP — browse subreddits, search posts, read comments, submit posts, comment, and vote.
 
-## Tools
+**Category:** Social | **1 skill** | **1 command** | **1 agent** | **MCP server**
 
-| Tool | Type | Description |
-|------|------|-------------|
-| `reddit_search_posts` | Read | Search posts across Reddit or within a subreddit |
-| `reddit_get_subreddit` | Read | Browse a subreddit feed (hot, new, top, rising) |
-| `reddit_get_comments` | Read | Get comments on a specific post |
-| `reddit_get_subreddit_info` | Read | Get subreddit metadata and stats |
-| `reddit_search_subreddits` | Read | Find subreddits by name or topic |
-| `reddit_get_user` | Read | Look up a user's public profile |
-| `reddit_get_me` | Read | Get the authenticated account's info |
-| `reddit_submit_post` | Write | Submit a new text or link post |
-| `reddit_comment` | Write | Reply to a post or comment |
-| `reddit_vote` | Write | Upvote, downvote, or remove vote |
+## Install
 
-## Commands
+```bash
+claude plugin add --from https://github.com/jcanizalez/fourmis-marketplace/plugins/reddit-mcp
+```
 
-- **`/reddit`** — Browse, search, and interact with Reddit from the CLI
+## Overview
+
+Full Reddit integration via MCP — browse subreddits, search posts, read comments, submit posts, comment, and vote. Authenticated via OAuth2 with 10 tools covering all core Reddit operations.
 
 ## Skills
 
-- **Reddit Engagement** — Research, monitor, and engage with Reddit communities
+| Skill | Activates when... |
+|-------|-------------------|
+| `reddit-engagement` | Research, monitor, and engage with Reddit communities — find relevant discussion... |
 
-## Setup
+## Commands
 
-This plugin requires a Reddit "script" app for OAuth2 authentication.
+| Command | Description |
+|---------|-------------|
+| `/reddit` | Browse, search, and interact with Reddit — get trending posts, search discussions, read comments, and post content |
 
-### 1. Create a Reddit App
+## Agents
 
-1. Go to [https://www.reddit.com/prefs/apps](https://www.reddit.com/prefs/apps)
-2. Click "create another app..."
-3. Select **"script"** as the app type
-4. Set redirect URI to `http://localhost:8080` (not used but required)
-5. Note the **client ID** (under the app name) and **client secret**
+### community-scout
+Reddit community research and engagement agent — finds relevant discussions, monitors subreddits, analyzes community sentiment, and drafts authentic posts and comments.
 
-### 2. Configure Environment Variables
+## MCP Server
 
-After installing the plugin, update the MCP configuration with your credentials:
+This plugin includes an MCP (Model Context Protocol) server that provides additional tools. The server starts automatically when the plugin is loaded.
 
-```json
-{
-  "reddit": {
-    "type": "stdio",
-    "command": "node",
-    "args": ["${CLAUDE_PLUGIN_ROOT}/dist/index.js"],
-    "env": {
-      "REDDIT_CLIENT_ID": "your_client_id",
-      "REDDIT_CLIENT_SECRET": "your_client_secret",
-      "REDDIT_USERNAME": "your_reddit_username",
-      "REDDIT_PASSWORD": "your_reddit_password"
-    }
-  }
-}
-```
+---
 
-### 3. Build
-
-```bash
-cd plugins/reddit-mcp
-npm install
-npm run build
-```
-
-## Rate Limits
-
-Reddit's API allows approximately 60 requests per minute. The MCP server handles authentication and token refresh automatically.
-
-## License
-
-MIT
+Part of the [Fourmis Marketplace](https://jcanizalez.github.io/fourmis-marketplace/) — open-source plugins for Claude Code.

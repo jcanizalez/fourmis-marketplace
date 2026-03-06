@@ -1,26 +1,44 @@
-# git-workflow
+# 📋 git-workflow
 
-Smart git workflows for Claude Code. Enforces consistent practices: conventional commits, branch naming, PR descriptions, and changelog generation.
+> Comprehensive git workflow toolkit — conventional commits, branch naming conventions, PR descriptions, changelog generation, git hooks (Husky, lint-staged, Lefthook), merge conflict resolution, rebasing and recovery (reflog, cherry-pick, stash), and monorepo workflows (CODEOWNERS, selective CI, Changesets).
 
-## Commands
+**Category:** Productivity | **6 skills** | **4 commands** | **1 agent**
 
-- **`/commit`** — Stage changes and create a conventional commit with a well-crafted message
-- **`/branch`** — Create a properly named branch following naming conventions
-- **`/changelog`** — Generate a changelog from git history, grouped by type
-- **`/pr`** — Create a pull request with structured description and testing steps
+## Install
+
+```bash
+claude plugin add --from https://github.com/jcanizalez/fourmis-marketplace/plugins/git-workflow
+```
+
+## Overview
+
+Comprehensive git workflow toolkit — conventional commits, branch naming conventions, PR descriptions, changelog generation, git hooks (Husky, lint-staged, Lefthook), merge conflict resolution, rebasing and recovery (reflog, cherry-pick, stash), and monorepo workflows (CODEOWNERS, selective CI, Changesets). 6 skills, 4 commands, 1 agent. No dependencies.
 
 ## Skills
 
-- **Conventional Commits** — Automatically formats commit messages following the Conventional Commits spec (feat, fix, refactor, etc.)
-- **Branch Strategy** — Enforces branch naming conventions and provides guidance on branching workflows
-- **PR Workflow** — Generates PR descriptions, changelogs, and pre-commit checklists
+| Skill | Activates when... |
+|-------|-------------------|
+| `branch-strategy` | When the user asks about branch naming conventions |
+| `conventional-commits` | When the user asks to commit changes |
+| `git-hooks` | When the user asks about git hooks |
+| `merge-conflicts` | When the user asks about merge conflicts |
+| `monorepo-workflows` | When the user asks about monorepo git workflows |
+| `pr-workflow` | When the user asks to create a pull request |
 
-## Installation
+## Commands
 
-```bash
-fourmis plugin install git-workflow
-```
+| Command | Description |
+|---------|-------------|
+| `/branch` | Create a properly named git branch following naming conventions |
+| `/changelog` | Generate a changelog from git history, grouped by type |
+| `/commit` | Stage changes and create a conventional commit with a well-crafted message |
+| `/pr` | Create a pull request with a well-structured description, testing steps, and checklist |
 
-## License
+## Agents
 
-MIT
+### git-expert
+Autonomous git workflow agent — manages branch strategy, creates conventional commits, resolves merge conflicts, sets up git hooks, handles rebasing and recovery, and configures monorepo workflows
+
+---
+
+Part of the [Fourmis Marketplace](https://jcanizalez.github.io/fourmis-marketplace/) — open-source plugins for Claude Code.

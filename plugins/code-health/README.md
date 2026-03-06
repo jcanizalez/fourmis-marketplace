@@ -1,28 +1,39 @@
-# code-health
+# 📋 code-health
 
-Codebase quality metrics and tech debt tracking for Claude Code. Analyzes file complexity, outdated dependencies, TODO/FIXME markers, and dead code patterns. Gives your codebase a health score with actionable improvements.
+> Codebase quality metrics and tech debt tracking.
 
-## Commands
+**Category:** Productivity | **3 skills** | **2 commands** | **1 agent**
 
-- **`/health`** — Full codebase health check with scored report (complexity, deps, debt, tests)
-- **`/debt`** — Find and list all tech debt markers (TODO, FIXME, HACK, XXX) by severity
+## Install
+
+```bash
+claude plugin add --from https://github.com/jcanizalez/fourmis-marketplace/plugins/code-health
+```
+
+## Overview
+
+Codebase quality metrics and tech debt tracking. Analyzes file complexity, outdated dependencies, TODO/FIXME markers, and dead code. Gives your codebase a health score with actionable improvements.
 
 ## Skills
 
-- **Complexity Analysis** — Identifies overly complex files, deep nesting, long functions, and god files
-- **Dependency Audit** — Checks for outdated packages, security concerns, bloat, and unused deps
-- **Tech Debt Tracking** — Finds TODO/FIXME/HACK/XXX markers, categorizes by severity, suggests fixes
+| Skill | Activates when... |
+|-------|-------------------|
+| `complexity-analysis` | Analyzes code file complexity when reviewing code |
+| `dependency-audit` | Checks project dependencies for outdated packages |
+| `tech-debt-tracking` | Finds and categorizes TODO, FIXME |
+
+## Commands
+
+| Command | Description |
+|---------|-------------|
+| `/debt` | Find and list all tech debt markers (TODO, FIXME, HACK, XXX) with severity and context |
+| `/health` | Run a full codebase health check — complexity, dependencies, tech debt, and overall score |
 
 ## Agents
 
-- **health-auditor** — Deep codebase analysis subagent for thorough project-wide scans
+### health-auditor
+Use this agent for thorough, deep codebase health analysis. Scans file complexity, dependency health, tech debt markers, test coverage gaps, and dead code patterns across the entire project.
 
-## Installation
+---
 
-```bash
-fourmis plugin install code-health
-```
-
-## License
-
-MIT
+Part of the [Fourmis Marketplace](https://jcanizalez.github.io/fourmis-marketplace/) — open-source plugins for Claude Code.

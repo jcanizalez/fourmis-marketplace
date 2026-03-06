@@ -2,6 +2,8 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "node scripts/build-landing.js"
+    "build": "node scripts/build-landing.js",
+    "gen:readmes": "node scripts/gen-readmes.js",
+    "build:all": "node scripts/build-landing.js && node scripts/gen-readmes.js"
   }
 }

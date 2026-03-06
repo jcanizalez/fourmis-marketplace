@@ -1,39 +1,40 @@
-# api-docs
+# 🔧 api-docs
 
-Auto-generate API documentation from your code. Scans route handlers in Express, Go (net/http, Chi, Gin), Next.js, Fastify, and Hono to produce OpenAPI specs, markdown references, and curl examples.
+> Auto-generate API documentation from your code.
 
-## Commands
+**Category:** Development | **3 skills** | **3 commands** | **1 agent**
 
-- **`/api-docs`** — Scan the project and generate a complete markdown API reference
-- **`/openapi`** — Generate or update an OpenAPI 3.0 specification from code
-- **`/api-test`** — Generate ready-to-run curl commands for testing endpoints
+## Install
+
+```bash
+claude plugin add --from https://github.com/jcanizalez/fourmis-marketplace/plugins/api-docs
+```
+
+## Overview
+
+Auto-generate API documentation from your code. Scans route handlers in Express, Go, Next.js, and Fastify to produce OpenAPI specs, markdown references, and curl examples.
 
 ## Skills
 
-- **Route Discovery** — Detects framework and finds all API endpoints with params, body, and response info
-- **OpenAPI Generation** — Creates valid OpenAPI 3.0.3 specs with schemas extracted from TypeScript interfaces, Go structs, or Pydantic models
-- **API Examples** — Generates curl commands, httpie commands, and markdown reference documentation
+| Skill | Activates when... |
+|-------|-------------------|
+| `api-examples` | Generates runnable API examples including curl commands |
+| `openapi-generation` | Generates OpenAPI 3.0 specifications from discovered API routes. Activates when ... |
+| `route-discovery` | Discovers API endpoints and route handlers across multiple frameworks. Activates... |
 
-## Supported Frameworks
+## Commands
 
-| Framework | Language | Route Detection |
-|-----------|----------|----------------|
-| Express.js | TypeScript/JS | `app.get()`, `router.post()`, etc. |
-| Fastify | TypeScript/JS | `fastify.get()`, route registration |
-| Next.js (App Router) | TypeScript/JS | `app/api/**/route.ts` exports |
-| Next.js (Pages Router) | TypeScript/JS | `pages/api/**/*.ts` default exports |
-| net/http | Go | `http.HandleFunc()`, `mux.Handle()` |
-| Chi | Go | `r.Get()`, `r.Post()`, etc. |
-| Gin | Go | `r.GET()`, `r.POST()`, etc. |
-| Hono | TypeScript/JS | `app.get()`, `app.post()`, etc. |
-| Elysia | TypeScript/JS | `.get()`, `.post()`, etc. |
+| Command | Description |
+|---------|-------------|
+| `/api-docs` | Scan the project for API endpoints and generate a complete markdown API reference |
+| `/api-test` | Generate curl commands to test your API endpoints |
+| `/openapi` | Generate or update an OpenAPI 3.0 specification from your API code |
 
-## Installation
+## Agents
 
-```bash
-fourmis plugin install api-docs
-```
+### api-documenter
+Autonomous API documentation agent — scans codebases to discover routes, extract schemas, and generate complete API reference docs, OpenAPI specs, and curl examples.
 
-## License
+---
 
-MIT
+Part of the [Fourmis Marketplace](https://jcanizalez.github.io/fourmis-marketplace/) — open-source plugins for Claude Code.
