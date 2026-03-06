@@ -1,0 +1,8 @@
+{
+  "name": "hooks-toolkit",
+  "version": "1.0.0",
+  "description": "Production-ready Claude Code hooks — bash command safety guards, file protection, auto-lint after edits, project context injection on session start, and task completeness verification. 5 ready-to-use hooks, 3 skills for writing your own, 2 commands, 1 agent. No dependencies.",
+  "author": {
+    "name": "Fourmis"
+  }
+}

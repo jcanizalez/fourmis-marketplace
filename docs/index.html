@@ -602,7 +602,7 @@
   <div class="container">
     <div class="hero-badge">
       <div class="dot"></div>
-      41 plugins &middot; Open Source
+      42 plugins &middot; Open Source
     </div>
     <h1>
       Plugins for<br>
@@ -624,19 +624,19 @@
   <div class="container">
     <div class="stats-grid">
       <div>
-        <div class="stat-num">41</div>
+        <div class="stat-num">42</div>
         <div class="stat-label">Plugins</div>
       </div>
       <div>
-        <div class="stat-num">191</div>
+        <div class="stat-num">194</div>
         <div class="stat-label">Skills</div>
       </div>
       <div>
-        <div class="stat-num">113</div>
+        <div class="stat-num">115</div>
         <div class="stat-label">Commands</div>
       </div>
       <div>
-        <div class="stat-num">46</div>
+        <div class="stat-num">47</div>
         <div class="stat-label">Agents</div>
       </div>
     </div>
@@ -660,7 +660,7 @@
   <div class="container">
     <div class="section-title">
       <h2>Plugin Catalog</h2>
-      <p>Browse all 41 plugins across 9 categories</p>
+      <p>Browse all 42 plugins across 9 categories</p>
     </div>
 
     <div class="search-box">
@@ -669,7 +669,7 @@
     </div>
 
     <div class="filter-bar" id="filterBar">
-      <button class="filter-btn active" data-cat="all" onclick="setFilter('all', this)">All (41)</button>
+      <button class="filter-btn active" data-cat="all" onclick="setFilter('all', this)">All (42)</button>
     </div>
 
     <div class="catalog-grid" id="catalogGrid"></div>
@@ -856,7 +856,8 @@ const plugins = [
   { name: "nextjs-patterns", desc: "Production Next.js patterns — App Router (file-based routing, layouts, parallel/intercepting routes, route groups), data fetching (Server Components, fetch caching, ISR, streaming with Suspense, React.cache, parallel data loading), Server Actions (useActionState, useOptimistic, validation, redirect after mutation), middleware and authentication (Auth.js/NextAuth v5, session cookies, JWT, role-based access, protected API routes), caching strategies (four cache layers, tag-based invalidation, revalidatePath/revalidateTag, cache debugging, ISR), and deployment optimization (next.config.ts, security headers, next/image, next/font, bundle analysis, Docker standalone, Vercel, env validation with Zod).", cat: "development", skills: 6, cmds: 3, agents: 1 },
   { name: "kubernetes-patterns", desc: "Production Kubernetes patterns — core resources (Pods, Deployments, StatefulSets, DaemonSets, Jobs, ConfigMaps, Secrets, Namespaces, resource quotas, labels), networking (Services, Ingress with NGINX and cert-manager TLS, NetworkPolicies with default deny, DNS service discovery, Gateway API, canary traffic splitting), storage (StorageClasses, PVCs, StatefulSets with volumeClaimTemplates, access modes, volume snapshots, Velero backups), scaling (HPA with CPU/memory/custom metrics, VPA right-sizing, KEDA event-driven scale-to-zero, PodDisruptionBudgets, Cluster Autoscaler, Karpenter), Helm charts (chart structure, values per environment, Go templates, hooks for migrations, dependencies, OCI registries, testing), and troubleshooting (CrashLoopBackOff, OOMKilled, ImagePullBackOff, pending pods, network debugging, RBAC, exit codes, kubectl debug).", cat: "devops", skills: 6, cmds: 3, agents: 1 },
   { name: "vector-db", desc: "Vector database and RAG patterns — embedding models (OpenAI text-embedding-3, Cohere, Voyage AI, sentence-transformers, Ollama local models, chunking strategies, token counting), pgvector (PostgreSQL extension setup, HNSW/IVFFlat indexes, cosine/L2/IP similarity search, hybrid search with full-text, metadata filtering, Drizzle/Prisma/node-postgres usage), vector search fundamentals (distance metrics, ANN algorithms, filtering strategies, cross-encoder re-ranking, Cohere rerank, Reciprocal Rank Fusion, evaluation metrics), RAG patterns (retrieval-augmented generation pipelines, query rewriting, HyDE, multi-step retrieval, parent document retrieval, context assembly, citation, ingestion pipelines, LLM-as-judge evaluation), Pinecone (serverless/pod indexes, batch upsert, metadata filtering, namespaces, hybrid search, index management), and ChromaDB/Weaviate (local embedded DB, collections, custom embedding functions, Weaviate schema, hybrid BM25+vector search, multi-tenancy).", cat: "development", skills: 6, cmds: 3, agents: 1 },
-  { name: "state-machines", desc: "State machines and workflow patterns — XState v5 (createMachine, createActor, context, events, guards, actions, invoke, delayed transitions, type-safe machines), XState + React (useActor, useSelector, actor context pattern, multi-step form wizards, authentication flows, testing), workflow patterns (order processing, approval workflows, retry with exponential backoff, saga pattern with compensation, pipeline pattern), finite automata (hierarchical/nested states, parallel states, history states, always transitions, final states, actor model/spawning), event-driven architecture (event sourcing, CQRS, event stores with optimistic concurrency, projections, snapshots, domain events, event versioning), and process orchestration (Temporal.io workflows/activities/signals/queries, simple workflow engine, database-backed job queues with SKIP LOCKED).", cat: "development", skills: 6, cmds: 3, agents: 1 }
+  { name: "state-machines", desc: "State machines and workflow patterns — XState v5 (createMachine, createActor, context, events, guards, actions, invoke, delayed transitions, type-safe machines), XState + React (useActor, useSelector, actor context pattern, multi-step form wizards, authentication flows, testing), workflow patterns (order processing, approval workflows, retry with exponential backoff, saga pattern with compensation, pipeline pattern), finite automata (hierarchical/nested states, parallel states, history states, always transitions, final states, actor model/spawning), event-driven architecture (event sourcing, CQRS, event stores with optimistic concurrency, projections, snapshots, domain events, event versioning), and process orchestration (Temporal.io workflows/activities/signals/queries, simple workflow engine, database-backed job queues with SKIP LOCKED).", cat: "development", skills: 6, cmds: 3, agents: 1 },
+  { name: "hooks-toolkit", desc: "Production-ready Claude Code hooks — bash command safety guards (blocks rm -rf, force push, DROP TABLE), file protection (.env, credentials, SSH keys), auto-lint after edits (ESLint, Prettier, ruff, gofmt), project context injection on session start, and task completeness verification via prompt hook.", cat: "development", skills: 3, cmds: 2, agents: 1 }
 ];
 
 const catLabels = {

@@ -416,6 +416,16 @@
       },
       "source": "./plugins/state-machines",
       "category": "development"
+    },
+    {
+      "name": "hooks-toolkit",
+      "description": "Production-ready Claude Code hooks — bash command safety guards (blocks rm -rf, force push, DROP TABLE), file protection (.env, credentials, SSH keys), auto-lint after edits (ESLint, Prettier, ruff, gofmt), project context injection on session start, and task completeness verification via prompt hook. 3 skills, 2 commands, 1 agent, 5 hooks. No dependencies.",
+      "version": "1.0.0",
+      "author": {
+        "name": "Fourmis"
+      },
+      "source": "./plugins/hooks-toolkit",
+      "category": "development"
     }
   ]
 }

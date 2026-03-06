@@ -1,0 +1,66 @@
+{
+  "description": "Production-ready hooks for safety, quality, and productivity",
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "${CLAUDE_PLUGIN_ROOT}/scripts/bash-guard.sh",
+            "timeout": 5,
+            "statusMessage": "Checking command safety..."
+          }
+        ]
+      },
+      {
+        "matcher": "Write|Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "${CLAUDE_PLUGIN_ROOT}/scripts/file-protect.sh",
+            "timeout": 5,
+            "statusMessage": "Checking file protection..."
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "Write|Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "${CLAUDE_PLUGIN_ROOT}/scripts/auto-lint.sh",
+            "timeout": 30,
+            "async": true
+          }
+        ]
+      }
+    ],
+    "SessionStart": [
+      {
+        "matcher": "startup",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "${CLAUDE_PLUGIN_ROOT}/scripts/project-context.sh",
+            "timeout": 10,
+            "statusMessage": "Loading project context..."
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "prompt",
+            "prompt": "You are evaluating whether Claude should stop working. Here is the conversation context:\n\n$ARGUMENTS\n\nCheck the last assistant message carefully. Determine if:\n1. The user's most recent request has been fully addressed\n2. There are no obvious errors or incomplete steps mentioned\n3. Claude is not in the middle of a multi-step task\n\nIf everything looks complete, respond: {\"ok\": true}\nIf work appears incomplete, respond: {\"ok\": false, \"reason\": \"Brief explanation of what's incomplete\"}",
+            "timeout": 15
+          }
+        ]
+      }
+    ]
+  }
+}
