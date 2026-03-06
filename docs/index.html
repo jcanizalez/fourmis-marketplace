@@ -4,9 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Fourmis Marketplace — Plugins for Claude Code</title>
-  <meta name="description" content="41 open-source plugins for Claude Code. Skills, commands, agents, and MCP servers to supercharge your AI-assisted development workflow.">
+  <meta name="description" content="43 open-source plugins for Claude Code. Skills, commands, agents, and MCP servers to supercharge your AI-assisted development workflow.">
   <meta property="og:title" content="Fourmis Marketplace">
-  <meta property="og:description" content="41 open-source plugins for Claude Code. 191 skills, 113 commands, 46 agents.">
+  <meta property="og:description" content="43 open-source plugins for Claude Code. 196 skills, 117 commands, 48 agents.">
   <meta property="og:type" content="website">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐜</text></svg>">
   <style>
@@ -602,7 +602,7 @@
   <div class="container">
     <div class="hero-badge">
       <div class="dot"></div>
-      42 plugins &middot; Open Source
+      43 plugins &middot; Open Source
     </div>
     <h1>
       Plugins for<br>
@@ -624,19 +624,19 @@
   <div class="container">
     <div class="stats-grid">
       <div>
-        <div class="stat-num">42</div>
+        <div class="stat-num">43</div>
         <div class="stat-label">Plugins</div>
       </div>
       <div>
-        <div class="stat-num">194</div>
+        <div class="stat-num">196</div>
         <div class="stat-label">Skills</div>
       </div>
       <div>
-        <div class="stat-num">115</div>
+        <div class="stat-num">117</div>
         <div class="stat-label">Commands</div>
       </div>
       <div>
-        <div class="stat-num">47</div>
+        <div class="stat-num">48</div>
         <div class="stat-label">Agents</div>
       </div>
     </div>
@@ -660,7 +660,7 @@
   <div class="container">
     <div class="section-title">
       <h2>Plugin Catalog</h2>
-      <p>Browse all 42 plugins across 9 categories</p>
+      <p>Browse all 43 plugins across 9 categories</p>
     </div>
 
     <div class="search-box">
@@ -669,7 +669,7 @@
     </div>
 
     <div class="filter-bar" id="filterBar">
-      <button class="filter-btn active" data-cat="all" onclick="setFilter('all', this)">All (42)</button>
+      <button class="filter-btn active" data-cat="all" onclick="setFilter('all', this)">All (43)</button>
     </div>
 
     <div class="catalog-grid" id="catalogGrid"></div>
@@ -857,7 +857,8 @@ const plugins = [
   { name: "kubernetes-patterns", desc: "Production Kubernetes patterns — core resources (Pods, Deployments, StatefulSets, DaemonSets, Jobs, ConfigMaps, Secrets, Namespaces, resource quotas, labels), networking (Services, Ingress with NGINX and cert-manager TLS, NetworkPolicies with default deny, DNS service discovery, Gateway API, canary traffic splitting), storage (StorageClasses, PVCs, StatefulSets with volumeClaimTemplates, access modes, volume snapshots, Velero backups), scaling (HPA with CPU/memory/custom metrics, VPA right-sizing, KEDA event-driven scale-to-zero, PodDisruptionBudgets, Cluster Autoscaler, Karpenter), Helm charts (chart structure, values per environment, Go templates, hooks for migrations, dependencies, OCI registries, testing), and troubleshooting (CrashLoopBackOff, OOMKilled, ImagePullBackOff, pending pods, network debugging, RBAC, exit codes, kubectl debug).", cat: "devops", skills: 6, cmds: 3, agents: 1 },
   { name: "vector-db", desc: "Vector database and RAG patterns — embedding models (OpenAI text-embedding-3, Cohere, Voyage AI, sentence-transformers, Ollama local models, chunking strategies, token counting), pgvector (PostgreSQL extension setup, HNSW/IVFFlat indexes, cosine/L2/IP similarity search, hybrid search with full-text, metadata filtering, Drizzle/Prisma/node-postgres usage), vector search fundamentals (distance metrics, ANN algorithms, filtering strategies, cross-encoder re-ranking, Cohere rerank, Reciprocal Rank Fusion, evaluation metrics), RAG patterns (retrieval-augmented generation pipelines, query rewriting, HyDE, multi-step retrieval, parent document retrieval, context assembly, citation, ingestion pipelines, LLM-as-judge evaluation), Pinecone (serverless/pod indexes, batch upsert, metadata filtering, namespaces, hybrid search, index management), and ChromaDB/Weaviate (local embedded DB, collections, custom embedding functions, Weaviate schema, hybrid BM25+vector search, multi-tenancy).", cat: "development", skills: 6, cmds: 3, agents: 1 },
   { name: "state-machines", desc: "State machines and workflow patterns — XState v5 (createMachine, createActor, context, events, guards, actions, invoke, delayed transitions, type-safe machines), XState + React (useActor, useSelector, actor context pattern, multi-step form wizards, authentication flows, testing), workflow patterns (order processing, approval workflows, retry with exponential backoff, saga pattern with compensation, pipeline pattern), finite automata (hierarchical/nested states, parallel states, history states, always transitions, final states, actor model/spawning), event-driven architecture (event sourcing, CQRS, event stores with optimistic concurrency, projections, snapshots, domain events, event versioning), and process orchestration (Temporal.io workflows/activities/signals/queries, simple workflow engine, database-backed job queues with SKIP LOCKED).", cat: "development", skills: 6, cmds: 3, agents: 1 },
-  { name: "hooks-toolkit", desc: "Production-ready Claude Code hooks — bash command safety guards (blocks rm -rf, force push, DROP TABLE), file protection (.env, credentials, SSH keys), auto-lint after edits (ESLint, Prettier, ruff, gofmt), project context injection on session start, and task completeness verification via prompt hook.", cat: "development", skills: 3, cmds: 2, agents: 1 }
+  { name: "hooks-toolkit", desc: "Production-ready Claude Code hooks — bash command safety guards (blocks rm -rf, force push, DROP TABLE), file protection (.env, credentials, SSH keys), auto-lint after edits (ESLint, Prettier, ruff, gofmt), project context injection on session start, and task completeness verification via prompt hook.", cat: "development", skills: 3, cmds: 2, agents: 1 },
+  { name: "workspace-setup", desc: "Smart workspace onboarding for Claude Code — auto-detects your project stack (Node.js, TypeScript, Go, Python, React, Next.js, Prisma, Docker, Kubernetes, GitHub Actions), recommends relevant marketplace plugins, and configures your workspace. Includes /setup and /plugins commands, a SessionStart hook for automatic stack detection, and a workspace-advisor agent.", cat: "productivity", skills: 2, cmds: 2, agents: 1 }
 ];
 
 const catLabels = {

@@ -142,6 +142,18 @@ html = html.replace(
   `All (${totalPlugins})`
 );
 
+// 6. Replace meta description
+html = html.replace(
+  /<meta name="description" content="[^"]*">/,
+  `<meta name="description" content="${totalPlugins} open-source plugins for Claude Code. Skills, commands, agents, and MCP servers to supercharge your AI-assisted development workflow.">`
+);
+
+// 7. Replace og:description
+html = html.replace(
+  /<meta property="og:description" content="[^"]*">/,
+  `<meta property="og:description" content="${totalPlugins} open-source plugins for Claude Code. ${totalSkills} skills, ${totalCmds} commands, ${totalAgents} agents.">`
+);
+
 // ─── Write output ────────────────────────────────────────────
 writeFileSync(INDEX_HTML, html, 'utf-8');
 console.log(`✅ docs/index.html updated — ${totalPlugins} plugins, ${totalSkills} skills, ${totalCmds} commands, ${totalAgents} agents`);

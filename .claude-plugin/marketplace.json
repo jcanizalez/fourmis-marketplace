@@ -426,6 +426,16 @@
       },
       "source": "./plugins/hooks-toolkit",
       "category": "development"
+    },
+    {
+      "name": "workspace-setup",
+      "description": "Smart workspace onboarding for Claude Code — auto-detects your project stack (Node.js, TypeScript, Go, Python, React, Next.js, Prisma, Docker, Kubernetes, GitHub Actions), recommends relevant marketplace plugins, and configures your workspace. Includes /setup and /plugins commands, a SessionStart hook for automatic stack detection, and a workspace-advisor agent. 2 skills, 2 commands, 1 agent, 1 hook. No dependencies.",
+      "version": "1.0.0",
+      "author": {
+        "name": "Fourmis"
+      },
+      "source": "./plugins/workspace-setup",
+      "category": "productivity"
     }
   ]
 }

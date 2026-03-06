@@ -1,0 +1,8 @@
+{
+  "name": "workspace-setup",
+  "version": "1.0.0",
+  "description": "Smart workspace onboarding for Claude Code — auto-detects your project stack (Node.js, Go, Python, React, Next.js, etc.), recommends relevant marketplace plugins, and configures your workspace with a /setup command. Includes a SessionStart hook for automatic stack detection. 2 skills, 2 commands, 1 agent, 1 hook. No dependencies.",
+  "author": {
+    "name": "Fourmis"
+  }
+}
