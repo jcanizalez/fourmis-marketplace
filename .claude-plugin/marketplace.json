@@ -446,6 +446,16 @@
       },
       "source": "./plugins/production-guard",
       "category": "devops"
+    },
+    {
+      "name": "session-guard",
+      "description": "Autonomous session management hooks — auto-checkpoints every N edits (git commits), stuck loop detection (repeated errors/commands), TODO/FIXME scanner (blocks session end if stubs remain), session summary generator (stats on stop), and test drift detector (warns when source changes outpace tests). Built for Ralph Wiggum loops and long-running autonomous sessions. 2 skills, 1 command, 1 agent, 5 hooks. No dependencies.",
+      "version": "1.0.0",
+      "author": {
+        "name": "Fourmis"
+      },
+      "source": "./plugins/session-guard",
+      "category": "productivity"
     }
   ]
 }

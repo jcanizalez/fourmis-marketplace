@@ -1,0 +1,6 @@
+{
+  "name": "session-guard",
+  "description": "Autonomous session management hooks — progress checkpointing, stuck loop detection, TODO scanning, session summaries, and drift detection. Built for long-running and autonomous Claude Code sessions.",
+  "version": "1.0.0",
+  "author": "fourmis"
+}
