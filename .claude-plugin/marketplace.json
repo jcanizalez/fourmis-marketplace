@@ -436,6 +436,16 @@
       },
       "source": "./plugins/workspace-setup",
       "category": "productivity"
+    },
+    {
+      "name": "production-guard",
+      "description": "Production readiness hooks — test gates that block session end until tests pass, secret scanning that blocks writes containing API keys and tokens, auto-formatting (prettier/gofmt/black/rustfmt), commit message validation (conventional commits, force-push protection), and async type checking (tsc/mypy/go vet). 2 skills, 1 command, 1 agent, 5 hooks. No dependencies.",
+      "version": "1.0.0",
+      "author": {
+        "name": "Fourmis"
+      },
+      "source": "./plugins/production-guard",
+      "category": "devops"
     }
   ]
 }

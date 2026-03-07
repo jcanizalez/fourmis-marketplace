@@ -1,0 +1,6 @@
+{
+  "name": "production-guard",
+  "description": "Production readiness hooks — test gates, secret scanning, auto-formatting, commit validation, and type checking. Enforces quality at the tool level so bad code never reaches your repo.",
+  "version": "1.0.0",
+  "author": "fourmis"
+}
